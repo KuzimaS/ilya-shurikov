@@ -1,0 +1,8 @@
+*.png
+!assets/ilya-portrait-D4EX4X6j.png
+
+index.*backup*.html
+index.lovable-backup-*.html
+
+assets/index-*.js
+assets/styles-*.css
