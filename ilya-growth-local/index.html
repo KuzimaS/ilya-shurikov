@@ -14,7 +14,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230b0c0d'/%3E%3Cpath d='M18 46V18h5v28h-5Zm23 0V34H29v12h-5V18h5v11h12V18h5v28h-5Z' fill='%23d9cbb7'/%3E%3C/svg%3E">
   <link rel="canonical" href="https://kuzimas.github.io/ilya-shurikov/">
   <link rel="preload" as="image" href="assets/ilya-portrait-720.jpg" imagesrcset="assets/ilya-portrait-560.jpg 560w, assets/ilya-portrait-720.jpg 720w" imagesizes="(max-width: 700px) 280px, 360px" fetchpriority="high">
-  <link rel="stylesheet" href="assets/executive.css?v=20260530-mobile">
+  <link rel="stylesheet" href="assets/executive.css?v=20260601-motion">
   <script>document.documentElement.classList.add("js");</script>
   <script type="application/ld+json">
     {
@@ -49,6 +49,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
 
   <header class="site-header" data-header>
     <div class="nav-shell">
@@ -83,12 +84,12 @@
             <p class="overline">Москва · 7+ лет · B2C-продажи / CRM / контакт-центр</p>
             <h1 id="hero-title">Илья Шуриков</h1>
             <p class="hero-role">Head of Sales / B2C Commercial Lead</p>
-            <p class="hero-text">Коммерческий руководитель на стыке продаж, контакт-центра, CRM, аналитики и автоматизации. Рабочая зона: превратить поток заявок в управляемый процесс от первого контакта до оплаты, повтора и P&L.</p>
+            <p class="hero-text">Коммерческий руководитель на стыке продаж, контакт-центра, CRM, аналитики и автоматизации: выстраиваю путь от заявки до оплаты, повторной продажи и управляемого P&L.</p>
 
             <div class="hero-actions" aria-label="Контакты">
-              <a class="button button-primary" href="https://t.me/S_kingDC">Telegram</a>
+              <a class="button button-primary" href="https://t.me/S_kingDC">Обсудить роль</a>
               <a class="button button-secondary" href="mailto:ilja-shurikov@rambler.ru">Email</a>
-              <a class="button button-secondary" href="tel:+79106479490">Позвонить</a>
+              <a class="button button-secondary" href="tel:+79106479490">Телефон</a>
             </div>
 
             <ul class="scope-list t-avatar-group" aria-label="Ключевые зоны">
@@ -131,6 +132,30 @@
           <dd>при росте продуктивности</dd>
         </div>
       </dl>
+      <div class="discipline-ticker reveal delay-3" aria-label="Зоны управленческого фокуса">
+        <div class="discipline-track">
+          <span>Контакт-центр</span>
+          <span>CRM</span>
+          <span>BI</span>
+          <span>SLA</span>
+          <span>ROMI</span>
+          <span>LTV</span>
+          <span>повторные продажи</span>
+          <span>качество диалогов</span>
+          <span>юнит-экономика</span>
+        </div>
+        <div class="discipline-track" aria-hidden="true">
+          <span>Контакт-центр</span>
+          <span>CRM</span>
+          <span>BI</span>
+          <span>SLA</span>
+          <span>ROMI</span>
+          <span>LTV</span>
+          <span>повторные продажи</span>
+          <span>качество диалогов</span>
+          <span>юнит-экономика</span>
+        </div>
+      </div>
     </section>
 
     <section class="section profile-section" id="profile" aria-labelledby="profile-title">
@@ -139,7 +164,7 @@
         <div>
           <h2 id="profile-title">Коммерческий руководитель для B2C-продаж, контакт-центров и CRM-контуров.</h2>
           <div class="lead-copy">
-            <p>Мой фокус — коммерческий контур: скорость реакции, дозвон, квалификация, CRM-дисциплина, качество диалога, оплата, повторное касание и управленческая отчётность.</p>
+            <p>Мой фокус — коммерческая система: скорость реакции, дозвон, квалификация, CRM-дисциплина, качество диалога, оплата, повторное касание и управленческая отчётность.</p>
             <p>Опыт полезен компаниям, где маркетинг уже создаёт поток лидов, но рост упирается в процесс: команда работает неровно, CRM не даёт прозрачности, повторные продажи случайны, а решения принимаются без единой управленческой картины.</p>
           </div>
         </div>
@@ -240,7 +265,7 @@
               <li><strong>6 мес.</strong><span>до прибыли</span></li>
               <li><strong>-25%</strong><span>OPEX</span></li>
             </ul>
-            <button class="case-open" type="button" data-case-target="case-infourok" aria-haspopup="dialog" aria-controls="case-infourok">Разобрать кейс</button>
+            <button class="case-open" type="button" data-case-target="case-infourok" aria-haspopup="dialog" aria-controls="case-infourok">Открыть кейс</button>
           </div>
         </article>
 
@@ -251,11 +276,11 @@
             <h3>Масштабирование контакт-центра и ROMI</h3>
             <p class="case-summary">Большой поток заявок превращён в управляемую связку ресурса, дозвона, качества, телефонии, BI и окупаемости рекламы.</p>
             <ul class="case-signals" aria-label="Ключевые показатели кейса Синергия">
-              <li><strong>до 240</strong><span>операционный контур</span></li>
+              <li><strong>до 240</strong><span>масштаб КЦ</span></li>
               <li><strong>+70%</strong><span>звонков на оператора</span></li>
               <li><strong>+27%</strong><span>дозвон</span></li>
             </ul>
-            <button class="case-open" type="button" data-case-target="case-synergy" aria-haspopup="dialog" aria-controls="case-synergy">Разобрать кейс</button>
+            <button class="case-open" type="button" data-case-target="case-synergy" aria-haspopup="dialog" aria-controls="case-synergy">Открыть кейс</button>
           </div>
         </article>
 
@@ -270,7 +295,7 @@
               <li><strong>+15 п.п.</strong><span>лид → квалифицированный звонок</span></li>
               <li><strong>-35%</strong><span>текучесть</span></li>
             </ul>
-            <button class="case-open" type="button" data-case-target="case-hectare" aria-haspopup="dialog" aria-controls="case-hectare">Разобрать кейс</button>
+            <button class="case-open" type="button" data-case-target="case-hectare" aria-haspopup="dialog" aria-controls="case-hectare">Открыть кейс</button>
           </div>
         </article>
 
@@ -285,12 +310,12 @@
               <li><strong>+38%</strong><span>средний чек</span></li>
               <li><strong>45-57%</strong><span>закрытие сделок</span></li>
             </ul>
-            <button class="case-open" type="button" data-case-target="case-multimaster" aria-haspopup="dialog" aria-controls="case-multimaster">Разобрать кейс</button>
+            <button class="case-open" type="button" data-case-target="case-multimaster" aria-haspopup="dialog" aria-controls="case-multimaster">Открыть кейс</button>
           </div>
         </article>
       </div>
 
-      <dialog class="case-dialog" id="case-infourok" aria-labelledby="case-infourok-title">
+      <dialog class="case-dialog" id="case-infourok" aria-labelledby="case-infourok-title" closedby="any">
         <div class="case-dialog-shell">
           <button class="dialog-close" type="button" data-close-case aria-label="Закрыть разбор кейса">×</button>
           <header class="case-dialog-head">
@@ -333,13 +358,13 @@
         </div>
       </dialog>
 
-      <dialog class="case-dialog" id="case-synergy" aria-labelledby="case-synergy-title">
+      <dialog class="case-dialog" id="case-synergy" aria-labelledby="case-synergy-title" closedby="any">
         <div class="case-dialog-shell">
           <button class="dialog-close" type="button" data-close-case aria-label="Закрыть разбор кейса">×</button>
           <header class="case-dialog-head">
             <p class="section-label">Разбор кейса · 02</p>
             <h3 id="case-synergy-title">Синергия: контакт-центр, ROMI и качество потока</h3>
-            <p>Фокус: связать ресурс, скорость обработки, дозвон, телефонию, обучение, BI и рекламную окупаемость в один управленческий контур.</p>
+            <p>Фокус: связать ресурс, скорость обработки, дозвон, телефонию, обучение, BI и рекламную окупаемость в одну систему контроля.</p>
           </header>
           <div class="case-dialog-grid">
             <section class="case-dashboard" aria-label="Ключевые показатели Синергия">
@@ -376,7 +401,7 @@
         </div>
       </dialog>
 
-      <dialog class="case-dialog" id="case-hectare" aria-labelledby="case-hectare-title">
+      <dialog class="case-dialog" id="case-hectare" aria-labelledby="case-hectare-title" closedby="any">
         <div class="case-dialog-shell">
           <button class="dialog-close" type="button" data-close-case aria-label="Закрыть разбор кейса">×</button>
           <header class="case-dialog-head">
@@ -419,7 +444,7 @@
         </div>
       </dialog>
 
-      <dialog class="case-dialog" id="case-multimaster" aria-labelledby="case-multimaster-title">
+      <dialog class="case-dialog" id="case-multimaster" aria-labelledby="case-multimaster-title" closedby="any">
         <div class="case-dialog-shell">
           <button class="dialog-close" type="button" data-close-case aria-label="Закрыть разбор кейса">×</button>
           <header class="case-dialog-head">
@@ -474,7 +499,7 @@
         <article class="resume-row reveal">
           <span>01</span>
           <h3>Целевая роль</h3>
-          <p>Директор по продажам / CEO-1 по коммерческому развитию: B2C, контакт-центр, онлайн-продажи, CRM, телефония, клиентский сервис и операционное управление.</p>
+          <p>Директор по продажам / коммерческий руководитель рядом с CEO: B2C, контакт-центр, онлайн-продажи, CRM, телефония, клиентский сервис и операционное управление.</p>
         </article>
         <article class="resume-row reveal delay-1">
           <span>02</span>
