@@ -6,10 +6,13 @@
   const sections = navLinks
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
+  const scrollProgress = document.querySelector("[data-scroll-progress]");
+  const heroSurface = document.querySelector(".hero-surface");
   const closeMs =
     parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--dropdown-close-dur")) || 150;
   let closeTimer = null;
   let lastCaseTrigger = null;
+  let progressFrame = 0;
 
   function setHeaderState() {
     if (!header) return;
@@ -32,6 +35,22 @@
 
     navLinks.forEach((link) => {
       link.classList.toggle("is-active", link.getAttribute("href") === "#" + activeId);
+    });
+  }
+
+  function setScrollProgress() {
+    if (!scrollProgress) return;
+    const root = document.scrollingElement || document.documentElement;
+    const max = Math.max(root.scrollHeight - window.innerHeight, 1);
+    const progress = Math.min(1, Math.max(0, root.scrollTop / max));
+    scrollProgress.style.setProperty("--progress", progress.toFixed(4));
+  }
+
+  function queueScrollProgress() {
+    if (!scrollProgress || progressFrame) return;
+    progressFrame = window.requestAnimationFrame(() => {
+      setScrollProgress();
+      progressFrame = 0;
     });
   }
 
@@ -69,6 +88,24 @@
       if (!nav.classList.contains("is-open")) return;
       if (nav.contains(event.target) || toggle.contains(event.target)) return;
       closeMenu();
+    });
+  }
+
+  if (
+    heroSurface &&
+    window.matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)").matches
+  ) {
+    heroSurface.addEventListener("pointermove", (event) => {
+      const rect = heroSurface.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
+      const y = ((event.clientY - rect.top) / rect.height - 0.5) * 6;
+      heroSurface.style.setProperty("--hero-x", x.toFixed(2) + "px");
+      heroSurface.style.setProperty("--hero-y", y.toFixed(2) + "px");
+    });
+
+    heroSurface.addEventListener("pointerleave", () => {
+      heroSurface.style.setProperty("--hero-x", "0px");
+      heroSurface.style.setProperty("--hero-y", "0px");
     });
   }
 
@@ -132,10 +169,14 @@
     () => {
       setHeaderState();
       setActiveLink();
+      queueScrollProgress();
     },
     { passive: true }
   );
-  window.addEventListener("resize", closeMenu);
+  window.addEventListener("resize", () => {
+    closeMenu();
+    setScrollProgress();
+  });
   window.addEventListener("hashchange", () => {
     if (!location.hash || location.hash === "#top") {
       navLinks.forEach((link) => link.classList.remove("is-active"));
@@ -144,6 +185,7 @@
   });
   setHeaderState();
   setActiveLink();
+  setScrollProgress();
 
   document.querySelectorAll(".t-avatar-group").forEach((root) => {
     const avatars = Array.from(root.querySelectorAll(".t-avatar"));
