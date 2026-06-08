@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kuzimas.github.io/ilya-shurikov/sitemap.xml
