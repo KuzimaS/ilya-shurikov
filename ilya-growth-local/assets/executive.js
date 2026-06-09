@@ -13,7 +13,6 @@
   let closeTimer = null;
   let lastCaseTrigger = null;
   let progressFrame = 0;
-  const mobileMenuQuery = window.matchMedia("(max-width: 840px)");
 
   function setHeaderState() {
     if (!header) return;
@@ -35,13 +34,7 @@
     }
 
     navLinks.forEach((link) => {
-      const isActive = link.getAttribute("href") === "#" + activeId;
-      link.classList.toggle("is-active", isActive);
-      if (isActive) {
-        link.setAttribute("aria-current", "true");
-      } else {
-        link.removeAttribute("aria-current");
-      }
+      link.classList.toggle("is-active", link.getAttribute("href") === "#" + activeId);
     });
   }
 
@@ -61,14 +54,7 @@
     });
   }
 
-  function getMenuFocusables() {
-    if (!nav) return [];
-    return Array.from(nav.querySelectorAll("a[href], button:not([disabled])")).filter(
-      (item) => !item.hasAttribute("hidden")
-    );
-  }
-
-  function closeMenu(options = {}) {
+  function closeMenu() {
     if (!toggle || !nav) return;
     if (!nav.classList.contains("is-open")) return;
     window.clearTimeout(closeTimer);
@@ -78,9 +64,6 @@
     closeTimer = window.setTimeout(() => {
       nav.classList.remove("is-closing");
     }, closeMs);
-    if (options.restoreFocus) {
-      window.setTimeout(() => toggle.focus({ preventScroll: true }), 0);
-    }
   }
 
   function openMenu() {
@@ -89,9 +72,6 @@
     toggle.setAttribute("aria-expanded", "true");
     nav.classList.remove("is-closing");
     nav.classList.add("is-open");
-    if (mobileMenuQuery.matches) {
-      window.setTimeout(() => getMenuFocusables()[0]?.focus({ preventScroll: true }), 0);
-    }
   }
 
   if (toggle && nav) {
@@ -100,7 +80,7 @@
       if (willOpen) {
         openMenu();
       } else {
-        closeMenu({ restoreFocus: true });
+        closeMenu();
       }
     });
 
@@ -117,8 +97,8 @@
   ) {
     heroSurface.addEventListener("pointermove", (event) => {
       const rect = heroSurface.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 4;
-      const y = ((event.clientY - rect.top) / rect.height - 0.5) * 3;
+      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
+      const y = ((event.clientY - rect.top) / rect.height - 0.5) * 6;
       heroSurface.style.setProperty("--hero-x", x.toFixed(2) + "px");
       heroSurface.style.setProperty("--hero-y", y.toFixed(2) + "px");
     });
@@ -131,34 +111,13 @@
 
   navLinks.forEach((link) =>
     link.addEventListener("click", () => {
-      navLinks.forEach((item) => {
-        const isActive = item === link;
-        item.classList.toggle("is-active", isActive);
-        if (isActive) {
-          item.setAttribute("aria-current", "true");
-        } else {
-          item.removeAttribute("aria-current");
-        }
-      });
+      navLinks.forEach((item) => item.classList.toggle("is-active", item === link));
       closeMenu();
     })
   );
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu({ restoreFocus: true });
-    if (event.key !== "Tab" || !nav?.classList.contains("is-open") || !mobileMenuQuery.matches) return;
-    const focusables = getMenuFocusables();
-    if (focusables.length === 0) return;
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus({ preventScroll: true });
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus({ preventScroll: true });
-    }
+    if (event.key === "Escape") closeMenu();
   });
 
   document.querySelectorAll("[data-case-target]").forEach((trigger) => {
@@ -220,10 +179,7 @@
   });
   window.addEventListener("hashchange", () => {
     if (!location.hash || location.hash === "#top") {
-      navLinks.forEach((link) => {
-        link.classList.remove("is-active");
-        link.removeAttribute("aria-current");
-      });
+      navLinks.forEach((link) => link.classList.remove("is-active"));
     }
     window.setTimeout(setActiveLink, 220);
   });
