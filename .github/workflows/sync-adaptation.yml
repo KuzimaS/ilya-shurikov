@@ -1,6 +1,10 @@
 name: Sync adaptation dashboard
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/sync-adaptation.yml"
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
