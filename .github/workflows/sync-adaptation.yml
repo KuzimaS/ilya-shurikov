@@ -1,0 +1,32 @@
+name: Sync adaptation dashboard
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch current dashboard state
+        run: |
+          curl --fail --silent --show-error --retry 3             "https://adaptation-race.clinf.chatgpt.site/api/state"             --output /tmp/adaptation-response.json
+          jq '.state' /tmp/adaptation-response.json > adaptation/state.json.tmp
+          mv adaptation/state.json.tmp adaptation/state.json
+
+      - name: Publish changes
+        run: |
+          git config user.name "adaptation-sync"
+          git config user.email "actions@users.noreply.github.com"
+          git add adaptation/state.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Sync adaptation dashboard data"
+          git push
