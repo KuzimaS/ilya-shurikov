@@ -13,10 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
 
       - name: Fetch current dashboard state
         run: |
-          curl --fail --silent --show-error --retry 3             "https://adaptation-race.clinf.chatgpt.site/api/state"             --output /tmp/adaptation-response.json
+          curl --fail --silent --show-error --retry 3 "https://adaptation-race.clinf.chatgpt.site/api/state" --output /tmp/adaptation-response.json
           jq '.state' /tmp/adaptation-response.json > adaptation/state.json.tmp
           mv adaptation/state.json.tmp adaptation/state.json
 
@@ -29,4 +31,4 @@ jobs:
             exit 0
           fi
           git commit -m "Sync adaptation dashboard data"
-          git push
+          git push origin HEAD:gh-pages
