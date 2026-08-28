@@ -41,14 +41,14 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
+      "appointed": 1,
       "held": 0,
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -58,14 +58,14 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
+      "appointed": 1,
       "held": 0,
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -194,14 +194,16 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
-      "held": 0,
+      "appointed": 1,
+      "held": 1,
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
       "note": "",
-      "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "dates": {
+        "held1": "2026-08-27"
+      },
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -211,14 +213,14 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
+      "appointed": 1,
       "held": 0,
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -296,14 +298,14 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
+      "appointed": 1,
       "held": 0,
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -364,14 +366,14 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
+      "appointed": 1,
       "held": 0,
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -381,14 +383,14 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
+      "appointed": 1,
       "held": 0,
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -398,14 +400,14 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
+      "appointed": 2,
       "held": 0,
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -422,7 +424,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T11:12:38.868Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -439,7 +441,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T11:12:38.868Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -456,7 +458,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T11:12:38.868Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -473,7 +475,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T11:12:38.868Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -490,7 +492,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T11:12:38.868Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -507,7 +509,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T11:12:38.868Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -524,7 +526,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T11:12:38.868Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     },
     {
@@ -541,10 +543,10 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T11:12:38.868Z",
+      "updatedAt": "2026-08-28T07:46:26.376Z",
       "demo": false
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-08-27T11:12:38.868Z"
+  "lastUpdated": "2026-08-28T07:46:26.376Z"
 }
