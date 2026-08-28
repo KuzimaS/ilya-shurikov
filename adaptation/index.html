@@ -228,8 +228,9 @@
     .tv-rank { justify-content: flex-start !important; gap: 8px; font-size: 14px; font-weight: 900; line-height: 1.05; }
     .rank-badge { flex: 0 0 auto; width: 11px; height: 26px; border-radius: 4px; background: var(--blue); }
     .rank-badge.revenue { background: var(--premium); }
-    .tv-goal { flex-direction: column; gap: 1px; font-size: 11px; font-weight: 900; background: #f2f5f7; color: #8798a5; line-height: 1; }
-    .tv-goal small { font-size: 9px; font-weight: 800; opacity: .78; }
+    .tv-goal { flex-direction: column; gap: 2px; font-size: 11px; font-weight: 900; background: #f2f5f7; color: #8798a5; line-height: 1; }
+    .tv-goal span { font-size: 9px; font-weight: 900; white-space: nowrap; }
+    .tv-goal strong { font-size: 13px; font-weight: 900; letter-spacing: -.02em; white-space: nowrap; }
     .tv-goal.done { background: linear-gradient(135deg, var(--success), var(--success-deep)); color: #063d21; box-shadow: inset 0 0 0 2px rgba(255,255,255,.66), 0 0 14px 3px var(--success-glow); position: relative; z-index: 2; }
     .tv-goal.done.revenue { background: linear-gradient(135deg, var(--success), var(--success-deep)); }
     .tv-goal.progress { background: var(--yellow); color: #503c00; box-shadow: inset 0 0 0 2px rgba(255,255,255,.45); }
@@ -254,6 +255,7 @@
     body.tv-density-medium .tv-name { font-size: 18px; }
     body.tv-density-medium .tv-rank { font-size: 12px; }
     body.tv-density-medium .tv-goal { font-size: 10px; }
+    body.tv-density-medium .tv-goal strong { font-size: 11px; }
     body.tv-density-dense .shell { padding: 10px 16px 16px; }
     body.tv-density-dense .topbar { margin-bottom: 8px; }
     body.tv-density-dense h1 { font-size: 30px; }
@@ -270,7 +272,8 @@
     body.tv-density-dense .tv-rank { font-size: 11px; }
     body.tv-density-dense .rank-badge { height: 19px; width: 7px; }
     body.tv-density-dense .tv-goal { font-size: 9px; }
-    body.tv-density-dense .tv-goal small { display: none; }
+    body.tv-density-dense .tv-goal span { font-size: 7px; }
+    body.tv-density-dense .tv-goal strong { display: block; font-size: 10px; }
     body.tv-mode { overflow-y: auto; }
     body.tv-mode .admin-only { display: none !important; }
 
@@ -652,7 +655,7 @@
           const started = isStarted(m, g);
           const today = done && isTodayAchievement(m, g);
           const revenue = i >= 5 ? ' revenue' : '';
-          const content = done ? `<span>${today ? '★ СЕГОДНЯ' : '✓ ' + g.shortRank}</span><small>${g.value(m)}</small>` : started ? `<span>В ПРОЦЕССЕ</span><small>${g.value(m)}</small>` : `<span>${g.value(m)}</span><small>пока 0</small>`;
+          const content = done ? `<span>${today ? '★ СЕГОДНЯ' : '✓ ВЫПОЛНЕНО'}</span><strong>${g.value(m)}</strong>` : started ? `<span>В ПРОЦЕССЕ</span><strong>${g.value(m)}</strong>` : `<span>ПОКА НОЛЬ</span><strong>${g.value(m)}</strong>`;
           return `<div class="tv-goal ${done ? 'done' : started ? 'progress' : ''}${today ? ' today' : ''}${revenue}">${content}</div>`;
         }).join('');
         return `<div class="tv-grid tv-row">
