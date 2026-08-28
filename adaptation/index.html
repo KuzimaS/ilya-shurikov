@@ -655,7 +655,7 @@
           const started = isStarted(m, g);
           const today = done && isTodayAchievement(m, g);
           const revenue = i >= 5 ? ' revenue' : '';
-          const content = done ? `<span>${today ? '★ СЕГОДНЯ' : '✓ ВЫПОЛНЕНО'}</span><strong>${g.value(m)}</strong>` : started ? `<span>В ПРОЦЕССЕ</span><strong>${g.value(m)}</strong>` : `<span>ПОКА НОЛЬ</span><strong>${g.value(m)}</strong>`;
+          const content = done ? `<span>${today ? '★ СЕГОДНЯ' : '✓ ВЫПОЛНЕНО'}</span><strong>${g.value(m)}</strong>` : started ? `<span>В ПРОЦЕССЕ</span><strong>${g.value(m)}</strong>` : `<strong>${g.value(m)}</strong>`;
           return `<div class="tv-goal ${done ? 'done' : started ? 'progress' : ''}${today ? ' today' : ''}${revenue}">${content}</div>`;
         }).join('');
         return `<div class="tv-grid tv-row">
