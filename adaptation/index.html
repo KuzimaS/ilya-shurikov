@@ -29,6 +29,9 @@
       --premium: #6657a6;
       --today: #22c875;
       --today-bright: #52ec9a;
+      --success: #20e875;
+      --success-deep: #0fc85c;
+      --success-glow: rgba(32, 232, 117, .52);
       --shadow: 0 16px 40px rgba(10, 46, 78, .09);
       --radius: 18px;
     }
@@ -101,9 +104,9 @@
     .legend-items { display: flex; flex-wrap: wrap; gap: 13px; color: var(--muted); font-size: 12px; }
     .legend-item { display: inline-flex; align-items: center; gap: 6px; }
     .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-    .dot.done { background: var(--green); }
+    .dot.done { background: var(--success); box-shadow: 0 0 9px 2px var(--success-glow); }
     .dot.current { background: white; border: 3px solid var(--deep); width: 12px; height: 12px; }
-    .dot.gap { background: var(--yellow); }
+    .dot.progress { background: var(--yellow); box-shadow: 0 0 7px rgba(240,179,35,.5); }
     .dot.future { background: #ddd9cd; }
 
     .cohorts { display: flex; gap: 8px; overflow-x: auto; padding: 3px 1px 12px; scrollbar-width: thin; }
@@ -151,14 +154,14 @@
       border-radius: 50%; border: 3px solid var(--card); background: #ddd9cd; color: white;
       box-shadow: 0 0 0 1px #d3cfc2; font-size: 11px; font-weight: 900;
     }
-    .stage.done .stage-dot { background: var(--teal); box-shadow: 0 0 0 1px var(--teal); }
-    .stage.done.revenue .stage-dot { background: var(--premium); box-shadow: 0 0 0 1px var(--premium); }
-    .stage.current .stage-dot { box-shadow: 0 0 0 4px rgba(20,32,29,.18), 0 0 0 1px var(--deep); }
-    .stage.gap .stage-dot { background: var(--yellow); color: #4f3c08; box-shadow: 0 0 0 1px #dba91e; }
+    .stage.done .stage-dot { background: var(--success); color: #063d21; box-shadow: 0 0 0 2px white, 0 0 13px 5px var(--success-glow); }
+    .stage.done.revenue .stage-dot { background: var(--success); box-shadow: 0 0 0 2px white, 0 0 13px 5px var(--success-glow); }
+    .stage.current .stage-dot { box-shadow: 0 0 0 2px white, 0 0 0 5px rgba(10,46,78,.22), 0 0 15px 7px var(--success-glow); }
+    .stage.progress .stage-dot { background: var(--yellow); color: #4f3c08; box-shadow: 0 0 0 2px white, 0 0 9px 3px rgba(240,179,35,.42); }
     .stage-title { font-size: 10px; font-weight: 800; line-height: 1.15; min-height: 24px; }
     .stage-value { margin-top: 4px; font-size: 10px; color: var(--muted); white-space: nowrap; }
     .stage-date { margin-top: 3px; font-size: 9px; color: var(--blue); font-weight: 700; min-height: 13px; }
-    .stage.gap .stage-date { color: #8a6500; }
+    .stage.progress .stage-date { color: #8a6500; }
 
     .money { text-align: right; }
     .money strong { display: block; font-size: 18px; }
@@ -185,7 +188,7 @@
     .formula-note { grid-column: 1 / -1; padding: 12px; border-radius: 12px; background: var(--blue-soft); color: #164d6d; font-size: 12px; }
     .history { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
     .history-item { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 10px; border: 1px solid var(--line); border-radius: 10px; background: white; }
-    .history-item.done { border-color: #a9d5c2; background: #eff9f4; }
+    .history-item.done { border-color: var(--success-deep); background: #e8fff2; box-shadow: 0 0 10px rgba(32,232,117,.2); }
     .history-item span { font-size: 11px; font-weight: 700; }
     .history-item input { width: 135px; border: 1px solid var(--line); border-radius: 8px; padding: 6px; background: white; }
     .modal-foot { display: flex; justify-content: space-between; gap: 12px; padding: 14px 22px 20px; border-top: 1px solid var(--line); }
@@ -227,9 +230,9 @@
     .rank-badge.revenue { background: var(--premium); }
     .tv-goal { flex-direction: column; gap: 1px; font-size: 11px; font-weight: 900; background: #f2f5f7; color: #8798a5; line-height: 1; }
     .tv-goal small { font-size: 9px; font-weight: 800; opacity: .78; }
-    .tv-goal.done { background: var(--teal); color: white; }
-    .tv-goal.done.revenue { background: var(--premium); }
-    .tv-goal.gap { background: var(--yellow); color: #503c00; }
+    .tv-goal.done { background: linear-gradient(135deg, var(--success), var(--success-deep)); color: #063d21; box-shadow: inset 0 0 0 2px rgba(255,255,255,.66), 0 0 14px 3px var(--success-glow); position: relative; z-index: 2; }
+    .tv-goal.done.revenue { background: linear-gradient(135deg, var(--success), var(--success-deep)); }
+    .tv-goal.progress { background: var(--yellow); color: #503c00; box-shadow: inset 0 0 0 2px rgba(255,255,255,.45); }
     @keyframes todayPulse {
       0%, 100% { background: #12985a; box-shadow: inset 0 0 0 2px rgba(255,255,255,.42), 0 0 0 rgba(34,200,117,0); }
       50% { background: var(--today-bright); color: #083c25; box-shadow: inset 0 0 0 3px white, 0 0 22px 5px rgba(34,200,117,.72); }
@@ -395,11 +398,11 @@
       <section class="legend">
       <strong>Как читать забег</strong>
       <div class="legend-items">
-        <span class="legend-item"><i class="dot done"></i> достигнуто и сохранено</span>
+        <span class="legend-item"><i class="dot done"></i> выполнено</span>
         <span class="legend-item"><i class="dot" style="background:#22c875;box-shadow:0 0 8px #22c875"></i> мигает зеленым, если достигнуто сегодня</span>
         <span class="legend-item"><i class="dot current"></i> самый дальний рубеж</span>
-        <span class="legend-item"><i class="dot gap"></i> пропущенная левая ачивка</span>
-        <span class="legend-item"><i class="dot future"></i> еще не достигнуто</span>
+        <span class="legend-item"><i class="dot progress"></i> выполнение началось</span>
+        <span class="legend-item"><i class="dot future"></i> показатель равен нулю</span>
       </div>
       </section>
 
@@ -512,6 +515,7 @@
         return dayOf(m) > 30 || m.status === 'completed' ? 'completed' : 'active';
       }
       function isReached(m, goal) { return Boolean(m.dates && m.dates[goal.key]) || Number(m[goal.field] || 0) >= goal.target; }
+      function isStarted(m, goal) { return !isReached(m, goal) && Number(m[goal.field] || 0) > 0; }
       function isTodayAchievement(m, goal) { return Boolean(m.dates && m.dates[goal.key] === todayISO()); }
       function earned(m) {
         let result = 0;
@@ -642,15 +646,14 @@
       }
 
       function tvRow(m, index) {
-        const far = furthest(m);
         const rank = rankOf(m);
         const cells = goals.map((g, i) => {
           const done = isReached(m, g);
-          const gap = !done && far > i;
+          const started = isStarted(m, g);
           const today = done && isTodayAchievement(m, g);
           const revenue = i >= 5 ? ' revenue' : '';
-          const content = done ? `<span>${today ? '★ СЕГОДНЯ' : '✓ ' + g.shortRank}</span><small>${g.value(m)}</small>` : gap ? `<span>! ПРОПУСК</span><small>${g.value(m)}</small>` : `<span>${g.value(m)}</span><small>цель: ${g.title}</small>`;
-          return `<div class="tv-goal ${done ? 'done' : gap ? 'gap' : ''}${today ? ' today' : ''}${revenue}">${content}</div>`;
+          const content = done ? `<span>${today ? '★ СЕГОДНЯ' : '✓ ' + g.shortRank}</span><small>${g.value(m)}</small>` : started ? `<span>В ПРОЦЕССЕ</span><small>${g.value(m)}</small>` : `<span>${g.value(m)}</span><small>пока 0</small>`;
+          return `<div class="tv-goal ${done ? 'done' : started ? 'progress' : ''}${today ? ' today' : ''}${revenue}">${content}</div>`;
         }).join('');
         return `<div class="tv-grid tv-row">
           <div class="tv-place">${index + 1}</div>
@@ -695,12 +698,12 @@
         const next = nextGoal(m);
         const stageHtml = goals.map((g, i) => {
           const done = isReached(m, g);
-          const gap = !done && far > i;
+          const started = isStarted(m, g);
           const today = done && isTodayAchievement(m, g);
-          const cls = [done ? 'done' : '', gap ? 'gap' : '', today ? 'today' : '', done && far === i ? 'current' : '', i >= 5 ? 'revenue' : ''].filter(Boolean).join(' ');
-          const icon = done ? '✓' : gap ? '!' : i + 1;
-          const date = m.dates && m.dates[g.key] ? (today ? 'сегодня' : formatDate(m.dates[g.key])) : (gap ? 'пропущено' : '');
-          return `<div class="stage ${cls}" title="${escapeHtml(g.title)}: ${done ? 'достигнуто' : gap ? 'пропущенная ачивка' : 'впереди'}"><div class="stage-dot">${icon}</div><div class="stage-title">${g.title}</div><div class="stage-value">${g.value(m)}</div><div class="stage-date">${date}</div></div>`;
+          const cls = [done ? 'done' : '', started ? 'progress' : '', today ? 'today' : '', done && far === i ? 'current' : '', i >= 5 ? 'revenue' : ''].filter(Boolean).join(' ');
+          const icon = done ? '✓' : started ? '↗' : i + 1;
+          const date = m.dates && m.dates[g.key] ? (today ? 'сегодня' : formatDate(m.dates[g.key])) : (started ? 'в процессе' : '');
+          return `<div class="stage ${cls}" title="${escapeHtml(g.title)}: ${done ? 'выполнено' : started ? 'в процессе' : 'показатель равен нулю'}"><div class="stage-dot">${icon}</div><div class="stage-title">${g.title}</div><div class="stage-value">${g.value(m)}</div><div class="stage-date">${date}</div></div>`;
         }).join('');
         const statusPill = status === 'active' ? `<span class="pill green">день ${Math.min(dayOf(m),30)} из 30</span>` : status === 'completed' ? `<span class="pill blue">30 дней завершены</span>` : `<span class="pill red">выбыл${m.leftDate ? ' ' + formatDate(m.leftDate) : ''}</span>`;
         const currentRank = rankOf(m);
