@@ -37,4 +37,4 @@ jobs:
           git commit -m "Sync adaptation dashboard data"
           git push origin HEAD:gh-pages
 
-# Manual refresh: two management-approved meetings 2026-08-29
+# Manual refresh: archive three terminated managers 2026-08-31
