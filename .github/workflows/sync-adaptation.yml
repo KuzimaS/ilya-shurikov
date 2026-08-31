@@ -37,4 +37,4 @@ jobs:
           git commit -m "Sync adaptation dashboard data"
           git push origin HEAD:gh-pages
 
-# Manual refresh: 2026-08-28 meeting metrics
+# Manual refresh: 2026-08-31 data through August 30
