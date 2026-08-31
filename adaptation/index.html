@@ -416,8 +416,9 @@
         <label class="sr-only" for="search">Поиск сотрудника</label>
         <input class="field-control" id="search" type="search" placeholder="Поиск по ФИО или РОП">
         <select class="field-control" id="statusFilter" aria-label="Статус">
-          <option value="active">В забеге</option>
           <option value="all">Все статусы</option>
+          <option value="active">В забеге</option>
+          
           <option value="completed">Завершили 30 дней</option>
           <option value="left">Выбыли</option>
         </select>
@@ -687,6 +688,8 @@
           return textMatch && statusMatch && weekMatch;
         });
         rows.sort((a,b) => {
+          const leftOrder = Number(effectiveStatus(a) === 'left') - Number(effectiveStatus(b) === 'left');
+          if (leftOrder) return leftOrder;
           if (sort === 'name') return a.name.localeCompare(b.name, 'ru');
           if (sort === 'day') return dayOf(b) - dayOf(a);
           if (sort === 'updated') return String(b.updatedAt).localeCompare(String(a.updatedAt));
