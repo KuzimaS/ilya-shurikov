@@ -14,7 +14,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -31,7 +31,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -48,7 +48,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -65,7 +65,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -116,7 +116,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -133,7 +133,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -150,7 +150,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -163,11 +163,11 @@
       "appointed": 0,
       "held": 0,
       "booking": 0,
-      "paid": 750000,
+      "paid": 0,
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -180,13 +180,13 @@
       "appointed": 2,
       "held": 2,
       "booking": 0,
-      "paid": 750000,
+      "paid": 0,
       "paidBonus": 0,
       "note": "",
       "dates": {
         "held1": "2026-08-27"
       },
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -203,7 +203,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -220,7 +220,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -237,7 +237,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -254,7 +254,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -271,7 +271,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -288,7 +288,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -305,7 +305,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -322,7 +322,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -339,7 +339,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -356,7 +356,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -369,14 +369,14 @@
       "appointed": 5,
       "held": 1,
       "booking": 0,
-      "paid": 83332,
+      "paid": 0,
       "paidBonus": 0,
       "note": "",
       "dates": {
         "appointed5": "2026-08-29",
         "held1": "2026-08-29"
       },
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -393,7 +393,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -410,7 +410,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -427,7 +427,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -444,7 +444,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -461,7 +461,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -478,7 +478,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     },
     {
@@ -495,10 +495,11 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-31T07:51:31.168Z",
+      "updatedAt": "2026-08-31T07:57:18.283Z",
       "demo": false
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-08-31T07:51:31.168Z"
+  "lastUpdated": "2026-08-31T07:57:18.283Z",
+  "dataVersion": "2026-08-31-contest-money-v1"
 }
