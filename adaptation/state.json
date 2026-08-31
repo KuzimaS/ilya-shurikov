@@ -3,7 +3,7 @@
     {
       "id": "mgr-20260827-01",
       "name": "Скоробогатова Екатерина",
-      "team": "",
+      "team": "Вильданов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -14,13 +14,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-02",
       "name": "Хизриев Руслан",
-      "team": "",
+      "team": "Гужов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -31,13 +31,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-03",
       "name": "Домбраускайте Виктория",
-      "team": "",
+      "team": "Востриков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -48,24 +48,24 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-04",
       "name": "Гуров Виталий",
-      "team": "",
+      "team": "Гужов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
       "appointed": 1,
       "held": 0,
       "booking": 0,
-      "paid": 0,
+      "paid": 750000,
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
@@ -105,7 +105,7 @@
     {
       "id": "mgr-20260827-07",
       "name": "Грищенко Татьяна",
-      "team": "",
+      "team": "Кузнецов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -116,13 +116,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-08",
       "name": "Воробьев Вячеслав",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -133,13 +133,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-09",
       "name": "Острогляд Сергей",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -150,30 +150,30 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-10",
       "name": "Крючкова Надежда",
-      "team": "",
+      "team": "Гужов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
       "appointed": 0,
       "held": 0,
       "booking": 0,
-      "paid": 0,
+      "paid": 750000,
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-11",
       "name": "Григорьева Екатерина",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -184,32 +184,32 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-12",
       "name": "Фоменко Роман",
-      "team": "",
+      "team": "Кузнецов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 1,
-      "held": 1,
+      "appointed": 2,
+      "held": 2,
       "booking": 0,
-      "paid": 0,
+      "paid": 750000,
       "paidBonus": 0,
       "note": "",
       "dates": {
         "held1": "2026-08-27"
       },
-      "updatedAt": "2026-08-28T08:42:18.372Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-13",
       "name": "Усачев Юрий",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -220,13 +220,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-14",
       "name": "Косырева Алена",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -237,13 +237,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-15",
       "name": "Фрейман Елена",
-      "team": "",
+      "team": "Инвестиции",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -254,13 +254,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-16",
       "name": "Рыжов Александр",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -271,13 +271,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-17",
       "name": "Жолтяк Артем",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -288,13 +288,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-18",
       "name": "Сметанкина Римма",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -305,13 +305,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-19",
       "name": "Гагаринцева Ангелина",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -322,13 +322,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-20",
       "name": "Балюк Кирилл",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -339,7 +339,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-27T10:45:00.800Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
@@ -362,7 +362,7 @@
     {
       "id": "mgr-20260827-22",
       "name": "Синицин Роман",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -373,13 +373,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-23",
       "name": "Конвисар Дарья",
-      "team": "",
+      "team": "Должиков",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -390,24 +390,27 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-24",
       "name": "Власов Никита",
-      "team": "",
+      "team": "Вильданов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 2,
-      "held": 0,
+      "appointed": 5,
+      "held": 1,
       "booking": 0,
-      "paid": 0,
+      "paid": 83332,
       "paidBonus": 0,
       "note": "",
-      "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "dates": {
+        "appointed5": "2026-08-29",
+        "held1": "2026-08-29"
+      },
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
@@ -424,7 +427,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
@@ -441,7 +444,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
@@ -458,7 +461,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
@@ -475,7 +478,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
@@ -492,7 +495,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
@@ -509,7 +512,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
@@ -526,7 +529,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     },
     {
@@ -543,10 +546,10 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-08-28T07:46:26.376Z",
+      "updatedAt": "2026-08-31T07:47:08.142Z",
       "demo": false
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-08-28T08:42:18.372Z"
+  "lastUpdated": "2026-08-31T07:47:08.142Z"
 }
