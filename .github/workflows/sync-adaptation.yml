@@ -37,4 +37,4 @@ jobs:
           git commit -m "Sync adaptation dashboard data"
           git push origin HEAD:gh-pages
 
-# Manual refresh: remove duplicate Fomenko meeting 2026-09-01
+# Manual refresh: mark four adaptation bonuses paid 2026-09-01
