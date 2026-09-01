@@ -165,7 +165,9 @@
 
     .money { text-align: right; }
     .money strong { display: block; font-size: 18px; }
-    .money small { display: block; color: var(--muted); margin-top: 3px; }
+    .money small { display: block; margin-top: 3px; font-weight: 900; }
+    .money small.payment-due { color: #c62828; }
+    .money small.payment-paid { color: #15803d; }
     .row-actions { display: flex; justify-content: flex-end; gap: 4px; }
     .icon-btn { border: 1px solid var(--line); background: white; width: 33px; height: 33px; border-radius: 10px; font-size: 16px; }
     .icon-btn:hover { background: #f2efe6; }
@@ -718,7 +720,7 @@
         return `<article class="person ${status === 'left' ? 'dim' : ''}" data-id="${m.id}">
           <div><div class="person-name">${escapeHtml(m.name)}</div><div class="person-meta">${statusPill}<span class="pill ${currentRank.revenue ? 'red' : 'blue'}">звание: ${currentRank.title}</span>${m.team ? `<span class="pill">${escapeHtml(m.team)}</span>` : ''}${nextPill}</div>${m.note ? `<div class="person-meta"><span class="pill">${escapeHtml(m.note)}</span></div>` : ''}</div>
           <div class="track">${stageHtml}</div>
-          <div class="money"><strong>${formatMoney(earned(m))}</strong><small>${owed ? `к выплате ${formatMoney(owed)}` : 'выплачено полностью'}</small></div>
+          <div class="money"><strong>${formatMoney(earned(m))}</strong><small class="${owed ? 'payment-due' : 'payment-paid'}">${owed ? `к выплате ${formatMoney(owed)}` : 'выплачено полностью'}</small></div>
           <div class="row-actions">${canEditRemote ? `<button class="icon-btn edit-btn" title="Обновить" aria-label="Обновить ${escapeHtml(m.name)}">✎</button>` : ''}</div>
         </article>`;
       }
