@@ -622,7 +622,7 @@
       }
 
       function render() {
-        const active = state.managers.filter(m => effectiveStatus(m) === 'active');
+        const active = state.managers.filter(m => effectiveStatus(m) === 'active' && !m.hideFromTv);
         el('activeCount').textContent = active.length;
         const totalEarned = state.managers.reduce((sum, m) => sum + earned(m), 0);
         const totalPaid = state.managers.reduce((sum, m) => sum + Number(m.paidBonus || 0), 0);
@@ -785,7 +785,7 @@
         el('manageView').classList.toggle('active', tab === 'manage');
         document.body.classList.toggle('tv-mode', tab === 'tv');
         document.body.classList.remove('tv-density-medium', 'tv-density-dense');
-        if (tab === 'tv') renderTV(state.managers.filter(m => effectiveStatus(m) === 'active'));
+        if (tab === 'tv') renderTV(state.managers.filter(m => effectiveStatus(m) === 'active' && !m.hideFromTv));
       }
       document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => setTab(btn.dataset.tab)));
       el('cohorts').addEventListener('click', event => {
