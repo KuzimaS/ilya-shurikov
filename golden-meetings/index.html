@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Золотой календарь встреч: конкурс менеджеров Мой гектар за сентябрь 2026">
+  <meta name="theme-color" content="#08111f">
+  <title>Золотой календарь встреч</title>
+  <style>
+    :root{
+      --bg:#060b14;--bg2:#0b1423;--panel:#0e192a;--panel2:#121f33;--line:#22324a;
+      --text:#f7f2e5;--muted:#8da0bb;--gold:#f4bd45;--gold2:#ffdd79;--gold3:#b8780e;
+      --green:#37d89c;--red:#ff6d7b;--blue:#6db7ff;--shadow:0 22px 70px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-width:1180px;background:
+      radial-gradient(circle at 78% -10%,rgba(244,189,69,.16),transparent 30%),
+      radial-gradient(circle at 15% 10%,rgba(47,108,180,.14),transparent 34%),var(--bg);
+      color:var(--text);font:14px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    button,input,select{font:inherit}
+    button{cursor:pointer}a.btn{text-decoration:none}
+    .shell{min-height:100vh}
+    .top{position:sticky;top:0;z-index:40;padding:18px 26px 16px;background:rgba(6,11,20,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .topline{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:1880px;margin:auto}
+    .brand{display:flex;align-items:center;gap:14px;min-width:300px}
+    .mark{width:46px;height:46px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(145deg,#ffe9a3,#d99413 60%,#7a4300);box-shadow:0 0 34px rgba(244,189,69,.25);font-size:24px}
+    .brand h1{font-size:18px;line-height:1.1;margin:0;letter-spacing:.01em}.brand p{margin:5px 0 0;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.14em}
+    .actions{display:flex;align-items:center;gap:8px}
+    .btn,.select,.search{height:40px;border:1px solid var(--line);color:var(--text);background:#0d1726;border-radius:11px;padding:0 13px;outline:none}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-weight:750}.btn:hover{border-color:#50617b;background:#132136}.btn.gold{border-color:#b37b1f;background:linear-gradient(135deg,#ffd873,#c68819);color:#241500;box-shadow:0 8px 22px rgba(207,143,24,.16)}
+    .btn.active{border-color:#c9902d;color:#ffd873;background:#271c0b}.btn.icon{width:40px;padding:0}.file{display:none}
+    .content{max-width:1880px;margin:0 auto;padding:24px 26px 42px}
+    .hero{display:grid;grid-template-columns:minmax(500px,1.4fr) minmax(580px,1fr);gap:16px;margin-bottom:16px}
+    .hero-main,.rules{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.09);border-radius:22px;background:linear-gradient(145deg,rgba(20,34,54,.94),rgba(10,18,31,.94));box-shadow:var(--shadow)}
+    .hero-main{padding:24px 26px}.hero-main:after{content:"";position:absolute;right:-70px;top:-90px;width:270px;height:270px;border-radius:50%;background:radial-gradient(circle,rgba(255,205,87,.28),transparent 68%);pointer-events:none}
+    .eyebrow{display:flex;align-items:center;gap:8px;color:#ffd66d;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.16em}.eyebrow:before{content:"";width:23px;height:2px;background:#ffd66d}
+    .hero h2{margin:12px 0 8px;font-size:35px;line-height:1.06;max-width:680px;letter-spacing:-.035em}.hero-main>p{margin:0;color:#a9b7cb;max-width:720px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:23px}
+    .stat{padding:13px 14px;border:1px solid rgba(255,255,255,.07);background:rgba(5,11,20,.42);border-radius:14px}.stat span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.stat b{display:block;margin-top:5px;font-size:22px}.stat.money b{color:#ffd66d}
+    .rules{padding:18px 20px;display:grid;grid-template-columns:1fr 1.25fr;gap:16px}.rule h3{font-size:13px;margin:0 0 12px;color:#e5edf8}.mini-days{display:flex;gap:5px}.mini-day{height:42px;min-width:42px;border-radius:9px;display:grid;place-items:center;font-weight:850;border:1px solid rgba(255,255,255,.08)}
+    .m0{background:#182334;color:#65758d}.m1{background:#33271b;color:#bb8a54}.m2{background:#5c461e;color:#e7bd68}.m3{background:linear-gradient(145deg,#a96d0a,#f3be49);color:#241700}.m4{background:linear-gradient(145deg,#ffe49a,#eaa524);color:#251600;box-shadow:0 0 20px rgba(244,189,69,.28)}
+    .rule-note{margin:9px 0 0;color:var(--muted);font-size:11px}.prize-line{display:flex;align-items:center;gap:5px;flex-wrap:wrap}.prize-dot{min-width:44px;height:42px;padding:0 7px;border-radius:10px;display:grid;place-items:center;border:1px solid #5d461c;background:#20190d;color:#ffd874;font-size:12px;font-weight:850}.prize-arrow{color:#56647a;font-size:12px}
+    .controls{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:18px 0 12px}.tabs{display:inline-flex;padding:4px;border-radius:13px;border:1px solid var(--line);background:#0a1321}.tab{border:0;background:transparent;color:#8596ae;border-radius:9px;padding:9px 16px;font-weight:800}.tab.active{background:#1c2a40;color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+    .filters{display:flex;align-items:center;gap:8px}.search{width:230px}.select{min-width:190px}
+    .edit-tip{display:none;color:#ffd66d;font-size:12px;margin-left:8px}.editing .edit-tip{display:inline}
+    .board{border:1px solid rgba(255,255,255,.09);border-radius:18px;background:rgba(11,20,34,.9);box-shadow:var(--shadow);overflow:hidden}
+    .board-head{display:flex;align-items:center;justify-content:space-between;padding:14px 17px;border-bottom:1px solid var(--line)}.board-head h3{margin:0;font-size:14px}.board-head p{margin:0;color:var(--muted);font-size:12px}
+    .table-wrap{overflow:auto;max-height:calc(100vh - 330px);min-height:380px}
+    table{border-collapse:separate;border-spacing:0;width:max-content;min-width:100%;background:#0a1321}
+    th,td{border-right:1px solid #1a293d;border-bottom:1px solid #1a293d;padding:0;text-align:center;height:54px}
+    thead th{position:sticky;top:0;z-index:8;background:#111d2e;color:#8ea1bb;font-size:11px;text-transform:uppercase;letter-spacing:.05em;height:46px}
+    .name-col{position:sticky;left:0;z-index:6;width:286px;min-width:286px;max-width:286px;text-align:left;background:#101b2b;padding:0 15px!important}.name-col b{display:block;font-size:13px;color:#edf3fa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.name-col small{display:block;color:#7589a5;margin-top:2px}.name-col .dept-tag{color:#c69a47}
+    thead .name-col{z-index:12}.day-head{width:55px;min-width:55px}.day-head b{display:block;color:#d5dfec;font-size:13px}.day-head small{font-size:9px}.weekend{background:#17192a!important;color:#b5a3c9!important}
+    .day-cell{width:55px;min-width:55px;background:#111b29;transition:.18s}.day-input{width:100%;height:100%;border:0;outline:none;text-align:center;background:transparent;color:inherit;font-weight:900;font-size:15px;appearance:textfield}.day-input::-webkit-inner-spin-button{appearance:none}.day-input:disabled{cursor:default;opacity:1}
+    .day-cell.lv0{background:#101927;color:#53657d}.day-cell.lv1{background:#2a231e;color:#a77d50}.day-cell.lv2{background:#4c3b20;color:#e0b65f}.day-cell.lv3{background:linear-gradient(145deg,#99620d,#e4aa35);color:#241700}.day-cell.lv4{background:linear-gradient(145deg,#ffe8a6,#efa91f);color:#201300;box-shadow:inset 0 0 0 1px #fff0b3,0 0 18px rgba(235,169,38,.15)}
+    .editing .day-cell{cursor:text}.editing .day-cell:hover{box-shadow:inset 0 0 0 2px #6db7ff;position:relative;z-index:2}
+    .summary-col{width:112px;min-width:112px;background:#0e1a2a;padding:0 8px!important}.summary-col b{display:block;font-size:15px}.summary-col small{display:block;color:#788ca7;font-size:10px}.money-col{width:132px;min-width:132px;background:#151b21;color:#ffd36a;padding:0 8px!important}.money-col b{font-size:15px}.group-row td{height:34px;background:#172337;color:#d4a84e;text-align:left;padding:0 14px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;position:sticky;left:0}
+    .empty{padding:50px;text-align:center;color:var(--muted)}
+    .held-list{padding:8px 12px 16px;max-height:calc(100vh - 330px);overflow:auto;background:#09121f}.held-group{margin:12px 3px 7px;color:#d7aa52;font-size:10px;text-transform:uppercase;letter-spacing:.13em;font-weight:900}
+    .held-row{display:grid;grid-template-columns:270px minmax(560px,1fr) 120px 150px;align-items:center;gap:16px;min-height:82px;padding:11px 13px;margin-bottom:6px;border:1px solid #1d2d43;background:linear-gradient(90deg,#101d2d,#0d1725);border-radius:14px}.held-row:hover{border-color:#344b69}.person b{display:block;font-size:13px}.person small{color:#768aa6}.held-control{display:flex;align-items:center;gap:7px;margin-top:7px}.round-btn{width:27px;height:27px;border:1px solid #30445f;border-radius:8px;background:#16243a;color:#fff;font-weight:900}.round-btn:disabled{opacity:.3;cursor:default}.held-number{width:48px;height:27px;border:1px solid #30445f;border-radius:8px;background:#0b1523;color:#fff;text-align:center;font-weight:900}.held-number:disabled{opacity:1}
+    .track-wrap{position:relative;padding:18px 2px 9px}.track{height:5px;background:#26354a;border-radius:20px;position:relative}.fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#ae6e0b,#ffd66d);box-shadow:0 0 14px rgba(244,189,69,.28)}.nodes{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center}.node{position:relative;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#1e2b3e;border:2px solid #34475f;color:#7489a6;font-size:9px;font-weight:900}.node.reached{background:linear-gradient(145deg,#ffe393,#d99516);border-color:#fff0b0;color:#271700;box-shadow:0 0 15px rgba(244,189,69,.36)}.node span{position:absolute;top:25px;white-space:nowrap;color:#60748f;font-size:8px}.node.reached span{color:#d4ac5f}.next-box span,.earned span{display:block;color:#72859f;font-size:10px;text-transform:uppercase;letter-spacing:.06em}.next-box b{display:block;margin-top:4px;font-size:12px;color:#d9e2ee}.earned{text-align:right}.earned b{display:block;margin-top:3px;font-size:18px;color:#ffd36a}.earned.max b{color:#fff1b7;text-shadow:0 0 16px rgba(255,211,106,.5)}
+    .toast{position:fixed;right:24px;bottom:24px;z-index:100;transform:translateY(25px);opacity:0;pointer-events:none;transition:.25s;background:#19283b;border:1px solid #3b516e;color:#fff;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow)}.toast.show{transform:none;opacity:1}
+    .modal{position:fixed;inset:0;z-index:120;display:none;place-items:center;background:rgba(2,6,12,.74);backdrop-filter:blur(5px)}.modal.open{display:grid}.dialog{width:460px;padding:22px;border:1px solid #34465f;background:#101b2a;border-radius:18px;box-shadow:0 30px 100px #000}.dialog h3{margin:0 0 8px}.dialog p{color:var(--muted);margin:0 0 18px}.dialog-actions{display:flex;justify-content:flex-end;gap:8px}
+    .tv .top{position:static}.tv .actions,.tv .filters,.tv .rules,.tv .hero-main>p,.tv .edit-tip{display:none!important}.tv .hero{grid-template-columns:1fr}.tv .hero-main{padding:17px 22px}.tv .hero h2{font-size:25px}.tv .stats{position:absolute;right:22px;top:17px;width:720px;margin:0}.tv .controls{margin-top:12px}.tv .table-wrap,.tv .held-list{max-height:calc(100vh - 220px)}
+    @media(max-width:1300px){.hero{grid-template-columns:1fr}.rules{grid-template-columns:1fr 1fr}.held-row{grid-template-columns:240px minmax(520px,1fr) 110px 140px}}
+    @media print{body{background:#fff;color:#111}.top,.controls,.rules{display:none!important}.content{padding:0}.hero{display:block}.hero-main,.board{box-shadow:none;border:1px solid #bbb;background:#fff}.hero h2,.stat b{color:#111}.hero-main>p,.stat span{color:#555}.table-wrap,.held-list{max-height:none;overflow:visible}.board{overflow:visible}.day-cell,.name-col,.summary-col,.money-col,thead th{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+  </style>
+</head>
+<body>
+  <div class="shell" id="app">
+    <header class="top">
+      <div class="topline">
+        <div class="brand"><div class="mark">🏆</div><div><h1>Золотой календарь встреч</h1><p>Техническая панель · сентябрь 2026</p></div></div>
+        <div class="actions">
+          <button class="btn" id="importBtn">Импорт</button><input class="file" id="importFile" type="file" accept="application/json">
+          <button class="btn" id="exportBtn">Экспорт</button>
+          <button class="btn icon" id="printBtn" title="Печать">⎙</button>
+          <a class="btn" href="./tv-assigned.html" target="_blank">ТВ: назначенные</a>
+          <a class="btn" href="./tv-held.html" target="_blank">ТВ: проведённые</a>
+          <button class="btn gold" id="editBtn">✎ Ввести результаты</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="hero">
+        <div class="hero-main">
+          <div class="eyebrow">30 дней золотой гонки</div>
+          <h2>Каждая встреча приближает к следующей награде</h2>
+          <p>Три назначения за день окрашивают дату в золото. Всё сверх трёх приносит по 1 000 ₽. Проведённые встречи открывают призовые уровни месяца.</p>
+          <div class="stats">
+            <div class="stat"><span>Участников</span><b id="statPeople">65</b></div>
+            <div class="stat"><span>Назначено</span><b id="statAssigned">0</b></div>
+            <div class="stat"><span>Проведено</span><b id="statHeld">0</b></div>
+            <div class="stat money"><span>Заработано</span><b id="statMoney">0 ₽</b></div>
+          </div>
+        </div>
+        <div class="rules">
+          <div class="rule"><h3>Назначения за день</h3><div class="mini-days"><div class="mini-day m0">0</div><div class="mini-day m1">1</div><div class="mini-day m2">2</div><div class="mini-day m3">3</div><div class="mini-day m4">4+</div></div><p class="rule-note">С четвёртой встречи: +1 000 ₽ за каждую</p></div>
+          <div class="rule"><h3>Награды за проведённые</h3><div class="prize-line"><div class="prize-dot">5</div><span class="prize-arrow">›</span><div class="prize-dot">7</div><span class="prize-arrow">›</span><div class="prize-dot">10</div><span class="prize-arrow">›</span><div class="prize-dot">12</div><span class="prize-arrow">›</span><div class="prize-dot">15</div><span class="prize-arrow">›</span><div class="prize-dot">20</div><span class="prize-arrow">›</span><div class="prize-dot">25</div><span class="prize-arrow">›</span><div class="prize-dot">30</div></div><p class="rule-note">От 10 000 ₽ до суперприза 70 000 ₽</p></div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <div><div class="tabs"><button class="tab active" data-view="assigned">Назначенные</button><button class="tab" data-view="held">Проведённые</button></div><span class="edit-tip">Режим ввода включён. Изменения сохраняются автоматически.</span></div>
+        <div class="filters"><input class="search" id="search" placeholder="Найти сотрудника"><select class="select" id="deptFilter"><option value="all">Все подразделения</option></select></div>
+      </section>
+
+      <section class="board">
+        <div class="board-head"><div><h3 id="boardTitle">Ежедневные назначения</h3><p id="boardSubtitle">Нажмите «Ввести результаты», чтобы заполнить календарь</p></div><p id="updatedAt">Данные ещё не обновлялись</p></div>
+        <div id="assignedView" class="table-wrap"></div>
+        <div id="heldView" class="held-list" hidden></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <div class="modal" id="resetModal"><div class="dialog"><h3>Обнулить весь конкурс?</h3><p>Все введённые назначения и проведённые встречи будут удалены только на этом устройстве.</p><div class="dialog-actions"><button class="btn" id="cancelReset">Отмена</button><button class="btn" id="confirmReset" style="border-color:#73313a;color:#ff9ba5">Обнулить</button></div></div></div>
+
+  <script>
+  const people = [
+    {id:'kuznetsov-anton',name:'Кузнецов Антон',role:'РОП',dept:'Отдел Кузнецова'},
+    {id:'zemlyukov-ilya',name:'Землюков Илья',role:'ст. Менеджер · 462',dept:'Отдел Кузнецова'},
+    {id:'amelchenko-sergey',name:'Амельченко Сергей',role:'Менеджер · 151',dept:'Отдел Кузнецова'},
+    {id:'kuznetsov-alexander',name:'Кузнецов Александр',role:'Менеджер · 158',dept:'Отдел Кузнецова'},
+    {id:'egorov-dmitry',name:'Егоров Дмитрий',role:'Менеджер · 162',dept:'Отдел Кузнецова'},
+    {id:'ufelman-sergey',name:'Уфельман Сергей',role:'Менеджер · 125',dept:'Отдел Кузнецова'},
+    {id:'kurtnizirov-dmitry',name:'Куртнизиров Дмитрий',role:'Менеджер · 252',dept:'Отдел Кузнецова'},
+    {id:'fomenko-roman',name:'Фоменко Роман',role:'Менеджер · 474',dept:'Отдел Кузнецова'},
+
+    {id:'vildanov-salavat',name:'Вильданов Салават',role:'РОП · 396',dept:'Отдел Вильданова'},
+    {id:'nebaykin-sergey',name:'Небайкин Сергей',role:'Ведущ. менеджер · 313',dept:'Отдел Вильданова'},
+    {id:'ilchevsky-oleg',name:'Ильчевский Олег',role:'Ведущ. менеджер · 140',dept:'Отдел Вильданова'},
+    {id:'sadykhova-lyaman',name:'Садыхова Ляман',role:'Ведущ. менеджер · 729',dept:'Отдел Вильданова'},
+    {id:'panasiy-ekaterina',name:'Панасий Екатерина',role:'Ведущ. менеджер · 157',dept:'Отдел Вильданова'},
+    {id:'gradesko-tamara',name:'Градеско Тамара',role:'ст. Менеджер · 511',dept:'Отдел Вильданова'},
+    {id:'kocharovsky-arseny',name:'Кочаровский Арсений',role:'ст. Менеджер · 401',dept:'Отдел Вильданова'},
+    {id:'balakireva-victoria',name:'Балакирева Виктория',role:'ст. Менеджер · 236',dept:'Отдел Вильданова'},
+    {id:'mzhelsky-anton',name:'Мжельский Антон',role:'ст. Менеджер · 127',dept:'Отдел Вильданова'},
+    {id:'donskikh-anna',name:'Донских Анна',role:'Менеджер · 500',dept:'Отдел Вильданова'},
+    {id:'skorobogatova-ekaterina',name:'Скоробогатова Екатерина',role:'Менеджер · 405',dept:'Отдел Вильданова'},
+    {id:'vlasov-nikita',name:'Власов Никита',role:'Менеджер · 805',dept:'Отдел Вильданова'},
+
+    {id:'vostrikov-vladislav',name:'Востриков Владислав',role:'РОП · 333',dept:'Отдел Вострикова'},
+    {id:'boldyrev-dmitry',name:'Болдырев Дмитрий',role:'Ведущ. менеджер · 232',dept:'Отдел Вострикова'},
+    {id:'yashkulova-tsagana',name:'Яшкулова Цагана',role:'Ведущ. менеджер · 348',dept:'Отдел Вострикова'},
+    {id:'bushin-dmitry',name:'Бушин Дмитрий',role:'ст. Менеджер · 449',dept:'Отдел Вострикова'},
+    {id:'artemov-evgeny',name:'Артёмов Евгений',role:'ст. Менеджер · 302',dept:'Отдел Вострикова'},
+    {id:'lazovoy-sergey',name:'Лазовой Сергей',role:'ст. Менеджер · 330',dept:'Отдел Вострикова'},
+    {id:'vasilchenko-ivan',name:'Васильченко Иван',role:'ст. Менеджер · 124',dept:'Отдел Вострикова'},
+    {id:'morev-pavel',name:'Морев Павел',role:'ст. Менеджер · 416',dept:'Отдел Вострикова'},
+    {id:'golovachev-dmitry',name:'Головачёв Дмитрий',role:'Менеджер · 155',dept:'Отдел Вострикова'},
+    {id:'lebedev-artem',name:'Лебедев Артем',role:'Менеджер · 121',dept:'Отдел Вострикова'},
+    {id:'dombrauskaite-victoria',name:'Домбраускайте Виктория',role:'Стажёр · 417',dept:'Отдел Вострикова'},
+
+    {id:'guzhov-mikhail',name:'Гужов Михаил',role:'РОП · 172',dept:'Отдел Гужова'},
+    {id:'barikov-yury',name:'Бариков Юрий',role:'Ведущ. менеджер · 001',dept:'Отдел Гужова'},
+    {id:'demkin-denis',name:'Дёмкин Денис',role:'ст. Менеджер · 132',dept:'Отдел Гужова'},
+    {id:'faybushevich-evgeny',name:'Файбушевич Евгений',role:'ст. Менеджер · 341',dept:'Отдел Гужова'},
+    {id:'semchenko-stepan',name:'Семченко Степан',role:'ст. Менеджер · 384',dept:'Отдел Гужова'},
+    {id:'vakhlaev-daniil',name:'Вахлаев Даниил',role:'Менеджер · 163',dept:'Отдел Гужова'},
+    {id:'mitrochenkov-andrey',name:'Митроченков Андрей',role:'Менеджер · 329',dept:'Отдел Гужова'},
+    {id:'krasikov-konstantin',name:'Красиков Константин',role:'Менеджер · 344',dept:'Отдел Гужова'},
+    {id:'gurov-vitaly',name:'Гуров Виталий',role:'ст. Стажёр · 345',dept:'Отдел Гужова'},
+    {id:'kryuchkova-nadezhda',name:'Крючкова Надежда',role:'Менеджер · 454',dept:'Отдел Гужова'},
+
+    {id:'eremenkov-sergey',name:'Ерёменков Сергей',role:'РОП',dept:'Отдел Ерёменкова'},
+    {id:'demidov-nikita',name:'Демидов Никита',role:'Менеджер · 505',dept:'Отдел Ерёменкова'},
+    {id:'usachev-yury',name:'Усачев Юрий',role:'ст. Стажёр · 461',dept:'Отдел Ерёменкова'},
+    {id:'vorobev-vyacheslav',name:'Воробьев Вячеслав',role:'ст. Стажёр · 510',dept:'Отдел Ерёменкова'},
+
+    {id:'levchenko-artem',name:'Левченко Артем',role:'РОП · 610',dept:'Отдел Левченко'},
+    {id:'kimaev-stanislav',name:'Кимаев Станислав',role:'Ведущ. Менеджер · 506',dept:'Отдел Левченко'},
+    {id:'kosyreva-alena',name:'Косырева Алена',role:'ст. Стажёр · 484',dept:'Отдел Левченко'},
+    {id:'ryzhov-alexander',name:'Рыжов Александр',role:'ст. Стажёр · 512',dept:'Отдел Левченко'},
+
+    {id:'dolzhikov-anton',name:'Должиков Антон',role:'РОА · 700',dept:'Адаптация'},
+    {id:'ostroglyad-sergey',name:'Острогляд Сергей',role:'Стажёр · 501',dept:'Адаптация'},
+    {id:'zholtyak-artem',name:'Жолтяк Артем',role:'Стажёр · 778',dept:'Адаптация'},
+    {id:'smetankina-rimma',name:'Сметанкина Римма',role:'Стажёр · 783',dept:'Адаптация'},
+    {id:'gagarintseva-angelina',name:'Гагаринцева Ангелина',role:'Стажёр · 742',dept:'Адаптация'},
+    {id:'balyuk-kirill',name:'Балюк Кирилл',role:'Стажёр · 691',dept:'Адаптация'},
+    {id:'sinitsin-roman',name:'Синицин Роман',role:'Стажёр · 785',dept:'Адаптация'},
+    {id:'konvisar-darya',name:'Конвисар Дарья',role:'Стажёр · 790',dept:'Адаптация'},
+    {id:'shlenkov-vadim',name:'Шленков Вадим',role:'Стажёр · 847',dept:'Адаптация'},
+    {id:'vafin-vyacheslav',name:'Вафин Вячеслав',role:'Стажёр · 877',dept:'Адаптация'},
+    {id:'novik-igor',name:'Новик Игорь',role:'Стажёр · 894',dept:'Адаптация'},
+    {id:'gromov-alexander',name:'Громов Александр',role:'Стажёр · 887',dept:'Адаптация'},
+    {id:'vagabova-elvira',name:'Вагабова Эльвира',role:'Стажёр · 895',dept:'Адаптация'},
+
+    {id:'shcherbakov-andrey',name:'Щербаков Андрей',role:'ДПИ Менеджер · 455',dept:'Инвестиционный отдел'},
+    {id:'fil-maximilian',name:'Филь Максимилиан',role:'ДПИ Менеджер · 314',dept:'Инвестиционный отдел'},
+    {id:'freiman-elena',name:'Фрейман Елена',role:'ДПИ Менеджер · 502',dept:'Инвестиционный отдел'}
+  ];
+
+  const milestones=[{n:5,p:10000},{n:7,p:15000},{n:10,p:25000},{n:12,p:30000},{n:15,p:40000},{n:20,p:50000},{n:25,p:60000},{n:30,p:70000}];
+  const days=Array.from({length:30},(_,i)=>i+1);
+  const depts=[...new Set(people.map(p=>p.dept))];
+  const storageKey='golden-meetings-september-2026-v1';
+  let editing=false,view='assigned',query='',dept='all';
+
+  function blankState(){const assigned={},held={};people.forEach(p=>{assigned[p.id]=Array(30).fill(0);held[p.id]=0});return{assigned,held,updatedAt:null}}
+  function normalize(raw){const fresh=blankState();if(!raw||typeof raw!=='object')return fresh;people.forEach(p=>{if(Array.isArray(raw.assigned?.[p.id]))fresh.assigned[p.id]=days.map((_,i)=>Math.max(0,Math.min(99,Number(raw.assigned[p.id][i])||0)));fresh.held[p.id]=Math.max(0,Math.min(99,Number(raw.held?.[p.id])||0))});fresh.updatedAt=raw.updatedAt||null;return fresh}
+  let state=(()=>{try{return normalize(JSON.parse(localStorage.getItem(storageKey)))}catch{return blankState()}})();
+  const rub=n=>new Intl.NumberFormat('ru-RU').format(n)+' ₽';
+  const reward=n=>{let value=0;for(const m of milestones)if(n>=m.n)value=m.p;return value};
+  const nextReward=n=>milestones.find(m=>n<m.n)||null;
+  const dayBonus=a=>a.reduce((s,n)=>s+Math.max(0,n-3)*1000,0);
+  const esc=s=>String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  function filtered(){return people.filter(p=>(dept==='all'||p.dept===dept)&&(!query||p.name.toLowerCase().includes(query.toLowerCase())))}
+  function persist(){state.updatedAt=new Date().toISOString();localStorage.setItem(storageKey,JSON.stringify(state));updateStats();updateTimestamp()}
+  function updateTimestamp(){document.getElementById('updatedAt').textContent=state.updatedAt?'Обновлено '+new Date(state.updatedAt).toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'Данные ещё не обновлялись'}
+  function updateStats(){let assigned=0,held=0,money=0;people.forEach(p=>{assigned+=state.assigned[p.id].reduce((a,b)=>a+b,0);held+=state.held[p.id];money+=dayBonus(state.assigned[p.id])+reward(state.held[p.id])});document.getElementById('statPeople').textContent=people.length;document.getElementById('statAssigned').textContent=assigned;document.getElementById('statHeld').textContent=held;document.getElementById('statMoney').textContent=rub(money)}
+  function level(n){return n>=4?4:n}
+  function weekday(day){return ['вс','пн','вт','ср','чт','пт','сб'][new Date(2026,8,day).getDay()]}
+  function renderAssigned(){
+    const list=filtered();let html='<table><thead><tr><th class="name-col">Сотрудник</th>';
+    for(const d of days){const w=weekday(d),weekend=w==='сб'||w==='вс';html+=`<th class="day-head ${weekend?'weekend':''}"><b>${d}</b><small>${w}</small></th>`}
+    html+='<th class="summary-col">Итого</th><th class="summary-col">Золотых дней</th><th class="money-col">Бонус</th></tr></thead><tbody>';
+    if(!list.length)html+='<tr><td class="empty" colspan="34">Никого не найдено</td></tr>';
+    let last='';for(const p of list){if(p.dept!==last){last=p.dept;html+=`<tr class="group-row"><td colspan="34">${esc(last)}</td></tr>`}const a=state.assigned[p.id],total=a.reduce((x,y)=>x+y,0),gold=a.filter(n=>n>=3).length,bonus=dayBonus(a);html+=`<tr><td class="name-col"><b>${esc(p.name)}</b><small><span class="dept-tag">${esc(p.dept)}</span> · ${esc(p.role)}</small></td>`;a.forEach((n,i)=>{const w=weekday(i+1),weekend=w==='сб'||w==='вс';html+=`<td class="day-cell lv${level(n)} ${weekend&&n===0?'weekend':''}"><input class="day-input" type="number" min="0" max="99" value="${n}" data-id="${p.id}" data-day="${i}" ${editing?'':'disabled'} aria-label="${esc(p.name)}, ${i+1} сентября"></td>`});html+=`<td class="summary-col"><b>${total}</b><small>назначено</small></td><td class="summary-col"><b>${gold}</b><small>дней с 3+</small></td><td class="money-col"><b>${rub(bonus)}</b></td></tr>`}
+    html+='</tbody></table>';document.getElementById('assignedView').innerHTML=html;
+  }
+  function renderHeld(){
+    const list=filtered();let html='',last='';if(!list.length)html='<div class="empty">Никого не найдено</div>';
+    for(const p of list){if(p.dept!==last){last=p.dept;html+=`<div class="held-group">${esc(last)}</div>`}const n=state.held[p.id],earned=reward(n),next=nextReward(n),progress=Math.min(100,n/30*100);html+=`<div class="held-row"><div class="person"><b>${esc(p.name)}</b><small>${esc(p.role)}</small><div class="held-control"><button class="round-btn" data-held="minus" data-id="${p.id}" ${editing?'':'disabled'}>−</button><input class="held-number" type="number" min="0" max="99" value="${n}" data-held="input" data-id="${p.id}" ${editing?'':'disabled'}><button class="round-btn" data-held="plus" data-id="${p.id}" ${editing?'':'disabled'}>+</button></div></div><div class="track-wrap"><div class="track"><div class="fill" style="width:${progress}%"></div><div class="nodes">${milestones.map(m=>`<div class="node ${n>=m.n?'reached':''}">${m.n}<span>${m.p/1000}к</span></div>`).join('')}</div></div></div><div class="next-box"><span>Следующая цель</span><b>${next?`${next.n} встреч · ${rub(next.p)}`:'Суперприз взят'}</b></div><div class="earned ${!next?'max':''}"><span>Заработано</span><b>${rub(earned)}</b></div></div>`}
+    document.getElementById('heldView').innerHTML=html;
+  }
+  function render(){renderAssigned();renderHeld();updateStats();updateTimestamp();document.body.classList.toggle('editing',editing);document.getElementById('assignedView').hidden=view!=='assigned';document.getElementById('heldView').hidden=view!=='held';document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));document.getElementById('boardTitle').textContent=view==='assigned'?'Ежедневные назначения':'Лестница проведённых встреч';document.getElementById('boardSubtitle').textContent=editing?(view==='assigned'?'Введите количество назначений по каждой дате':'Меняйте количество кнопками или введите число'):(view==='assigned'?'Нажмите «Ввести результаты», чтобы заполнить календарь':'Нажмите «Ввести результаты», чтобы обновить прогресс')}
+  function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2200)}
+  document.getElementById('deptFilter').innerHTML+=[...depts].map(d=>`<option value="${esc(d)}">${esc(d)}</option>`).join('');
+  document.querySelector('.tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;view=b.dataset.view;render()});
+  document.getElementById('search').addEventListener('input',e=>{query=e.target.value;render()});
+  document.getElementById('deptFilter').addEventListener('change',e=>{dept=e.target.value;render()});
+  document.getElementById('editBtn').addEventListener('click',()=>{editing=!editing;const b=document.getElementById('editBtn');b.classList.toggle('active',editing);b.textContent=editing?'✓ Завершить ввод':'✎ Ввести результаты';render();if(!editing)toast('Результаты сохранены')});
+  document.getElementById('assignedView').addEventListener('input',e=>{if(!e.target.matches('.day-input'))return;const v=Math.max(0,Math.min(99,Number(e.target.value)||0));state.assigned[e.target.dataset.id][Number(e.target.dataset.day)]=v;e.target.parentElement.className='day-cell lv'+level(v);persist();const tr=e.target.closest('tr'),p=people.find(x=>x.id===e.target.dataset.id),a=state.assigned[p.id];tr.querySelectorAll('.summary-col')[0].innerHTML=`<b>${a.reduce((x,y)=>x+y,0)}</b><small>назначено</small>`;tr.querySelectorAll('.summary-col')[1].innerHTML=`<b>${a.filter(n=>n>=3).length}</b><small>дней с 3+</small>`;tr.querySelector('.money-col').innerHTML=`<b>${rub(dayBonus(a))}</b>`});
+  document.getElementById('heldView').addEventListener('click',e=>{const b=e.target.closest('[data-held]');if(!b||!editing||b.dataset.held==='input')return;const id=b.dataset.id;state.held[id]=Math.max(0,state.held[id]+(b.dataset.held==='plus'?1:-1));persist();renderHeld()});
+  document.getElementById('heldView').addEventListener('input',e=>{if(e.target.dataset.held!=='input')return;state.held[e.target.dataset.id]=Math.max(0,Math.min(99,Number(e.target.value)||0));persist();renderHeld()});
+  document.getElementById('exportBtn').addEventListener('click',()=>{const payload={title:'Золотой календарь встреч',period:'01.09.2026-30.09.2026',people:people.map(p=>({id:p.id,name:p.name,dept:p.dept,role:p.role})),...state};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}));a.download='zolotoy-kalendar-2026-09.json';a.click();URL.revokeObjectURL(a.href);toast('Данные выгружены')});
+  document.getElementById('importBtn').addEventListener('click',()=>document.getElementById('importFile').click());
+  document.getElementById('importFile').addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{state=normalize(JSON.parse(reader.result));persist();render();toast('Данные загружены')}catch{toast('Не удалось прочитать файл')}};reader.readAsText(file);e.target.value=''});
+  document.getElementById('printBtn').addEventListener('click',()=>window.print());
+  document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==='r')document.getElementById('resetModal').classList.add('open')});
+  document.getElementById('cancelReset').addEventListener('click',()=>document.getElementById('resetModal').classList.remove('open'));
+  document.getElementById('confirmReset').addEventListener('click',()=>{state=blankState();localStorage.removeItem(storageKey);document.getElementById('resetModal').classList.remove('open');render();toast('Конкурс обнулён')});
+  render();
+  </script>
+</body>
+</html>

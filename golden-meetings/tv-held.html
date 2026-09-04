@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070d17">
+  <title>ТВ · Проведённые встречи</title>
+  <style>
+    :root{--bg:#060b14;--panel:#0e1928;--line:#203149;--text:#f7f2e5;--muted:#8396af;--gold:#f4bd45;--gold2:#ffe79b}
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    body{background:radial-gradient(circle at 82% -15%,rgba(244,189,69,.2),transparent 34%),radial-gradient(circle at 15% 0,rgba(50,113,190,.14),transparent 30%),#060b14}
+    .screen{height:100vh;display:grid;grid-template-rows:154px minmax(0,1fr) 42px;padding:22px 26px 12px;gap:13px}
+    header{display:grid;grid-template-columns:1fr auto;align-items:start;padding:21px 24px;border:1px solid rgba(255,255,255,.09);border-radius:22px;background:linear-gradient(135deg,rgba(19,34,54,.97),rgba(9,17,30,.97));box-shadow:0 24px 70px rgba(0,0,0,.34);position:relative;overflow:hidden}
+    header:after{content:"";position:absolute;right:30%;top:-130px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,205,91,.18),transparent 68%)}
+    .kicker{color:#ffd875;text-transform:uppercase;letter-spacing:.17em;font-size:12px;font-weight:900}.title{margin:8px 0 0;font-size:35px;line-height:1;letter-spacing:-.035em}.sub{margin-top:9px;color:#93a5bc;font-size:14px}.gold{color:#ffd875}
+    .stats{display:flex;gap:10px;position:relative;z-index:2}.stat{min-width:158px;padding:14px 16px;background:rgba(5,11,20,.52);border:1px solid rgba(255,255,255,.08);border-radius:15px}.stat span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.09em}.stat b{display:block;margin-top:5px;font-size:24px}.stat.money b{color:#ffd875}
+    .board{min-height:0;display:grid;grid-template-rows:repeat(8,minmax(0,1fr));gap:7px;overflow:hidden}
+    .row{display:grid;grid-template-columns:52px 260px 88px minmax(500px,1fr) 150px 185px;gap:13px;align-items:center;padding:10px 15px;border:1px solid rgba(255,255,255,.09);border-radius:15px;background:linear-gradient(90deg,rgba(17,30,48,.98),rgba(10,19,32,.98));box-shadow:0 15px 45px rgba(0,0,0,.2)}
+    .rank{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;background:#1a283b;border:1px solid #30425b;color:#8ca0b9;font-size:16px;font-weight:950}.rank.top1{background:linear-gradient(145deg,#ffe99f,#d79213);border-color:#fff0ad;color:#271600}.rank.top2{background:linear-gradient(145deg,#eef4fb,#8796a9);color:#17202b}.rank.top3{background:linear-gradient(145deg,#e4ab75,#865128);color:#27170c}
+    .person b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.person small{display:block;margin-top:3px;color:#778ba5;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.count{text-align:center}.count b{display:block;font-size:28px;color:#f4f7fb}.count span{display:block;color:#6f829a;font-size:9px;text-transform:uppercase;letter-spacing:.09em}
+    .progress{padding:14px 3px 10px}.rail{height:6px;border-radius:30px;background:#26354a;position:relative}.fill{height:100%;border-radius:30px;background:linear-gradient(90deg,#ad6c0a,#ffd875);box-shadow:0 0 15px rgba(244,189,69,.28)}.nodes{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between}.node{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#1c2a3d;border:2px solid #35485f;color:#7489a5;font-size:9px;font-weight:950;position:relative}.node.hit{background:linear-gradient(145deg,#ffe798,#d99618);border-color:#fff0ac;color:#2a1800;box-shadow:0 0 15px rgba(244,189,69,.35)}.node i{position:absolute;top:26px;font-style:normal;font-size:8px;color:#61758f;white-space:nowrap}.node.hit i{color:#d6aa50}
+    .reward span,.next span{display:block;color:#71859e;font-size:9px;text-transform:uppercase;letter-spacing:.08em}.reward b{display:block;margin-top:4px;color:#ffd572;font-size:20px}.next b{display:block;margin-top:5px;color:#dce5ef;font-size:12px}.max b{color:#fff0b3;text-shadow:0 0 18px rgba(255,213,114,.5)}
+    footer{display:flex;align-items:center;justify-content:space-between;padding:0 5px;color:#6f829c;font-size:11px}.levels{display:flex;gap:11px}.levels b{color:#d6a94f}.pager{display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:20px;background:#304057}.dot.active{width:25px;background:#e9ad37}.tech{color:#677b95;text-decoration:none}.tech:hover{color:#ffd875}
+    @media(max-width:1500px){.screen{padding:14px 16px 8px;grid-template-rows:136px minmax(0,1fr) 34px}.title{font-size:29px}.stat{min-width:132px}.row{grid-template-columns:45px 220px 72px minmax(450px,1fr) 125px 155px}.person b{font-size:13px}.reward b{font-size:17px}}
+  </style>
+</head>
+<body>
+  <div class="screen">
+    <header>
+      <div><div class="kicker">Золотой календарь · сентябрь 2026</div><h1 class="title">Проведённые встречи</h1><div class="sub">Каждая ступень открывает новую награду · суперприз: <span class="gold">70 000 ₽ за 30 встреч</span></div></div>
+      <div class="stats"><div class="stat"><span>Участников</span><b id="people">65</b></div><div class="stat"><span>Проведено</span><b id="held">0</b></div><div class="stat"><span>Получили награду</span><b id="winners">0</b></div><div class="stat money"><span>Призовой фонд</span><b id="money">0 ₽</b></div></div>
+    </header>
+    <main class="board" id="board"></main>
+    <footer><div class="levels">Уровни: <b>5</b> 10к · <b>7</b> 15к · <b>10</b> 25к · <b>12</b> 30к · <b>15</b> 40к · <b>20</b> 50к · <b>25</b> 60к · <b>30</b> 70к</div><div class="pager" id="pager"></div><a class="tech" href="./index.html">Техническая панель</a></footer>
+  </div>
+  <script src="./contest-data.js"></script>
+  <script>
+    const people=window.ContestPeople,milestones=window.ContestMilestones,key='golden-meetings-september-2026-v1',perPage=8;
+    let page=0,lastRaw='';
+    const rub=n=>new Intl.NumberFormat('ru-RU').format(n)+' ₽';
+    const esc=s=>String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+    const reward=n=>{let p=0;milestones.forEach(m=>{if(n>=m.n)p=m.p});return p};
+    const next=n=>milestones.find(m=>n<m.n)||null;
+    function load(){const held={};people.forEach(p=>held[p.id]=0);try{const raw=localStorage.getItem(key);lastRaw=raw||'';const saved=raw?JSON.parse(raw):window.ContestPublishedState;people.forEach(p=>held[p.id]=Math.max(0,Number(saved?.held?.[p.id])||0))}catch{}return held}
+    let held=load();
+    function list(){return [...people].sort((a,b)=>held[b.id]-held[a.id]||reward(held[b.id])-reward(held[a.id])||people.indexOf(a)-people.indexOf(b))}
+    function totals(){const total=people.reduce((s,p)=>s+held[p.id],0),winners=people.filter(p=>reward(held[p.id])>0).length,money=people.reduce((s,p)=>s+reward(held[p.id]),0);document.getElementById('held').textContent=total;document.getElementById('winners').textContent=winners;document.getElementById('money').textContent=rub(money)}
+    function render(){const all=list(),pages=Math.ceil(all.length/perPage);if(page>=pages)page=0;const shown=all.slice(page*perPage,(page+1)*perPage);let h='';shown.forEach((p,i)=>{const n=held[p.id],earned=reward(n),goal=next(n),rank=page*perPage+i+1;h+=`<section class="row"><div class="rank ${rank===1?'top1':rank===2?'top2':rank===3?'top3':''}">${rank}</div><div class="person"><b>${esc(p.name)}</b><small>${esc(p.dept)} · ${esc(p.role)}</small></div><div class="count"><b>${n}</b><span>встреч</span></div><div class="progress"><div class="rail"><div class="fill" style="width:${Math.min(100,n/30*100)}%"></div><div class="nodes">${milestones.map(m=>`<span class="node ${n>=m.n?'hit':''}">${m.n}<i>${m.p/1000}к</i></span>`).join('')}</div></div></div><div class="reward ${!goal?'max':''}"><span>Заработано</span><b>${rub(earned)}</b></div><div class="next"><span>Следующий уровень</span><b>${goal?`${goal.n} встреч · ${rub(goal.p)}`:'Суперприз открыт'}</b></div></section>`});for(let i=shown.length;i<perPage;i++)h+='<section class="row"></section>';document.getElementById('board').innerHTML=h;document.getElementById('pager').innerHTML=Array.from({length:pages},(_,i)=>`<span class="dot ${i===page?'active':''}"></span>`).join('');totals()}
+    function forward(){page=(page+1)%Math.ceil(people.length/perPage);render()}
+    setInterval(forward,12000);setInterval(()=>{const raw=localStorage.getItem(key)||'';if(raw!==lastRaw){held=load();render()}},3000);
+    addEventListener('storage',()=>{held=load();render()});addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')forward();if(e.key==='ArrowLeft'||e.key==='PageUp'){page=(page-1+Math.ceil(people.length/perPage))%Math.ceil(people.length/perPage);render()}});
+    render();
+  </script>
+</body>
+</html>
