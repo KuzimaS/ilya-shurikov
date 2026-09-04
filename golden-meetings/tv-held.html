@@ -3,69 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#060b14">
+  <meta name="theme-color" content="#07101b">
   <title>ТВ · Проведённые встречи</title>
   <style>
-    :root{--bg:#060b14;--panel:#0d1928;--line:#203149;--text:#f7f2e5;--muted:#8396af;--gold:#f4bd45}
+    :root{--bg:#07101b;--panel:#0d1928;--line:#26384f;--text:#f5f1e7;--muted:#8294aa;--gold:#efb83d}
     *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:Arial,"Segoe UI",sans-serif}
-    body{background:#060b14}.screen{height:100vh;display:grid;grid-template-rows:142px minmax(0,1fr) 38px;padding:18px 22px 10px;gap:10px}
-    header{display:grid;grid-template-columns:1fr auto;align-items:start;padding:18px 21px;border:1px solid #24354c;border-radius:18px;background:#0d1928;contain:layout paint style}
-    .kicker{color:#ffd875;text-transform:uppercase;letter-spacing:.15em;font-size:12px;font-weight:900}.title{margin:7px 0 0;font-size:34px;line-height:1;letter-spacing:-.025em}.sub{margin-top:9px;color:#93a5bc;font-size:14px}.gold{color:#ffd875}
-    .stats{display:flex;gap:8px}.stat{min-width:150px;padding:12px 14px;background:#08111e;border:1px solid #24354c;border-radius:12px}.stat span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em}.stat b{display:block;margin-top:5px;font-size:23px}.stat.money b{color:#ffd875}
-    .board{min-height:0;display:grid;grid-template-rows:repeat(8,minmax(0,1fr));gap:6px;overflow:hidden;contain:strict}
-    .row{display:grid;grid-template-columns:50px 260px 84px minmax(500px,1fr) 145px 180px;gap:12px;align-items:center;padding:9px 14px;border:1px solid #24354c;border-radius:12px;background:#0d1928;contain:layout paint style}.empty{visibility:hidden}
-    .rank{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:#1a283b;border:1px solid #30425b;color:#8ca0b9;font-size:16px;font-weight:950}.rank.top1{background:#e3ae34;border-color:#ffe59a;color:#271600}.rank.top2{background:#a7b1bd;color:#17202b}.rank.top3{background:#b87842;color:#27170c}
-    .person b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.person small{display:block;margin-top:3px;color:#778ba5;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.count{text-align:center}.count b{display:block;font-size:27px;color:#f4f7fb}.count span{display:block;color:#6f829a;font-size:9px;text-transform:uppercase;letter-spacing:.08em}
-    .progress{padding:14px 3px 10px}.rail{height:7px;border-radius:20px;background:#26354a;position:relative}.fill{height:100%;border-radius:20px;background:#d99d27}.nodes{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between}.node{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#1c2a3d;border:2px solid #35485f;color:#7489a5;font-size:9px;font-weight:950;position:relative}.node.hit{background:#e3ae34;border-color:#ffe59a;color:#2a1800}.node i{position:absolute;top:25px;font-style:normal;font-size:8px;color:#61758f;white-space:nowrap}.node.hit i{color:#d6aa50}
-    .reward span,.next span{display:block;color:#71859e;font-size:9px;text-transform:uppercase;letter-spacing:.08em}.reward b{display:block;margin-top:4px;color:#ffd572;font-size:20px}.next b{display:block;margin-top:5px;color:#dce5ef;font-size:12px}.max b{color:#fff0b3}
-    footer{display:flex;align-items:center;justify-content:space-between;padding:0 5px;color:#73869e;font-size:11px}.levels{display:flex;gap:11px}.levels b{color:#d6a94f}.pager{display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;border-radius:20px;background:#304057}.dot.active{width:24px;background:#e9ad37}.tech{color:#71849b;text-decoration:none}.tech:hover{color:#ffd875}
-    @media(max-width:1500px){.screen{padding:12px 14px 7px;grid-template-rows:128px minmax(0,1fr) 32px}.title{font-size:28px}.stat{min-width:128px;padding:10px 12px}.row{grid-template-columns:44px 220px 70px minmax(420px,1fr) 120px 150px}.person b{font-size:13px}.reward b{font-size:17px}}
+    .screen{height:100vh;display:grid;grid-template-rows:126px minmax(0,1fr) 34px;padding:14px 18px 8px;gap:8px}
+    header{display:grid;grid-template-columns:minmax(450px,1fr) auto;gap:18px;align-items:center;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+    .kicker{color:#f1c35e;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.title-line{display:flex;align-items:center;gap:12px;margin-top:6px}.title{margin:0;font-size:30px;line-height:1}.sub{margin-top:7px;color:#91a1b4;font-size:13px}.scope{height:34px;max-width:250px;padding:0 30px 0 10px;border:1px solid #40536c;border-radius:8px;background:#111f31;color:#f7f2e7;font-size:13px;font-weight:700}
+    .stats{display:flex;gap:7px}.stat{min-width:126px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:#091421}.stat span{display:block;color:var(--muted);font-size:9px;letter-spacing:.07em;text-transform:uppercase}.stat b{display:block;margin-top:3px;font-size:21px}.stat.money b{color:#ffd36d}
+    .board{min-height:0;display:grid;grid-template-rows:repeat(10,minmax(0,1fr));gap:5px;overflow:hidden}.row{display:grid;grid-template-columns:52px 320px 90px minmax(260px,1fr) 155px 190px;gap:13px;align-items:center;padding:7px 13px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.empty{display:none}
+    .rank{width:38px;height:38px;display:grid;place-items:center;border:1px solid #40536c;border-radius:9px;background:#18273a;color:#91a4ba;font-size:16px;font-weight:900}.rank.top1{background:#e2ad34;color:#241600}.rank.top2{background:#aab4c0;color:#15202d}.rank.top3{background:#b97842;color:#241409}
+    .person b{display:block;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.person small{display:block;margin-top:3px;color:#7f91a8;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.count{text-align:center}.count b{display:block;font-size:28px}.count span{display:block;color:#71849a;font-size:9px;letter-spacing:.06em;text-transform:uppercase}
+    .progress{display:grid;grid-template-columns:1fr 74px;gap:10px;align-items:center}.track{height:10px;overflow:hidden;border:1px solid #354960;border-radius:8px;background:#17263a}.fill{height:100%;background:#dba52e}.progress small{color:#8294aa;font-size:11px}.reward span,.next span{display:block;color:#71849a;font-size:9px;letter-spacing:.07em;text-transform:uppercase}.reward b{display:block;margin-top:4px;color:#ffd36d;font-size:19px}.next b{display:block;margin-top:4px;font-size:13px}.max b{color:#ffe8a1}
+    footer{display:flex;align-items:center;justify-content:space-between;padding:0 4px;color:#71849a;font-size:11px}.screen-no{color:#a6b3c2}.screen-no b{color:#efb83d}.tech{color:#71849a;text-decoration:none}.tech:hover{color:#ffd875}
+    @media(max-width:1500px){.screen{padding:10px 12px 6px;grid-template-rows:116px minmax(0,1fr) 28px}.title{font-size:25px}.stat{min-width:105px}.row{grid-template-columns:46px 255px 72px minmax(220px,1fr) 125px 155px}.person b{font-size:14px}.reward b{font-size:16px}}
   </style>
 </head>
 <body>
   <div class="screen">
     <header>
-      <div><div class="kicker">Золотой календарь · сентябрь 2026</div><h1 class="title">Проведённые встречи</h1><div class="sub">Каждая ступень открывает новую награду · суперприз: <span class="gold">70 000 ₽ за 30 встреч</span></div></div>
-      <div class="stats"><div class="stat"><span>Участников</span><b id="people">65</b></div><div class="stat"><span>Проведено</span><b id="held">0</b></div><div class="stat"><span>Получили награду</span><b id="winners">0</b></div><div class="stat money"><span>Призовой фонд</span><b id="money">0 ₽</b></div></div>
+      <div><div class="kicker">Золотой календарь · сентябрь 2026</div><div class="title-line"><h1 class="title">Проведённые встречи</h1><select class="scope" id="scope" aria-label="Выбор отдела"></select></div><div class="sub">Награды: 5, 7, 10, 12, 15, 20, 25 и 30 проведённых встреч</div></div>
+      <div class="stats"><div class="stat"><span>В списке</span><b id="peopleCount">0</b></div><div class="stat"><span>Проведено</span><b id="held">0</b></div><div class="stat"><span>С наградой</span><b id="winners">0</b></div><div class="stat money"><span>Призовой фонд</span><b id="money">0 ₽</b></div></div>
     </header>
     <main class="board" id="board"></main>
-    <footer><div class="levels">Уровни: <b>5</b> 10к · <b>7</b> 15к · <b>10</b> 25к · <b>12</b> 30к · <b>15</b> 40к · <b>20</b> 50к · <b>25</b> 60к · <b>30</b> 70к</div><div class="pager" id="pager"></div><a class="tech" href="./index.html">Техническая панель</a></footer>
+    <footer><span>Стрелки на пульте переключают экран</span><span class="screen-no" id="screenNo"></span><a class="tech" href="./index.html">Техническая панель</a></footer>
   </div>
   <script src="./contest-data.js"></script>
   <script>
-    const people=window.ContestPeople,milestones=window.ContestMilestones,key='golden-meetings-september-2026-v1',perPage=8,pageCount=Math.ceil(people.length/perPage),formatter=new Intl.NumberFormat('ru-RU');
-    let page=0,lastRaw='',held,ordered=[],rows=[],dots=[];
+    const allPeople=window.ContestPeople,milestones=window.ContestMilestones,key='golden-meetings-september-2026-v1',perPage=10,formatter=new Intl.NumberFormat('ru-RU');
+    const params=new URLSearchParams(location.search),scopeValue=params.get('scope')||'all';
+    let page=0,held={},people=[],pageCount=1,rows=[];
     const rub=n=>formatter.format(n)+' ₽';
-    const reward=n=>{let p=0;milestones.forEach(m=>{if(n>=m.n)p=m.p});return p};
-    const next=n=>milestones.find(m=>n<m.n)||null;
-    function load(){const nextHeld={};people.forEach(p=>nextHeld[p.id]=0);try{const raw=localStorage.getItem(key);lastRaw=raw||'';const saved=raw?JSON.parse(raw):window.ContestPublishedState;people.forEach(p=>nextHeld[p.id]=Math.max(0,Number(saved?.held?.[p.id])||0))}catch{}return nextHeld}
-    function sortPeople(){ordered=[...people].sort((a,b)=>held[b.id]-held[a.id]||reward(held[b.id])-reward(held[a.id])||people.indexOf(a)-people.indexOf(b))}
-    function build(){
-      const board=document.getElementById('board');
-      for(let i=0;i<perPage;i++){
-        const row=document.createElement('section');row.className='row';
-        const rank=document.createElement('div');rank.className='rank';
-        const person=document.createElement('div'),personB=document.createElement('b'),personSmall=document.createElement('small');person.className='person';person.append(personB,personSmall);
-        const count=document.createElement('div'),countB=document.createElement('b'),countSpan=document.createElement('span');count.className='count';countSpan.textContent='встреч';count.append(countB,countSpan);
-        const progress=document.createElement('div'),rail=document.createElement('div'),fill=document.createElement('div'),nodes=document.createElement('div');progress.className='progress';rail.className='rail';fill.className='fill';nodes.className='nodes';const nodeEls=[];
-        milestones.forEach(m=>{const node=document.createElement('span'),label=document.createElement('i');node.className='node';node.textContent=m.n;label.textContent=(m.p/1000)+'к';node.appendChild(label);nodes.appendChild(node);nodeEls.push(node)});rail.append(fill,nodes);progress.appendChild(rail);
-        const rewardBox=document.createElement('div'),rewardLabel=document.createElement('span'),rewardB=document.createElement('b');rewardBox.className='reward';rewardLabel.textContent='Заработано';rewardBox.append(rewardLabel,rewardB);
-        const nextBox=document.createElement('div'),nextLabel=document.createElement('span'),nextB=document.createElement('b');nextBox.className='next';nextLabel.textContent='Следующий уровень';nextBox.append(nextLabel,nextB);
-        row.append(rank,person,count,progress,rewardBox,nextBox);board.appendChild(row);rows.push({row,rank,personB,personSmall,countB,fill,nodeEls,rewardBox,rewardB,nextB});
-      }
-      const pager=document.getElementById('pager');for(let i=0;i<pageCount;i++){const dot=document.createElement('span');dot.className='dot';pager.appendChild(dot);dots.push(dot)}
-    }
-    function updateTotals(){const total=people.reduce((s,p)=>s+held[p.id],0),winners=people.filter(p=>reward(held[p.id])>0).length,money=people.reduce((s,p)=>s+reward(held[p.id]),0);document.getElementById('held').textContent=total;document.getElementById('winners').textContent=winners;document.getElementById('money').textContent=rub(money)}
-    function render(){
-      rows.forEach((slot,i)=>{const p=ordered[page*perPage+i];slot.row.classList.toggle('empty',!p);if(!p)return;const n=held[p.id],earned=reward(n),goal=next(n),rank=page*perPage+i+1;slot.rank.textContent=rank;slot.rank.className='rank '+(rank===1?'top1':rank===2?'top2':rank===3?'top3':'');slot.personB.textContent=p.name;slot.personSmall.textContent=p.dept+' · '+p.role;slot.countB.textContent=n;slot.fill.style.width=Math.min(100,n/30*100)+'%';slot.nodeEls.forEach((node,j)=>node.classList.toggle('hit',n>=milestones[j].n));slot.rewardB.textContent=rub(earned);slot.rewardBox.classList.toggle('max',!goal);slot.nextB.textContent=goal?goal.n+' встреч · '+rub(goal.p):'Суперприз открыт'});
-      dots.forEach((dot,i)=>dot.classList.toggle('active',i===page));
-    }
-    function forward(){page=(page+1)%pageCount;render()}
-    function backward(){page=(page-1+pageCount)%pageCount;render()}
-    function refresh(){const raw=localStorage.getItem(key)||'';if(raw!==lastRaw){held=load();sortPeople();updateTotals();render()}}
-    build();held=load();sortPeople();updateTotals();render();
-    setInterval(()=>{if(!document.hidden)forward()},12000);setInterval(refresh,30000);
-    addEventListener('storage',refresh);addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')forward();if(e.key==='ArrowLeft'||e.key==='PageUp')backward()});
+    const reward=n=>{let p=0;milestones.forEach(m=>{if(n>=m.n)p=m.p});return p},next=n=>milestones.find(m=>n<m.n)||null;
+    function load(){const data={};allPeople.forEach(p=>data[p.id]=0);try{const raw=localStorage.getItem(key),saved=raw?JSON.parse(raw):window.ContestPublishedState;allPeople.forEach(p=>data[p.id]=Math.max(0,Number(saved?.held?.[p.id])||0))}catch{}return data}
+    function setPeople(){let list=[...allPeople].sort((a,b)=>held[b.id]-held[a.id]||reward(held[b.id])-reward(held[a.id])||allPeople.indexOf(a)-allPeople.indexOf(b));if(scopeValue==='top10')list=list.slice(0,10);else if(scopeValue.startsWith('dept:'))list=list.filter(p=>p.dept===scopeValue.slice(5));people=list;pageCount=Math.max(1,Math.ceil(people.length/perPage));if(page>=pageCount)page=0}
+    function buildScope(){const select=document.getElementById('scope'),departments=[...new Set(allPeople.map(p=>p.dept))];[['all','Все отделы'],['top10','Топ-10 по встречам'],...departments.map(d=>['dept:'+d,d])].forEach(([value,label])=>{const o=document.createElement('option');o.value=value;o.textContent=label;select.appendChild(o)});select.value=scopeValue;select.onchange=()=>{const url=new URL(location.href);if(select.value==='all')url.searchParams.delete('scope');else url.searchParams.set('scope',select.value);location.href=url.href}}
+    function build(){const board=document.getElementById('board');for(let i=0;i<perPage;i++){const row=document.createElement('section'),rank=document.createElement('div'),person=document.createElement('div'),pb=document.createElement('b'),ps=document.createElement('small'),count=document.createElement('div'),cb=document.createElement('b'),cs=document.createElement('span'),progress=document.createElement('div'),track=document.createElement('div'),fill=document.createElement('div'),progressText=document.createElement('small'),rewardBox=document.createElement('div'),rewardLabel=document.createElement('span'),rewardB=document.createElement('b'),nextBox=document.createElement('div'),nextLabel=document.createElement('span'),nextB=document.createElement('b');row.className='row';rank.className='rank';person.className='person';person.append(pb,ps);count.className='count';cs.textContent='встреч';count.append(cb,cs);progress.className='progress';track.className='track';fill.className='fill';track.appendChild(fill);progress.append(track,progressText);rewardBox.className='reward';rewardLabel.textContent='Заработано';rewardBox.append(rewardLabel,rewardB);nextBox.className='next';nextLabel.textContent='Следующая цель';nextBox.append(nextLabel,nextB);row.append(rank,person,count,progress,rewardBox,nextBox);board.appendChild(row);rows.push({row,rank,pb,ps,cb,fill,progressText,rewardBox,rewardB,nextB})}}
+    function totals(){const total=people.reduce((s,p)=>s+held[p.id],0),winners=people.filter(p=>reward(held[p.id])>0).length,money=people.reduce((s,p)=>s+reward(held[p.id]),0);document.getElementById('peopleCount').textContent=people.length;document.getElementById('held').textContent=total;document.getElementById('winners').textContent=winners;document.getElementById('money').textContent=rub(money)}
+    function render(){rows.forEach((r,i)=>{const p=people[page*perPage+i];r.row.classList.toggle('empty',!p);if(!p)return;const n=held[p.id],earned=reward(n),goal=next(n),rank=page*perPage+i+1;r.rank.textContent=rank;r.rank.className='rank '+(rank===1?'top1':rank===2?'top2':rank===3?'top3':'');r.pb.textContent=p.name;r.ps.textContent=p.dept+' · '+p.role;r.cb.textContent=n;r.fill.style.width=Math.min(100,n/30*100)+'%';r.progressText.textContent=n+'/30';r.rewardB.textContent=rub(earned);r.rewardBox.classList.toggle('max',!goal);r.nextB.textContent=goal?goal.n+' встреч · '+rub(goal.p):'Суперприз открыт'});document.getElementById('screenNo').innerHTML='Экран <b>'+(page+1)+'</b> из '+pageCount}
+    function forward(){page=(page+1)%pageCount;render()}function backward(){page=(page-1+pageCount)%pageCount;render()}function refresh(){held=load();setPeople();totals();render()}
+    held=load();buildScope();setPeople();build();totals();render();setInterval(()=>{if(!document.hidden&&pageCount>1)forward()},30000);addEventListener('storage',refresh);addEventListener('focus',refresh);addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')forward();if(e.key==='ArrowLeft'||e.key==='PageUp')backward()});
   </script>
 </body>
 </html>
