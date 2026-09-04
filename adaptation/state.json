@@ -414,14 +414,14 @@
       "dates": {
         "appointed5": "2026-08-29",
         "held1": "2026-08-29",
-        "booking30": "2026-09-04"
+        "booking30": "2026-09-01"
       },
       "payoutStatuses": {
         "appointed5": "paid",
         "held1": "paid",
         "booking30": "paid"
       },
-      "updatedAt": "2026-09-04T13:22:36.999Z",
+      "updatedAt": "2026-09-04T13:26:21.554Z",
       "demo": false
     },
     {
@@ -562,7 +562,7 @@
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-09-04T13:22:36.999Z",
+  "lastUpdated": "2026-09-04T13:26:21.555Z",
   "dataVersion": "2026-08-31-contest-money-v1",
   "daySevenVersion": "2026-09-02-all-active-day-7-v1"
 }
