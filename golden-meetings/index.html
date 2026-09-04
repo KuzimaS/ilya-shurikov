@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Золотой календарь встреч: конкурс менеджеров Мой гектар за сентябрь 2026">
+  <meta name="description" content="Спринт встреч менеджеров Мой гектар с 7 по 30 сентября 2026">
   <meta name="theme-color" content="#08111f">
   <title>Золотой календарь встреч</title>
   <style>
@@ -71,7 +71,7 @@
   <div class="shell" id="app">
     <header class="top">
       <div class="topline">
-        <div class="brand"><div class="mark">🏆</div><div><h1>Золотой календарь встреч</h1><p>Техническая панель · сентябрь 2026</p></div></div>
+        <div class="brand"><div class="mark">24</div><div><h1>Спринт встреч</h1><p>Техническая панель · 7-30 сентября 2026</p></div></div>
         <div class="actions">
           <button class="btn" id="importBtn">Импорт</button><input class="file" id="importFile" type="file" accept="application/json">
           <button class="btn" id="exportBtn">Экспорт</button>
@@ -87,9 +87,9 @@
     <main class="content">
       <section class="hero">
         <div class="hero-main">
-          <div class="eyebrow">30 дней золотой гонки</div>
-          <h2>Каждая встреча приближает к следующей награде</h2>
-          <p>Три назначения за день окрашивают дату в золото. Всё сверх трёх приносит по 1 000 ₽. Проведённые встречи открывают призовые уровни месяца.</p>
+          <div class="eyebrow">Новый конкурс · 24 дня</div>
+          <h2>Спринт с 7 по 30 сентября</h2>
+          <p>Три назначения за день окрашивают дату в золото. Всё сверх трёх приносит по 1 000 ₽. Проведённые встречи открывают восемь достижимых призовых ступеней.</p>
           <div class="stats">
             <div class="stat"><span>Участников</span><b id="statPeople">65</b></div>
             <div class="stat"><span>Назначено</span><b id="statAssigned">0</b></div>
@@ -99,7 +99,7 @@
         </div>
         <div class="rules">
           <div class="rule"><h3>Назначения за день</h3><div class="mini-days"><div class="mini-day m0">0</div><div class="mini-day m1">1</div><div class="mini-day m2">2</div><div class="mini-day m3">3</div><div class="mini-day m4">4+</div></div><p class="rule-note">С четвёртой встречи: +1 000 ₽ за каждую</p></div>
-          <div class="rule"><h3>Награды за проведённые</h3><div class="prize-line"><div class="prize-dot">5</div><span class="prize-arrow">›</span><div class="prize-dot">7</div><span class="prize-arrow">›</span><div class="prize-dot">10</div><span class="prize-arrow">›</span><div class="prize-dot">12</div><span class="prize-arrow">›</span><div class="prize-dot">15</div><span class="prize-arrow">›</span><div class="prize-dot">20</div><span class="prize-arrow">›</span><div class="prize-dot">25</div><span class="prize-arrow">›</span><div class="prize-dot">30</div></div><p class="rule-note">От 10 000 ₽ до суперприза 70 000 ₽</p></div>
+          <div class="rule"><h3>Награды за проведённые</h3><div class="prize-line"><div class="prize-dot">3</div><span class="prize-arrow">›</span><div class="prize-dot">4</div><span class="prize-arrow">›</span><div class="prize-dot">5</div><span class="prize-arrow">›</span><div class="prize-dot">6</div><span class="prize-arrow">›</span><div class="prize-dot">7</div><span class="prize-arrow">›</span><div class="prize-dot">9</div><span class="prize-arrow">›</span><div class="prize-dot">12</div><span class="prize-arrow">›</span><div class="prize-dot">15</div></div><p class="rule-note">Шкала рассчитана по результатам 35 менеджеров за август</p></div>
         </div>
       </section>
 
@@ -195,14 +195,14 @@
     {id:'freiman-elena',name:'Фрейман Елена',role:'ДПИ Менеджер · 502',dept:'Инвестиционный отдел'}
   ];
 
-  const milestones=[{n:5,p:10000},{n:7,p:15000},{n:10,p:25000},{n:12,p:30000},{n:15,p:40000},{n:20,p:50000},{n:25,p:60000},{n:30,p:70000}];
-  const days=Array.from({length:30},(_,i)=>i+1);
+  const milestones=[{n:3,p:10000},{n:4,p:15000},{n:5,p:25000},{n:6,p:30000},{n:7,p:40000},{n:9,p:50000},{n:12,p:60000},{n:15,p:70000}];
+  const days=Array.from({length:24},(_,i)=>i+7);
   const depts=[...new Set(people.map(p=>p.dept))];
-  const storageKey='golden-meetings-september-2026-v1';
+  const storageKey='golden-meetings-september-7-30-2026-v1';
   let editing=false,view='assigned',query='',dept='all';
 
   function blankState(){const assigned={},held={};people.forEach(p=>{assigned[p.id]=Array(30).fill(0);held[p.id]=0});return{assigned,held,updatedAt:null}}
-  function normalize(raw){const fresh=blankState();if(!raw||typeof raw!=='object')return fresh;people.forEach(p=>{if(Array.isArray(raw.assigned?.[p.id]))fresh.assigned[p.id]=days.map((_,i)=>Math.max(0,Math.min(99,Number(raw.assigned[p.id][i])||0)));fresh.held[p.id]=Math.max(0,Math.min(99,Number(raw.held?.[p.id])||0))});fresh.updatedAt=raw.updatedAt||null;return fresh}
+  function normalize(raw){const fresh=blankState();if(!raw||typeof raw!=='object')return fresh;people.forEach(p=>{if(Array.isArray(raw.assigned?.[p.id]))fresh.assigned[p.id]=Array.from({length:30},(_,i)=>Math.max(0,Math.min(99,Number(raw.assigned[p.id][i])||0)));fresh.held[p.id]=Math.max(0,Math.min(99,Number(raw.held?.[p.id])||0))});fresh.updatedAt=raw.updatedAt||null;return fresh}
   let state=(()=>{try{return normalize(JSON.parse(localStorage.getItem(storageKey)))}catch{return blankState()}})();
   const rub=n=>new Intl.NumberFormat('ru-RU').format(n)+' ₽';
   const reward=n=>{let value=0;for(const m of milestones)if(n>=m.n)value=m.p;return value};
@@ -212,20 +212,20 @@
   function filtered(){return people.filter(p=>(dept==='all'||p.dept===dept)&&(!query||p.name.toLowerCase().includes(query.toLowerCase())))}
   function persist(){state.updatedAt=new Date().toISOString();localStorage.setItem(storageKey,JSON.stringify(state));updateStats();updateTimestamp()}
   function updateTimestamp(){document.getElementById('updatedAt').textContent=state.updatedAt?'Обновлено '+new Date(state.updatedAt).toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'Данные ещё не обновлялись'}
-  function updateStats(){let assigned=0,held=0,money=0;people.forEach(p=>{assigned+=state.assigned[p.id].reduce((a,b)=>a+b,0);held+=state.held[p.id];money+=dayBonus(state.assigned[p.id])+reward(state.held[p.id])});document.getElementById('statPeople').textContent=people.length;document.getElementById('statAssigned').textContent=assigned;document.getElementById('statHeld').textContent=held;document.getElementById('statMoney').textContent=rub(money)}
+  function updateStats(){let assigned=0,held=0,money=0;people.forEach(p=>{const period=days.map(d=>state.assigned[p.id][d-1]);assigned+=period.reduce((a,b)=>a+b,0);held+=state.held[p.id];money+=dayBonus(period)+reward(state.held[p.id])});document.getElementById('statPeople').textContent=people.length;document.getElementById('statAssigned').textContent=assigned;document.getElementById('statHeld').textContent=held;document.getElementById('statMoney').textContent=rub(money)}
   function level(n){return n>=4?4:n}
   function weekday(day){return ['вс','пн','вт','ср','чт','пт','сб'][new Date(2026,8,day).getDay()]}
   function renderAssigned(){
     const list=filtered();let html='<table><thead><tr><th class="name-col">Сотрудник</th>';
     for(const d of days){const w=weekday(d),weekend=w==='сб'||w==='вс';html+=`<th class="day-head ${weekend?'weekend':''}"><b>${d}</b><small>${w}</small></th>`}
     html+='<th class="summary-col">Итого</th><th class="summary-col">Золотых дней</th><th class="money-col">Бонус</th></tr></thead><tbody>';
-    if(!list.length)html+='<tr><td class="empty" colspan="34">Никого не найдено</td></tr>';
-    let last='';for(const p of list){if(p.dept!==last){last=p.dept;html+=`<tr class="group-row"><td colspan="34">${esc(last)}</td></tr>`}const a=state.assigned[p.id],total=a.reduce((x,y)=>x+y,0),gold=a.filter(n=>n>=3).length,bonus=dayBonus(a);html+=`<tr><td class="name-col"><b>${esc(p.name)}</b><small><span class="dept-tag">${esc(p.dept)}</span> · ${esc(p.role)}</small></td>`;a.forEach((n,i)=>{const w=weekday(i+1),weekend=w==='сб'||w==='вс';html+=`<td class="day-cell lv${level(n)} ${weekend&&n===0?'weekend':''}"><input class="day-input" type="number" min="0" max="99" value="${n}" data-id="${p.id}" data-day="${i}" ${editing?'':'disabled'} aria-label="${esc(p.name)}, ${i+1} сентября"></td>`});html+=`<td class="summary-col"><b>${total}</b><small>назначено</small></td><td class="summary-col"><b>${gold}</b><small>дней с 3+</small></td><td class="money-col"><b>${rub(bonus)}</b></td></tr>`}
+    if(!list.length)html+='<tr><td class="empty" colspan="28">Никого не найдено</td></tr>';
+    let last='';for(const p of list){if(p.dept!==last){last=p.dept;html+=`<tr class="group-row"><td colspan="28">${esc(last)}</td></tr>`}const a=state.assigned[p.id],period=days.map(d=>a[d-1]),total=period.reduce((x,y)=>x+y,0),gold=period.filter(n=>n>=3).length,bonus=dayBonus(period);html+=`<tr><td class="name-col"><b>${esc(p.name)}</b><small><span class="dept-tag">${esc(p.dept)}</span> · ${esc(p.role)}</small></td>`;days.forEach(d=>{const n=a[d-1],w=weekday(d),weekend=w==='сб'||w==='вс';html+=`<td class="day-cell lv${level(n)} ${weekend&&n===0?'weekend':''}"><input class="day-input" type="number" min="0" max="99" value="${n}" data-id="${p.id}" data-day="${d-1}" ${editing?'':'disabled'} aria-label="${esc(p.name)}, ${d} сентября"></td>`});html+=`<td class="summary-col"><b>${total}</b><small>назначено</small></td><td class="summary-col"><b>${gold}</b><small>дней с 3+</small></td><td class="money-col"><b>${rub(bonus)}</b></td></tr>`}
     html+='</tbody></table>';document.getElementById('assignedView').innerHTML=html;
   }
   function renderHeld(){
     const list=filtered();let html='',last='';if(!list.length)html='<div class="empty">Никого не найдено</div>';
-    for(const p of list){if(p.dept!==last){last=p.dept;html+=`<div class="held-group">${esc(last)}</div>`}const n=state.held[p.id],earned=reward(n),next=nextReward(n),progress=Math.min(100,n/30*100);html+=`<div class="held-row"><div class="person"><b>${esc(p.name)}</b><small>${esc(p.role)}</small><div class="held-control"><button class="round-btn" data-held="minus" data-id="${p.id}" ${editing?'':'disabled'}>−</button><input class="held-number" type="number" min="0" max="99" value="${n}" data-held="input" data-id="${p.id}" ${editing?'':'disabled'}><button class="round-btn" data-held="plus" data-id="${p.id}" ${editing?'':'disabled'}>+</button></div></div><div class="track-wrap"><div class="track"><div class="fill" style="width:${progress}%"></div><div class="nodes">${milestones.map(m=>`<div class="node ${n>=m.n?'reached':''}">${m.n}<span>${m.p/1000}к</span></div>`).join('')}</div></div></div><div class="next-box"><span>Следующая цель</span><b>${next?`${next.n} встреч · ${rub(next.p)}`:'Суперприз взят'}</b></div><div class="earned ${!next?'max':''}"><span>Заработано</span><b>${rub(earned)}</b></div></div>`}
+    for(const p of list){if(p.dept!==last){last=p.dept;html+=`<div class="held-group">${esc(last)}</div>`}const n=state.held[p.id],earned=reward(n),next=nextReward(n),progress=Math.min(100,n/15*100);html+=`<div class="held-row"><div class="person"><b>${esc(p.name)}</b><small>${esc(p.role)}</small><div class="held-control"><button class="round-btn" data-held="minus" data-id="${p.id}" ${editing?'':'disabled'}>−</button><input class="held-number" type="number" min="0" max="99" value="${n}" data-held="input" data-id="${p.id}" ${editing?'':'disabled'}><button class="round-btn" data-held="plus" data-id="${p.id}" ${editing?'':'disabled'}>+</button></div></div><div class="track-wrap"><div class="track"><div class="fill" style="width:${progress}%"></div><div class="nodes">${milestones.map(m=>`<div class="node ${n>=m.n?'reached':''}">${m.n}<span>${m.p/1000}к</span></div>`).join('')}</div></div></div><div class="next-box"><span>Следующая цель</span><b>${next?`${next.n} встреч · ${rub(next.p)}`:'Суперприз взят'}</b></div><div class="earned ${!next?'max':''}"><span>Заработано</span><b>${rub(earned)}</b></div></div>`}
     document.getElementById('heldView').innerHTML=html;
   }
   function render(){renderAssigned();renderHeld();updateStats();updateTimestamp();document.body.classList.toggle('editing',editing);document.getElementById('assignedView').hidden=view!=='assigned';document.getElementById('heldView').hidden=view!=='held';document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));document.getElementById('boardTitle').textContent=view==='assigned'?'Ежедневные назначения':'Лестница проведённых встреч';document.getElementById('boardSubtitle').textContent=editing?(view==='assigned'?'Введите количество назначений по каждой дате':'Меняйте количество кнопками или введите число'):(view==='assigned'?'Нажмите «Ввести результаты», чтобы заполнить календарь':'Нажмите «Ввести результаты», чтобы обновить прогресс')}
@@ -235,10 +235,10 @@
   document.getElementById('search').addEventListener('input',e=>{query=e.target.value;render()});
   document.getElementById('deptFilter').addEventListener('change',e=>{dept=e.target.value;render()});
   document.getElementById('editBtn').addEventListener('click',()=>{editing=!editing;const b=document.getElementById('editBtn');b.classList.toggle('active',editing);b.textContent=editing?'✓ Завершить ввод':'✎ Ввести результаты';render();if(!editing)toast('Результаты сохранены')});
-  document.getElementById('assignedView').addEventListener('input',e=>{if(!e.target.matches('.day-input'))return;const v=Math.max(0,Math.min(99,Number(e.target.value)||0));state.assigned[e.target.dataset.id][Number(e.target.dataset.day)]=v;e.target.parentElement.className='day-cell lv'+level(v);persist();const tr=e.target.closest('tr'),p=people.find(x=>x.id===e.target.dataset.id),a=state.assigned[p.id];tr.querySelectorAll('.summary-col')[0].innerHTML=`<b>${a.reduce((x,y)=>x+y,0)}</b><small>назначено</small>`;tr.querySelectorAll('.summary-col')[1].innerHTML=`<b>${a.filter(n=>n>=3).length}</b><small>дней с 3+</small>`;tr.querySelector('.money-col').innerHTML=`<b>${rub(dayBonus(a))}</b>`});
+  document.getElementById('assignedView').addEventListener('input',e=>{if(!e.target.matches('.day-input'))return;const v=Math.max(0,Math.min(99,Number(e.target.value)||0));state.assigned[e.target.dataset.id][Number(e.target.dataset.day)]=v;e.target.parentElement.className='day-cell lv'+level(v);persist();const tr=e.target.closest('tr'),p=people.find(x=>x.id===e.target.dataset.id),a=state.assigned[p.id],period=days.map(d=>a[d-1]);tr.querySelectorAll('.summary-col')[0].innerHTML=`<b>${period.reduce((x,y)=>x+y,0)}</b><small>назначено</small>`;tr.querySelectorAll('.summary-col')[1].innerHTML=`<b>${period.filter(n=>n>=3).length}</b><small>дней с 3+</small>`;tr.querySelector('.money-col').innerHTML=`<b>${rub(dayBonus(period))}</b>`});
   document.getElementById('heldView').addEventListener('click',e=>{const b=e.target.closest('[data-held]');if(!b||!editing||b.dataset.held==='input')return;const id=b.dataset.id;state.held[id]=Math.max(0,state.held[id]+(b.dataset.held==='plus'?1:-1));persist();renderHeld()});
   document.getElementById('heldView').addEventListener('input',e=>{if(e.target.dataset.held!=='input')return;state.held[e.target.dataset.id]=Math.max(0,Math.min(99,Number(e.target.value)||0));persist();renderHeld()});
-  document.getElementById('exportBtn').addEventListener('click',()=>{const payload={title:'Золотой календарь встреч',period:'01.09.2026-30.09.2026',people:people.map(p=>({id:p.id,name:p.name,dept:p.dept,role:p.role})),...state};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}));a.download='zolotoy-kalendar-2026-09.json';a.click();URL.revokeObjectURL(a.href);toast('Данные выгружены')});
+  document.getElementById('exportBtn').addEventListener('click',()=>{const payload={title:'Спринт встреч',period:'07.09.2026-30.09.2026',people:people.map(p=>({id:p.id,name:p.name,dept:p.dept,role:p.role})),...state};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}));a.download='sprint-vstrech-07-30-09-2026.json';a.click();URL.revokeObjectURL(a.href);toast('Данные выгружены')});
   document.getElementById('importBtn').addEventListener('click',()=>document.getElementById('importFile').click());
   document.getElementById('importFile').addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{state=normalize(JSON.parse(reader.result));persist();render();toast('Данные загружены')}catch{toast('Не удалось прочитать файл')}};reader.readAsText(file);e.target.value=''});
   document.getElementById('printBtn').addEventListener('click',()=>window.print());
