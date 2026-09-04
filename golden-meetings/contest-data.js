@@ -74,6 +74,6 @@ window.ContestPeople = [
     {id:'freiman-elena',name:'Фрейман Елена',role:'ДПИ Менеджер · 502',dept:'Инвестиционный отдел'}
   ];
 
-window.ContestMilestones=[{n:5,p:10000},{n:7,p:15000},{n:10,p:25000},{n:12,p:30000},{n:15,p:40000},{n:20,p:50000},{n:25,p:60000},{n:30,p:70000}];
+window.ContestMilestones=[{n:3,p:10000},{n:4,p:15000},{n:5,p:25000},{n:6,p:30000},{n:7,p:40000},{n:9,p:50000},{n:12,p:60000},{n:15,p:70000}];
 
 window.ContestPublishedState = { assigned: {}, held: {}, updatedAt: null };
