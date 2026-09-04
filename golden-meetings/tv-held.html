@@ -27,7 +27,7 @@
 <body>
   <div class="screen">
     <header>
-      <div><div class="kicker">Золотой календарь · сентябрь 2026</div><div class="title-line"><h1 class="title">Проведённые встречи</h1><select class="scope" id="scope" aria-label="Выбор отдела"></select></div><div class="sub">Каждая золотая ступень открывает новую сумму: от 5 встреч до суперприза за 30</div></div>
+      <div><div class="kicker">Новый спринт · 7-30 сентября 2026</div><div class="title-line"><h1 class="title">Проведённые встречи</h1><select class="scope" id="scope" aria-label="Выбор отдела"></select></div><div class="sub">Реалистичная лестница по августовскому темпу: от 3 встреч до суперприза за 15</div></div>
       <div class="stats"><div class="stat"><span>В списке</span><b id="peopleCount">0</b></div><div class="stat"><span>Проведено</span><b id="held">0</b></div><div class="stat"><span>С наградой</span><b id="winners">0</b></div><div class="stat money"><span>Призовой фонд</span><b id="money">0 ₽</b></div></div>
     </header>
     <main class="board" id="board"></main>
@@ -35,7 +35,7 @@
   </div>
   <script src="./contest-data.js"></script>
   <script>
-    const allPeople=window.ContestPeople,milestones=window.ContestMilestones,key='golden-meetings-september-2026-v1',formatter=new Intl.NumberFormat('ru-RU');
+    const allPeople=window.ContestPeople,milestones=window.ContestMilestones,key='golden-meetings-september-7-30-2026-v1',formatter=new Intl.NumberFormat('ru-RU');
     const params=new URLSearchParams(location.search),scopeValue=params.get('scope')||'all';
     let page=0,held={},people=[],rowLimit=10,pageCount=1,rows=[];
     const rub=n=>formatter.format(n)+' ₽';
