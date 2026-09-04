@@ -76,4 +76,3 @@ window.ContestPeople = [
 
 window.ContestMilestones=[{n:3,p:10000},{n:4,p:15000},{n:5,p:25000},{n:6,p:30000},{n:7,p:40000},{n:9,p:50000},{n:12,p:60000},{n:15,p:70000}];
 
-window.ContestPublishedState = { assigned: {}, held: {}, updatedAt: null };
