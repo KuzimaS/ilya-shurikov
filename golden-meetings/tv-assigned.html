@@ -61,7 +61,7 @@
     function render(){
       const half=screen%2,employeePage=Math.floor(screen/2),start=half*daysPerScreen;
       document.getElementById('range').textContent=(start+1)+'-'+(start+daysPerScreen)+' сентября';
-      dayHeaders.forEach((header,i)=>{const d=start+i,w=weekday(d);header.b.textContent=d;header.small.textContent=w;header.th.className='day '+((w==='сб'||w==='вс')?'weekend':'')});
+      dayHeaders.forEach((header,i)=>{const d=start+i+1,w=weekday(d);header.b.textContent=d;header.small.textContent=w;header.th.className='day '+((w==='сб'||w==='вс')?'weekend':'')});
       rows.forEach((row,i)=>{const p=people[employeePage*perPage+i];row.tr.classList.toggle('empty',!p);if(!p)return;const a=state.assigned[p.id];row.nameB.textContent=p.name;row.nameSmall.textContent=p.dept+' · '+p.role;row.metrics.forEach((cell,j)=>{const n=a[start+j]||0;cell.className='lv'+level(n);cell.textContent=n||'·'});row.total.textContent=a.reduce((x,y)=>x+y,0);row.gold.textContent=a.filter(n=>n>=3).length;row.money.textContent=rub(bonus(a))});
       dots.forEach((dot,i)=>dot.classList.toggle('active',i===screen));
     }
