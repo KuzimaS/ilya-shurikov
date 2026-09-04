@@ -3,74 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#060b14">
+  <meta name="theme-color" content="#07101b">
   <title>ТВ · Назначенные встречи</title>
   <style>
-    :root{--bg:#060b14;--panel:#0d1928;--panel2:#101b2b;--line:#203149;--text:#f7f2e5;--muted:#8396af;--gold:#f4bd45}
+    :root{--bg:#07101b;--panel:#0d1928;--cell:#101c2c;--line:#26384f;--text:#f5f1e7;--muted:#8294aa;--gold:#efb83d}
     *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:Arial,"Segoe UI",sans-serif}
-    body{background:#060b14}
-    .screen{height:100vh;display:grid;grid-template-rows:142px minmax(0,1fr) 38px;padding:18px 22px 10px;gap:10px}
-    header{display:grid;grid-template-columns:1fr auto;align-items:start;padding:18px 21px;border:1px solid #24354c;border-radius:18px;background:#0d1928;contain:layout paint style}
-    .kicker{color:#ffd875;text-transform:uppercase;letter-spacing:.15em;font-size:12px;font-weight:900}.title{margin:7px 0 0;font-size:34px;line-height:1;letter-spacing:-.025em}.sub{margin-top:9px;color:#93a5bc;font-size:14px}.gold{color:#ffd875}.range{display:inline-block;margin-left:10px;padding:4px 9px;border:1px solid #705627;border-radius:8px;color:#ffd875;font-size:12px;vertical-align:4px}
-    .stats{display:flex;gap:8px}.stat{min-width:145px;padding:12px 14px;background:#08111e;border:1px solid #24354c;border-radius:12px}.stat span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em}.stat b{display:block;margin-top:5px;font-size:23px}.stat.money b{color:#ffd875}
-    .board{min-height:0;overflow:hidden;border:1px solid #24354c;border-radius:14px;background:#091321;contain:strict}
-    table{border-collapse:separate;border-spacing:0;width:100%;height:100%;table-layout:fixed}th,td{border-right:1px solid #19283b;border-bottom:1px solid #19283b;text-align:center;padding:0}
-    thead th{height:43px;background:#111e2f;color:#8194ad;font-size:10px;text-transform:uppercase;letter-spacing:.04em}.name{width:290px;text-align:left;padding:0 14px;background:#101b2b}.name b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.name small{display:block;margin-top:2px;color:#7a8da6;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.day{width:51px}.day b{display:block;color:#dce5ef;font-size:13px}.day small{font-size:9px}.weekend{background:#171929!important;color:#b7a3ca!important}
-    tbody tr{height:calc((100% - 43px)/12)}tbody td{background:#0f1927;font-size:15px;font-weight:900}.lv0{color:#43546b}.lv1{background:#29221d!important;color:#bd8e59}.lv2{background:#4c3b20!important;color:#e8c46e}.lv3{background:#b67a18!important;color:#170f04}.lv4{background:#f1b934!important;color:#1b1203;outline:1px solid #ffe79b;outline-offset:-2px}
-    .total{width:78px;background:#101c2d;font-size:16px}.gold-days{width:72px;background:#111d2e;color:#dcb14f}.bonus{width:112px;background:#171c21;color:#ffd36b;font-size:15px}.empty{visibility:hidden}
-    footer{display:flex;align-items:center;justify-content:space-between;padding:0 5px;color:#73869e;font-size:11px}.legend{display:flex;gap:7px;align-items:center}.sw{width:20px;height:20px;border-radius:5px;display:grid;place-items:center;font-size:9px;font-weight:900}.pager{display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;border-radius:20px;background:#304057}.dot.active{width:24px;background:#e9ad37}.tech{color:#71849b;text-decoration:none}.tech:hover{color:#ffd875}
-    @media(max-width:1500px){.screen{padding:12px 14px 7px;grid-template-rows:128px minmax(0,1fr) 32px}.title{font-size:28px}.stat{min-width:122px;padding:10px 12px}.name{width:230px}.bonus{width:95px}.day{width:43px}}
+    .screen{height:100vh;display:grid;grid-template-rows:126px minmax(0,1fr) 34px;padding:14px 18px 8px;gap:8px}
+    header{display:grid;grid-template-columns:minmax(420px,1fr) auto;gap:18px;align-items:center;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+    .kicker{color:#f1c35e;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.title-line{display:flex;align-items:center;gap:12px;margin-top:6px}.title{margin:0;font-size:30px;line-height:1}.range{padding:5px 9px;border:1px solid #755a27;border-radius:7px;color:#ffd978;font-size:12px;font-weight:800;white-space:nowrap}.sub{margin-top:7px;color:#91a1b4;font-size:13px}
+    .scope{height:34px;max-width:250px;padding:0 30px 0 10px;border:1px solid #40536c;border-radius:8px;background:#111f31;color:#f7f2e7;font-size:13px;font-weight:700}.stats{display:flex;gap:7px}.stat{min-width:126px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:#091421}.stat span{display:block;color:var(--muted);font-size:9px;letter-spacing:.07em;text-transform:uppercase}.stat b{display:block;margin-top:3px;font-size:21px}.stat.money b{color:#ffd36d}
+    .board{min-height:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#0a1523}
+    table{width:100%;height:100%;border-collapse:collapse;table-layout:fixed}th,td{padding:0;border-right:1px solid #1f3046;border-bottom:1px solid #1f3046;text-align:center}thead th{height:44px;background:#111f31;color:#889bb2;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+    .name{width:330px;padding:0 15px;text-align:left;background:#101c2c}.name b{display:block;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.name small{display:block;margin-top:3px;color:#7f91a8;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.day b{display:block;color:#e5ebf1;font-size:16px}.day small{display:block;margin-top:2px;font-size:10px}.weekend{background:#181b2b!important;color:#bca9ce!important}
+    tbody tr{height:calc((100% - 44px)/8)}tbody td{background:var(--cell);font-size:21px;font-weight:900}.metric.lv0{color:#465971}.metric.lv1{background:#2c251f;color:#c9975e}.metric.lv2{background:#514020;color:#ebc66c}.metric.lv3{background:#ae7418;color:#160f04}.metric.lv4{background:#efb83d;color:#1b1203;outline:1px solid #ffe79b;outline-offset:-2px}
+    .total{width:92px;background:#111f31;font-size:20px}.gold-days{width:78px;background:#121e2e;color:#dcb14f}.bonus{width:128px;background:#1a1e22;color:#ffd36b;font-size:18px}.empty,.off{display:none}
+    footer{display:flex;align-items:center;justify-content:space-between;padding:0 4px;color:#71849a;font-size:11px}.screen-no{color:#a6b3c2}.screen-no b{color:#efb83d}.tech{color:#71849a;text-decoration:none}.tech:hover{color:#ffd875}
+    @media(max-width:1500px){.screen{padding:10px 12px 6px;grid-template-rows:116px minmax(0,1fr) 28px}.title{font-size:25px}.name{width:260px}.stat{min-width:105px}.name b{font-size:14px}.name small{font-size:10px}.bonus{width:105px}}
   </style>
 </head>
 <body>
   <div class="screen">
     <header>
-      <div><div class="kicker">Золотой календарь · сентябрь 2026</div><h1 class="title">Назначенные встречи <span class="range" id="range">1-15 сентября</span></h1><div class="sub">Цель дня: <span class="gold">3 встречи</span> · каждая следующая приносит <span class="gold">+1 000 ₽</span></div></div>
-      <div class="stats"><div class="stat"><span>Участников</span><b id="people">65</b></div><div class="stat"><span>Назначено</span><b id="assigned">0</b></div><div class="stat"><span>Золотых дней</span><b id="goldDays">0</b></div><div class="stat money"><span>Заработано</span><b id="money">0 ₽</b></div></div>
+      <div><div class="kicker">Золотой календарь · сентябрь 2026</div><div class="title-line"><h1 class="title">Назначенные встречи</h1><span class="range" id="range"></span><select class="scope" id="scope" aria-label="Выбор отдела"></select></div><div class="sub">3 встречи за день дают золото, каждая следующая приносит +1 000 ₽</div></div>
+      <div class="stats"><div class="stat"><span>В списке</span><b id="peopleCount">0</b></div><div class="stat"><span>Назначено</span><b id="assigned">0</b></div><div class="stat"><span>Золотых дней</span><b id="goldDays">0</b></div><div class="stat money"><span>Заработано</span><b id="money">0 ₽</b></div></div>
     </header>
     <main class="board" id="board"></main>
-    <footer><div class="legend"><span class="sw lv0">0</span><span class="sw lv1">1</span><span class="sw lv2">2</span><span class="sw lv3">3</span><span class="sw lv4">4+</span><span>До золота · цель · бонус</span></div><div class="pager" id="pager"></div><a class="tech" href="./index.html">Техническая панель</a></footer>
+    <footer><span>Стрелки на пульте переключают экран</span><span class="screen-no" id="screenNo"></span><a class="tech" href="./index.html">Техническая панель</a></footer>
   </div>
   <script src="./contest-data.js"></script>
   <script>
-    const people=window.ContestPeople,allDays=Array.from({length:30},(_,i)=>i+1),key='golden-meetings-september-2026-v1',perPage=12,daysPerScreen=15;
-    const employeePages=Math.ceil(people.length/perPage),screenCount=employeePages*2,formatter=new Intl.NumberFormat('ru-RU');
-    let screen=0,lastRaw='',state,rows=[],dayHeaders=[],dots=[];
-    const rub=n=>formatter.format(n)+' ₽';
-    const blank=()=>{const assigned={},held={};people.forEach(p=>{assigned[p.id]=Array(30).fill(0);held[p.id]=0});return{assigned,held}};
-    function load(){const base=blank();try{const raw=localStorage.getItem(key);lastRaw=raw||'';const saved=raw?JSON.parse(raw):window.ContestPublishedState;people.forEach(p=>{if(Array.isArray(saved?.assigned?.[p.id]))base.assigned[p.id]=allDays.map((_,i)=>Math.max(0,Number(saved.assigned[p.id][i])||0));base.held[p.id]=Math.max(0,Number(saved?.held?.[p.id])||0)})}catch{}return base}
-    const weekday=d=>['вс','пн','вт','ср','чт','пт','сб'][new Date(2026,8,d).getDay()];
-    const level=n=>n>=4?4:n;
-    const bonus=a=>a.reduce((sum,n)=>sum+Math.max(0,n-3)*1000,0);
-    function build(){
-      const board=document.getElementById('board'),table=document.createElement('table'),thead=document.createElement('thead'),headRow=document.createElement('tr');
-      const nameHead=document.createElement('th');nameHead.className='name';nameHead.textContent='Сотрудник';headRow.appendChild(nameHead);
-      for(let i=0;i<daysPerScreen;i++){const th=document.createElement('th');th.className='day';const b=document.createElement('b'),small=document.createElement('small');th.append(b,small);headRow.appendChild(th);dayHeaders.push({th,b,small})}
-      [['total','Итого'],['gold-days','3+'],['bonus','Бонус']].forEach(([cls,label])=>{const th=document.createElement('th');th.className=cls;th.textContent=label;headRow.appendChild(th)});
-      thead.appendChild(headRow);table.appendChild(thead);
-      const tbody=document.createElement('tbody');
-      for(let i=0;i<perPage;i++){
-        const tr=document.createElement('tr'),name=document.createElement('td'),nameB=document.createElement('b'),nameSmall=document.createElement('small');name.className='name';name.append(nameB,nameSmall);tr.appendChild(name);
-        const metrics=[];for(let j=0;j<daysPerScreen;j++){const td=document.createElement('td');td.className='lv0';tr.appendChild(td);metrics.push(td)}
-        const total=document.createElement('td'),gold=document.createElement('td'),money=document.createElement('td');total.className='total';gold.className='gold-days';money.className='bonus';tr.append(total,gold,money);tbody.appendChild(tr);rows.push({tr,nameB,nameSmall,metrics,total,gold,money});
-      }
-      table.appendChild(tbody);board.appendChild(table);
-      const pager=document.getElementById('pager');for(let i=0;i<screenCount;i++){const dot=document.createElement('span');dot.className='dot';pager.appendChild(dot);dots.push(dot)}
-    }
-    function updateTotals(){let assigned=0,gold=0,money=0;people.forEach(p=>{const a=state.assigned[p.id];assigned+=a.reduce((x,y)=>x+y,0);gold+=a.filter(n=>n>=3).length;money+=bonus(a)});document.getElementById('assigned').textContent=assigned;document.getElementById('goldDays').textContent=gold;document.getElementById('money').textContent=rub(money)}
-    function render(){
-      const half=screen%2,employeePage=Math.floor(screen/2),start=half*daysPerScreen;
-      document.getElementById('range').textContent=(start+1)+'-'+(start+daysPerScreen)+' сентября';
-      dayHeaders.forEach((header,i)=>{const d=start+i+1,w=weekday(d);header.b.textContent=d;header.small.textContent=w;header.th.className='day '+((w==='сб'||w==='вс')?'weekend':'')});
-      rows.forEach((row,i)=>{const p=people[employeePage*perPage+i];row.tr.classList.toggle('empty',!p);if(!p)return;const a=state.assigned[p.id];row.nameB.textContent=p.name;row.nameSmall.textContent=p.dept+' · '+p.role;row.metrics.forEach((cell,j)=>{const n=a[start+j]||0;cell.className='lv'+level(n);cell.textContent=n||'·'});row.total.textContent=a.reduce((x,y)=>x+y,0);row.gold.textContent=a.filter(n=>n>=3).length;row.money.textContent=rub(bonus(a))});
-      dots.forEach((dot,i)=>dot.classList.toggle('active',i===screen));
-    }
-    function forward(){screen=(screen+1)%screenCount;render()}
-    function backward(){screen=(screen-1+screenCount)%screenCount;render()}
-    function refresh(){const raw=localStorage.getItem(key)||'';if(raw!==lastRaw){state=load();updateTotals();render()}}
-    build();state=load();updateTotals();render();
-    setInterval(()=>{if(!document.hidden)forward()},12000);setInterval(refresh,30000);
-    addEventListener('storage',refresh);addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')forward();if(e.key==='ArrowLeft'||e.key==='PageUp')backward()});
+    const allPeople=window.ContestPeople,allDays=Array.from({length:30},(_,i)=>i+1),key='golden-meetings-september-2026-v1',perPage=8,daysPerScreen=7,weeks=[0,7,14,21,28],formatter=new Intl.NumberFormat('ru-RU');
+    const params=new URLSearchParams(location.search),scopeValue=params.get('scope')||'all';
+    let screen=0,state,people=[],peoplePages=1,screenCount=1,rows=[],dayHeaders=[];
+    const rub=n=>formatter.format(n)+' ₽',weekday=d=>['вс','пн','вт','ср','чт','пт','сб'][new Date(2026,8,d).getDay()],level=n=>n>=4?4:n;
+    const bonus=a=>a.reduce((sum,n)=>sum+Math.max(0,n-3)*1000,0),assignedTotal=p=>state.assigned[p.id].reduce((a,b)=>a+b,0);
+    function blank(){const assigned={},held={};allPeople.forEach(p=>{assigned[p.id]=Array(30).fill(0);held[p.id]=0});return{assigned,held}}
+    function load(){const base=blank();try{const raw=localStorage.getItem(key),saved=raw?JSON.parse(raw):window.ContestPublishedState;allPeople.forEach(p=>{if(Array.isArray(saved?.assigned?.[p.id]))base.assigned[p.id]=allDays.map((_,i)=>Math.max(0,Number(saved.assigned[p.id][i])||0));base.held[p.id]=Math.max(0,Number(saved?.held?.[p.id])||0)})}catch{}return base}
+    function setPeople(){if(scopeValue==='top10')people=[...allPeople].sort((a,b)=>assignedTotal(b)-assignedTotal(a)||bonus(state.assigned[b.id])-bonus(state.assigned[a.id])||allPeople.indexOf(a)-allPeople.indexOf(b)).slice(0,10);else if(scopeValue.startsWith('dept:'))people=allPeople.filter(p=>p.dept===scopeValue.slice(5));else people=[...allPeople];peoplePages=Math.max(1,Math.ceil(people.length/perPage));screenCount=peoplePages*weeks.length;if(screen>=screenCount)screen=0}
+    function buildScope(){const select=document.getElementById('scope'),departments=[...new Set(allPeople.map(p=>p.dept))];[['all','Все отделы'],['top10','Топ-10 по назначениям'],...departments.map(d=>['dept:'+d,d])].forEach(([value,label])=>{const o=document.createElement('option');o.value=value;o.textContent=label;select.appendChild(o)});select.value=scopeValue;select.onchange=()=>{const url=new URL(location.href);if(select.value==='all')url.searchParams.delete('scope');else url.searchParams.set('scope',select.value);location.href=url.href}}
+    function build(){const table=document.createElement('table'),thead=document.createElement('thead'),hr=document.createElement('tr'),nameHead=document.createElement('th');nameHead.className='name';nameHead.textContent='Сотрудник';hr.appendChild(nameHead);for(let i=0;i<daysPerScreen;i++){const th=document.createElement('th'),b=document.createElement('b'),s=document.createElement('small');th.className='day';th.append(b,s);hr.appendChild(th);dayHeaders.push({th,b,s})}for(const pair of [['total','Итого'],['gold-days','3+'],['bonus','Бонус']]){const th=document.createElement('th');th.className=pair[0];th.textContent=pair[1];hr.appendChild(th)}thead.appendChild(hr);table.appendChild(thead);const tbody=document.createElement('tbody');for(let i=0;i<perPage;i++){const tr=document.createElement('tr'),name=document.createElement('td'),nb=document.createElement('b'),ns=document.createElement('small');name.className='name';name.append(nb,ns);tr.appendChild(name);const cells=[];for(let j=0;j<daysPerScreen;j++){const td=document.createElement('td');td.className='metric lv0';tr.appendChild(td);cells.push(td)}const total=document.createElement('td'),gold=document.createElement('td'),money=document.createElement('td');total.className='total';gold.className='gold-days';money.className='bonus';tr.append(total,gold,money);tbody.appendChild(tr);rows.push({tr,nb,ns,cells,total,gold,money})}table.appendChild(tbody);document.getElementById('board').appendChild(table)}
+    function totals(){let sum=0,gold=0,money=0;people.forEach(p=>{const a=state.assigned[p.id];sum+=a.reduce((x,y)=>x+y,0);gold+=a.filter(n=>n>=3).length;money+=bonus(a)});document.getElementById('peopleCount').textContent=people.length;document.getElementById('assigned').textContent=sum;document.getElementById('goldDays').textContent=gold;document.getElementById('money').textContent=rub(money)}
+    function render(){const weekIndex=Math.floor(screen/peoplePages),peoplePage=screen%peoplePages,start=weeks[weekIndex],count=Math.min(daysPerScreen,30-start);document.getElementById('range').textContent=(start+1)+'-'+(start+count)+' сентября';dayHeaders.forEach((h,i)=>{const shown=i<count,d=start+i+1,w=shown?weekday(d):'';h.th.className='day '+((w==='сб'||w==='вс')?'weekend ':'')+(shown?'':'off');h.b.textContent=shown?d:'';h.s.textContent=w});rows.forEach((r,i)=>{const p=people[peoplePage*perPage+i];r.tr.classList.toggle('empty',!p);if(!p)return;const a=state.assigned[p.id];r.nb.textContent=(scopeValue==='top10'?(people.indexOf(p)+1)+'. ':'')+p.name;r.ns.textContent=p.dept+' · '+p.role;r.cells.forEach((c,j)=>{const shown=j<count,n=shown?(a[start+j]||0):0;c.className='metric lv'+level(n)+(shown?'':' off');c.textContent=shown?(n||'·'):''});r.total.textContent=assignedTotal(p);r.gold.textContent=a.filter(n=>n>=3).length;r.money.textContent=rub(bonus(a))});document.getElementById('screenNo').innerHTML='Экран <b>'+(screen+1)+'</b> из '+screenCount}
+    function forward(){screen=(screen+1)%screenCount;render()}function backward(){screen=(screen-1+screenCount)%screenCount;render()}function refresh(){state=load();setPeople();totals();render()}
+    state=load();buildScope();setPeople();build();totals();render();setInterval(()=>{if(!document.hidden)forward()},30000);addEventListener('storage',refresh);addEventListener('focus',refresh);addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')forward();if(e.key==='ArrowLeft'||e.key==='PageUp')backward()});
   </script>
 </body>
 </html>
