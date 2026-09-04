@@ -37,4 +37,4 @@ jobs:
           git commit -m "Sync adaptation dashboard data"
           git push origin HEAD:gh-pages
 
-# Manual refresh: move Vlasov amount to booking 2026-09-03
+# Manual refresh: publish September 3 metrics and queued payouts 2026-09-04
