@@ -63,8 +63,8 @@
       const changed=signature(s)!==signature(published)||s.updatedAt!==published.updatedAt;
       published=s;lastSuccess=Date.now();lastError=null;
       try{localStorage.setItem(cacheKey,JSON.stringify(s));}catch{}
-      notify(changed);
-    }catch(e){lastError=e.message;notify(false);}finally{clearTimeout(timer);busy=false;}
+      notify(changed);return true;
+    }catch(e){lastError=e.message;notify(false);return false;}finally{clearTimeout(timer);busy=false;}
   }
   function watch(fn){listeners.push(fn);fn(published,{changed:true,message:message(),error:lastError,lastSuccess});if(!started){started=true;refresh();setInterval(()=>{if(!document.hidden)refresh();},30000);addEventListener('focus',refresh);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});}}
   root.Contest={contestId,period,people,milestones,cacheKey,draftKey,empty,count,normalize,reward,next,bonus,total,rank,progress,summary,signature,cached,refresh,watch};
