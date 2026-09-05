@@ -49,6 +49,7 @@
   const summary=s=>({assigned:people.reduce((n,p)=>n+total(s.assigned[p.id]),0),held:people.reduce((n,p)=>n+s.held[p.id],0),money:people.reduce((n,p)=>n+bonus(s.assigned[p.id])+reward(s.held[p.id]),0)});
   const signature=s=>JSON.stringify([s.assigned,s.heldEvents,s.unverifiedHeld]);
   function cached(){try{return normalize(JSON.parse(localStorage.getItem(cacheKey)))}catch{return empty();}}
+  let localStorageHasCache=false;
   let published=cached(),listeners=[],busy=false,lastSuccess=null,lastError=null,started=false;
   function message(){if(lastError)return 'Нет связи · показана последняя загруженная версия';if(!lastSuccess)return 'Подключение к опубликованным данным';if(!published.updatedAt)return 'Данные ещё не опубликованы';const stale=Date.now()-Date.parse(published.updatedAt)>86400000;return (stale?'Данные старше суток · ':'Обновлено ')+new Date(published.updatedAt).toLocaleString('ru-RU',{timeZone:'Europe/Moscow',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})+' МСК';}
   function notify(changed){listeners.forEach(fn=>fn(published,{changed,message:message(),error:lastError,lastSuccess}));}
@@ -62,7 +63,7 @@
       if(Object.values(s.unverifiedHeld).some(n=>n>0))throw Error('Опубликованы встречи без дат');
       const changed=signature(s)!==signature(published)||s.updatedAt!==published.updatedAt;
       published=s;lastSuccess=Date.now();lastError=null;
-      try{localStorage.setItem(cacheKey,JSON.stringify(s));}catch{}
+      if(changed||!localStorageHasCache){try{localStorage.setItem(cacheKey,JSON.stringify(s));localStorageHasCache=true;}catch{}}
       notify(changed);return true;
     }catch(e){lastError=e.message;notify(false);return false;}finally{clearTimeout(timer);busy=false;}
   }

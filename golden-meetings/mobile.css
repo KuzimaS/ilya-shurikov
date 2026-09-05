@@ -1,0 +1,81 @@
+/* Узкий экран: обычная прокрутка и карточки вместо широкого ТВ-полотна. */
+.page-controls{display:flex;gap:10px;align-items:center;justify-content:center}
+.page-controls button{min-height:44px;padding:8px 14px;border:1px solid #40536c;border-radius:8px;background:#111f31;color:#f7f2e7;font:inherit;cursor:pointer}
+.page-controls button:disabled{opacity:.4;cursor:default}
+.tv-pages{display:none}
+.day-value{display:block;padding:12px 0;font-weight:800}
+@media(max-width:1000px){
+  html,body{height:auto;min-height:100%;overflow:visible;background:#07101b}
+  body{overflow-wrap:break-word}
+  button,input,select,textarea{font-size:16px!important}
+  button,a.btn,select{min-height:44px}
+  .screen{height:auto;min-height:100vh;display:flex;flex-direction:column;padding:12px;gap:12px}
+  .screen header{display:flex;flex-direction:column;align-items:stretch;padding:14px;gap:14px;min-width:0}
+  .title-line{flex-wrap:wrap}.title{font-size:26px;line-height:1.15}.kicker{font-size:12px;letter-spacing:.06em}
+  .title-line .title{width:100%}.scope{width:100%;max-width:100%;height:44px}
+  .sub,.sync-stamp{font-size:13px;line-height:1.4}
+  .screen .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .screen .stat{min-width:0;padding:10px}.screen .stat span{font-size:12px;letter-spacing:0}.screen .stat b{font-size:22px}
+  .screen footer{flex-wrap:wrap;gap:12px;font-size:13px;line-height:1.4;padding:8px 0}
+  .screen footer a{display:inline-block;padding:10px 0;font-size:14px}.screen .nav{display:flex;flex-wrap:wrap;gap:4px 12px}
+  .tv-pages{display:flex}.tv-pages[hidden]{display:none}
+  .screen .board,.screen .dept-board{display:block;overflow:visible;min-height:0}
+  .screen .dept-head,.screen .dept-row{grid-template-columns:42px minmax(0,1fr) 88px;min-height:64px;margin-bottom:8px}
+  .screen .dept-head>div{font-size:12px;letter-spacing:0;padding:5px}
+  .screen .dept-name{padding:10px;font-size:16px}.screen .dept-total{font-size:25px}.screen .dept-rank{font-size:20px}
+  /* Проведённые: имя, факт, ступени и деньги в пределах ширины телефона. */
+  .screen .head{display:none}
+  .screen .data-row{grid-template-columns:36px minmax(0,1fr) 62px;gap:0;margin-bottom:12px}
+  .screen .data-row.empty{display:none}
+  .data-row>.cell{border-right:0;padding:12px 8px}
+  .data-row .person b{white-space:normal;font-size:16px}.data-row .person small{white-space:normal;font-size:12px;line-height:1.4}
+  .data-row .count b{font-size:28px}.data-row .count small{font-size:12px}
+  .data-row .achievement-strip{grid-column:1/-1;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .data-row .achievement-strip .step{min-height:44px;font-size:16px}.data-row .achievement-strip .step small,.data-row .achievement-strip .step-prize{font-size:12px}
+  .data-row .reward{grid-column:1/-1;align-items:flex-start;border-top:1px solid #26384f}
+  .data-row .next{grid-column:1/-1;align-items:flex-start;text-align:left;border-top:1px solid #26384f}
+  .data-row .reward b{font-size:23px}.data-row .next b{font-size:16px}.data-row .reward small,.data-row .next small{font-size:12px}
+  /* Назначенные: семь дат, затем итоги за весь конкурс. */
+  .screen .board:has(table){border:0;background:transparent}
+  .screen table,.screen tbody{display:block;width:100%;height:auto}
+  .screen thead{display:none}
+  .screen tbody tr{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));height:auto;margin-bottom:12px;border:1px solid #26384f;border-radius:10px;overflow:hidden}
+  .screen tbody tr.empty{display:none}
+  .screen td{width:auto;min-width:0;border-right:0;padding:10px 2px;font-size:18px}
+  .screen td.name{grid-column:1/-1;padding:14px;text-align:left}.screen .name b{white-space:normal;font-size:16px}.screen .name small{white-space:normal;font-size:12px}
+  .screen td.metric::before{content:attr(data-date);display:block;font-size:12px;margin-bottom:8px;font-weight:400}
+  .screen td.total,.screen td.gold-days{grid-column:span 2;font-size:18px}.screen td.bonus{grid-column:span 3;font-size:18px}
+  .screen td.total{grid-column:1/span 2}
+  .screen td.total::before,.screen td.gold-days::before,.screen td.bonus::before{display:block;font-size:12px;font-weight:400;margin-bottom:6px}
+  .screen td.total::before{content:'Всего встреч'}.screen td.gold-days::before{content:'Золотых дней'}.screen td.bonus::before{content:'Начислено'}
+  /* Общий топ-10. */
+  .screen .row{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px;gap:14px;margin-bottom:12px}
+  .screen .row .rank{grid-column:1;grid-row:1}.screen .row .person{grid-column:1/-1;grid-row:2;min-width:0}
+  .screen .row .person b{white-space:normal;font-size:18px}.screen .row .person small{white-space:normal;font-size:13px}
+  .screen .metric span,.screen .total span{font-size:12px;letter-spacing:0}.screen .metric b{font-size:20px}
+  .screen .row .total{grid-column:1/-1}.screen .row .total b{font-size:25px}
+  /* Техничка: десять сотрудников на странице, поля только в режиме ввода. */
+  .top,.content{padding:12px}.topline{gap:12px}.actions{gap:6px}.actions .btn{font-size:13px;padding:8px 10px}
+  .controls>div,.filters{width:100%}.filters{display:grid;grid-template-columns:1fr;gap:8px}
+  .filters .select,.filters .search{width:100%;height:44px;max-width:100%}
+  .tabs{display:flex}.tab{flex:1;padding:10px 8px;font-size:14px!important}
+  .board{box-shadow:none}.board-head{flex-wrap:wrap;padding:14px}.board-head h3{font-size:16px}.board-head p{font-size:12px}
+  .table-wrap,.held-list{max-height:none;min-height:0;overflow:visible}
+  .mobile-assigned{padding:0 10px 10px}.assigned-card{padding:12px 0;border-bottom:1px solid #26384f}
+  .assigned-card h4{font-size:17px;margin:4px 0}.assigned-card>small{color:#a7b7ca;font-size:12px}
+  .mobile-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:12px 0}
+  .mobile-day{min-width:0;text-align:center}.mobile-day>small{display:block;font-size:12px;color:#a7b7ca;margin-bottom:5px}
+  .mobile-day .day-cell{width:100%;min-width:0;border-radius:6px;transition:none;box-shadow:none}
+  .mobile-day .day-input{height:44px;font-size:16px}.mobile-day .day-value{font-size:16px;line-height:20px}
+  .card-summary{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:6px}
+  .card-summary .summary-col,.card-summary .money-col{position:static;width:auto;min-width:0;padding:8px 4px;background:#101b2b;border-radius:6px;text-align:center}
+  .card-summary small{display:block;font-size:12px;color:#a7b7ca;margin-bottom:6px}.card-summary b{font-size:16px!important}
+  .held-row{grid-template-columns:minmax(0,1fr) 70px;padding:16px 12px;gap:12px}
+  .held-row .person{min-width:0}.held-row .person b{font-size:17px;white-space:normal}.held-row .person small{font-size:12px;white-space:normal}
+  .held-row .track-wrap{grid-column:1/-1;grid-row:2;margin:12px 0;padding:0 16px 26px 0}
+  .held-row .next-box{grid-column:1/-1;grid-row:3}.held-row .earned{grid-column:1/-1;grid-row:4;text-align:left}
+  .held-row .next-box span,.held-row .earned span{font-size:12px}.held-row .next-box b{font-size:16px}
+  .node,.fill,.mark,.btn.gold,.day-cell{box-shadow:none!important;transition:none!important}
+  .rules{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #adminPager{padding:12px;font-size:13px;flex-wrap:wrap}dialog{padding:16px}dialog input,dialog textarea{min-width:0}
+}
