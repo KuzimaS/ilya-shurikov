@@ -13,7 +13,7 @@
     .board{min-height:0;display:grid;grid-template-rows:repeat(10,minmax(0,1fr));gap:5px}.row{display:grid;grid-template-columns:55px minmax(260px,1.4fr) 125px 105px 115px 145px 145px 165px;gap:11px;align-items:center;padding:7px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.rank{width:40px;height:40px;display:grid;place-items:center;border:1px solid #40536c;border-radius:9px;background:#18273a;color:#91a4ba;font-size:17px;font-weight:900}.rank.top1{background:#e2ad34;color:#241600}.rank.top2{background:#aab4c0;color:#15202d}.rank.top3{background:#b97842;color:#241409}.person b{display:block;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.person small{display:block;margin-top:3px;color:#7f91a8;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.metric span{display:block;color:#71849a;font-size:9px;letter-spacing:.07em;text-transform:uppercase}.metric b{display:block;margin-top:4px;font-size:18px}.metric.money b,.total b{color:#ffd36d}.total{padding:8px 12px;border-left:2px solid #785a23}.total span{display:block;color:#947a49;font-size:9px;letter-spacing:.07em;text-transform:uppercase}.total b{display:block;margin-top:4px;font-size:21px}.nav a{margin-right:16px;color:#71849a;text-decoration:none}.nav a:hover{color:#ffd875}.updated{color:#71849a;font-size:11px}
     @media(max-width:1500px){.screen{padding:10px 12px 6px;grid-template-rows:116px minmax(0,1fr) 28px}.title{font-size:25px}.stat{min-width:125px}.row{grid-template-columns:48px minmax(210px,1.3fr) 100px 85px 90px 112px 112px 135px;gap:8px}.person b{font-size:14px}.metric b{font-size:15px}.total b{font-size:17px}}
  .sync-stamp{font-size:11px;color:#aab9cc;margin-bottom:6px}.sync-stamp.pending{color:#ffd36a}.screen{grid-template-rows:126px minmax(0,1fr) 30px}.sub{font-size:12px}.stat span{font-size:10px}.stat b{font-size:23px}.scope:focus-visible,a:focus-visible{outline:2px solid #72baff}.dept-name{font-size:clamp(20px,1.8vw,34px)}.dept-total{font-size:clamp(28px,2.3vw,44px)}   </style>
-  <link rel="stylesheet" href="./mobile.css?v=4">
+  <link rel="stylesheet" href="./mobile.css?v=5">
 </head>
 <body>
   <div class="screen">
@@ -21,8 +21,8 @@
     <main class="board" id="board"></main>
     <footer style="display:flex;align-items:center;justify-content:space-between"><div class="nav"><a href="./tv-assigned.html?scope=top10">Топ сотрудников по назначениям</a><a href="./tv-held.html?scope=top10">Топ сотрудников по проведённым</a><a href="./tv-assigned.html?scope=departments">Топ отделов по назначениям</a><a href="./tv-held.html?scope=departments">Топ отделов по проведённым</a></div><a class="updated" href="./index.html" style="text-decoration:none">Техническая панель</a></footer>
   </div>
-  <script src="./contest-data.js?v=4"></script>
-  <script src="./contest-core.js?v=4"></script>
+  <script src="./contest-data.js?v=5"></script>
+  <script src="./contest-core.js?v=5"></script>
   <script>
     window.tvPublished=Contest.cached();
     const allPeople=window.ContestPeople,milestones=window.ContestMilestones,key='golden-meetings-september-7-30-2026-v1',formatter=new Intl.NumberFormat('ru-RU');let state;

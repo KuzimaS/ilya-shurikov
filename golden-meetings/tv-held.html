@@ -24,7 +24,7 @@
     footer{display:flex;align-items:center;justify-content:space-between;padding:0 4px;color:#71849a;font-size:11px}.screen-no{color:#a6b3c2}.screen-no b{color:#efb83d}.tech{color:#71849a;text-decoration:none}.tech:hover{color:#ffd875}
     @media(max-width:1500px){:root{--cols:40px 218px 60px repeat(8,minmax(62px,1fr)) 104px 118px}.screen{padding:10px 12px 6px;grid-template-rows:116px minmax(0,1fr) 28px}.title{font-size:25px}.stat{min-width:105px}.person{padding:0 7px}.person b{font-size:12px}.person small{font-size:8px}.count b{font-size:21px}.reward b{font-size:13px}.next b{font-size:9px}.hcell{font-size:8px}.hcell.step-head b{font-size:12px}.dept-head,.dept-row{grid-template-columns:72px minmax(280px,1fr) 210px}.dept-name{padding:0 22px;font-size:20px}.dept-total{font-size:29px}.dept-rank{font-size:23px}}
  .sync-stamp{font-size:11px;color:#aab9cc;margin-bottom:6px}.sync-stamp.pending{color:#ffd36a}.screen{grid-template-rows:126px minmax(0,1fr) 30px}.sub{font-size:12px}.stat span{font-size:10px}.stat b{font-size:23px}.scope:focus-visible,a:focus-visible{outline:2px solid #72baff}.dept-name{font-size:clamp(20px,1.8vw,34px)}.dept-total{font-size:clamp(28px,2.3vw,44px)}  :root{--cols:50px minmax(210px,1.4fr) 90px minmax(300px,1.5fr) 160px 190px}.person b{font-size:clamp(16px,1.35vw,26px)}.person small{font-size:12px;color:#a8b7c9}.count b{font-size:clamp(26px,2vw,38px)}.reward b{font-size:clamp(19px,1.5vw,28px)}.next b{font-size:clamp(14px,1.1vw,21px)}.reward small,.next small{font-size:11px;color:#a8b7c9}.hcell{font-size:11px}.achievement-strip{display:grid;grid-template-columns:repeat(8,1fr);gap:3px;padding:8px}.achievement-strip .step{display:flex;flex-direction:column;justify-content:center;min-height:0;height:100%;max-height:56px;border-radius:5px;border:1px solid #3b4c60;color:#aebbd0;font-size:14px}.achievement-strip .step small{font-size:10px;margin-top:2px}.achievement-strip .reached{color:#201500}.achievement-strip .active{color:#fff0b2}.count small{font-size:10px}.rank{font-size:22px}@media(max-width:1200px){:root{--cols:38px minmax(170px,1.2fr) 65px minmax(240px,1.4fr) 130px 160px}.achievement-strip{gap:2px;padding:4px}.achievement-strip .step{font-size:12px}.person b{font-size:15px}.reward b{font-size:18px}.next b{font-size:13px}}  </style>
-  <link rel="stylesheet" href="./mobile.css?v=4">
+  <link rel="stylesheet" href="./mobile.css?v=5">
 </head>
 <body>
   <div class="screen">
@@ -36,8 +36,8 @@
     <main class="board" id="board"></main>
     <footer><span id="hint">Золотая ячейка означает пройденную ступень</span><span class="screen-no" id="screenNo"></span><a class="tech" href="./index.html">Техническая панель</a></footer>
   </div>
-  <script src="./contest-data.js?v=4"></script>
-  <script src="./contest-core.js?v=4"></script>
+  <script src="./contest-data.js?v=5"></script>
+  <script src="./contest-core.js?v=5"></script>
   <script>
     window.tvPublished=Contest.cached();
     const allPeople=window.ContestPeople,milestones=window.ContestMilestones,key='golden-meetings-september-7-30-2026-v1',formatter=new Intl.NumberFormat('ru-RU');

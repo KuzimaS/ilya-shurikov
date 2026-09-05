@@ -31,7 +31,7 @@ $('deptFilter').innerHTML+=[...depts].map(d=>`<option value="${esc(d)}">${esc(d)
 document.querySelector('.tabs').onclick=e=>{const b=e.target.closest('.tab');if(b){view=b.dataset.view;render();}};
 $('search').oninput=e=>{query=e.target.value;peoplePage=0;clearTimeout(window.searchTimer);window.searchTimer=setTimeout(render,120);};
 $('deptFilter').onchange=e=>{dept=e.target.value;peoplePage=0;render();};
-$('prevPeople').onclick=()=>{peoplePage--;render();};$('nextPeople').onclick=()=>{peoplePage++;render();};mobile.addEventListener('change',()=>{peoplePage=0;render();});
+$('prevPeople').onclick=()=>{peoplePage--;render();};$('nextPeople').onclick=()=>{peoplePage++;render();};$('adminMenu').open=!mobile.matches;mobile.addEventListener('change',()=>{$('adminMenu').open=!mobile.matches;peoplePage=0;render();});
 $('calendarRange').value=startDay+':'+endDay;
 $('calendarRange').onchange=e=>{[startDay,endDay]=e.target.value.split(':').map(Number);renderAssigned();};
 $('editBtn').onclick=()=>{if(loadError){toast('Сначала восстановите данные из резервной копии');return;}editing=!editing;render();};

@@ -3,6 +3,7 @@
 .page-controls button{min-height:44px;padding:8px 14px;border:1px solid #40536c;border-radius:8px;background:#111f31;color:#f7f2e7;font:inherit;cursor:pointer}
 .page-controls button:disabled{opacity:.4;cursor:default}
 .tv-pages{display:none}
+.admin-menu>summary{display:none}.menu-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .day-value{display:block;padding:12px 0;font-weight:800}
 @media(max-width:1000px){
   html,body{height:auto;min-height:100%;overflow:visible;background:#07101b}
@@ -43,19 +44,20 @@
   .screen tbody tr.empty{display:none}
   .screen td{width:auto;min-width:0;border-right:0;padding:10px 2px;font-size:18px}
   .screen td.name{grid-column:1/-1;padding:14px;text-align:left}.screen .name b{white-space:normal;font-size:16px}.screen .name small{white-space:normal;font-size:12px}
-  .screen td.metric::before{content:attr(data-date);display:block;font-size:12px;margin-bottom:8px;font-weight:400}
+  .screen td.metric::before{content:attr(data-date);display:block;color:#a7b7ca;font-size:12px;margin-bottom:8px;font-weight:400}
   .screen td.total,.screen td.gold-days{grid-column:span 2;font-size:18px}.screen td.bonus{grid-column:span 3;font-size:18px}
   .screen td.total{grid-column:1/span 2}
   .screen td.total::before,.screen td.gold-days::before,.screen td.bonus::before{display:block;font-size:12px;font-weight:400;margin-bottom:6px}
   .screen td.total::before{content:'Всего встреч'}.screen td.gold-days::before{content:'Золотых дней'}.screen td.bonus::before{content:'Начислено'}
   /* Общий топ-10. */
   .screen .row{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px;gap:14px;margin-bottom:12px}
-  .screen .row .rank{grid-column:1;grid-row:1}.screen .row .person{grid-column:1/-1;grid-row:2;min-width:0}
+  .screen .row .rank{grid-column:1;grid-row:1;z-index:1;align-self:start}.screen .row .person{grid-column:1/-1;grid-row:1;min-width:0;padding-left:54px}
   .screen .row .person b{white-space:normal;font-size:18px}.screen .row .person small{white-space:normal;font-size:13px}
   .screen .metric span,.screen .total span{font-size:12px;letter-spacing:0}.screen .metric b{font-size:20px}
   .screen .row .total{grid-column:1/-1}.screen .row .total b{font-size:25px}
   /* Техничка: десять сотрудников на странице, поля только в режиме ввода. */
   .top,.content{padding:12px}.topline{gap:12px}.actions{gap:6px}.actions .btn{font-size:13px;padding:8px 10px}
+  .actions{width:100%;align-items:flex-start}.admin-menu{flex:1;min-width:150px}.admin-menu>summary{display:block;min-height:44px;padding:12px 10px;border:1px solid #40536c;border-radius:8px;cursor:pointer;font-size:14px;color:#c9d6e5}.admin-menu[open]{flex-basis:100%}.menu-actions{padding-top:8px}
   .controls>div,.filters{width:100%}.filters{display:grid;grid-template-columns:1fr;gap:8px}
   .filters .select,.filters .search{width:100%;height:44px;max-width:100%}
   .tabs{display:flex}.tab{flex:1;padding:10px 8px;font-size:14px!important}
