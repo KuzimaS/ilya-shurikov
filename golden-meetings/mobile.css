@@ -31,7 +31,7 @@
   .data-row>.cell{border-right:0;padding:12px 8px}
   .data-row .person b{white-space:normal;font-size:16px}.data-row .person small{white-space:normal;font-size:12px;line-height:1.4}
   .data-row .count b{font-size:28px}.data-row .count small{font-size:12px}
-  .data-row .achievement-strip{grid-column:1/-1;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .data-row .achievement-strip{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
   .data-row .achievement-strip .step{min-height:44px;font-size:16px}.data-row .achievement-strip .step small,.data-row .achievement-strip .step-prize{font-size:12px}
   .data-row .reward{grid-column:1/-1;align-items:flex-start;border-top:1px solid #26384f}
   .data-row .next{grid-column:1/-1;align-items:flex-start;text-align:left;border-top:1px solid #26384f}
