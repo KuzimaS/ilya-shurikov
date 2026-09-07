@@ -3,7 +3,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const context={window:{},Set,Date,console};vm.createContext(context);
 for(const file of ['contest-data.js','contest-core.js'])vm.runInContext(fs.readFileSync(__dirname+'/'+file,'utf8'),context);
 const C=context.window.Contest,id=C.people[0].id;
-for(const [n,p] of [[0,0],[2,0],[3,10000],[4,10000],[5,20000],[6,20000],[7,40000],[8,40000],[9,50000],[11,50000],[12,60000],[14,60000],[15,70000],[30,70000]])assert.equal(C.reward(n),p);
+for(const [n,p] of [[0,0],[2,0],[3,10000],[4,10000],[5,20000],[6,20000],[7,35000],[8,35000],[9,45000],[11,45000],[12,60000],[14,60000],[15,70000],[30,70000]])assert.equal(C.reward(n),p);
 const s=C.empty();s.assigned[id][6]=4;s.assigned[id][29]=6;assert.equal(C.bonus(s.assigned[id]),4000);
 assert.equal(C.rank([5,5,3,0],5),1);assert.equal(C.rank([5,5,3,0],3),3);assert.equal(C.rank([0,0],0),null);
 assert.ok(Math.abs(C.progress(3)-100/6)<1e-9);assert.equal(C.progress(7),50);assert.equal(C.progress(15),100);
