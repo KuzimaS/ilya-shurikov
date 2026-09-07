@@ -74,5 +74,5 @@ window.ContestPeople = [
     {id:'freiman-elena',name:'Фрейман Елена',role:'ДПИ Менеджер · 502',dept:'Инвестиционный отдел'}
   ];
 
-window.ContestMilestones=[{n:3,p:10000},{n:5,p:25000},{n:7,p:40000},{n:9,p:50000},{n:12,p:60000},{n:15,p:70000}];
+window.ContestMilestones=[{n:3,p:10000},{n:5,p:20000},{n:7,p:40000},{n:9,p:50000},{n:12,p:60000},{n:15,p:70000}];
 
