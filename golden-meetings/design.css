@@ -1,0 +1,95 @@
+/* Спринт встреч: общая визуальная система. Без анимаций и тяжёлых эффектов. */
+:root{color-scheme:dark;--bg:#0b0e14;--bg2:#111620;--panel:#141a24;--panel2:#1b2330;--cell:#151c27;--line:#2a3443;--text:#f4f7fc;--muted:#a1aec2;--gold:#ffda57;--gold2:#ffe88e;--gold3:#ffca28;--green:#65e6b0;--blue:#7aa7ff;--shadow:none}
+html,body{background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
+button,input,select,textarea{font-family:inherit}button,a,select,input,summary{touch-action:manipulation}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #8cb4ff;outline-offset:3px}
+.btn,.select,.search,.scope,.page-controls button{background:#1c2533;border:1px solid #37465c;color:#eef4ff;border-radius:10px;box-shadow:none}
+.btn:hover,.page-controls button:hover{background:#273750;border-color:#7093c6}
+.btn.gold{background:#263b5f;border-color:#486897;color:#e4eeff;box-shadow:none}
+#editBtn,.tab.active{background:#487af2;color:#fff;border-color:#487af2;box-shadow:none}
+.btn.active{background:#274469;border-color:#72a4ff;color:#fff}
+.tabs{background:#141c28;border-color:var(--line);padding:5px;border-radius:12px}.tab{color:#b7c5d9;font-size:14px;min-height:42px}
+.stat{background:#1a2331;border:0;border-radius:12px;box-shadow:none}.stat span{color:#afbdd1}.stat b{color:#f3f7ff;font-weight:800;letter-spacing:-.03em}.stat.money{background:#17332f}.stat.money b{color:#78f0be}
+.sync-stamp,.sub,.person small,.name small,.updated,footer,.tech,.nav a{color:#a8b6cb}
+.sync-stamp.pending,.pending{color:#ffda57}.kicker,.eyebrow{color:#8bb2ff}.eyebrow:before{background:#8bb2ff}
+.title,.brand h1{letter-spacing:-.035em;font-weight:800}.scope{height:38px;font-weight:650}
+.range{border-color:#44629a;background:#1c2d4b;color:#c1d5ff;border-radius:8px}
+.weekend{background:#202332!important;color:#c3cae2!important}
+/* Одинаковое значение цвета в календаре и в правилах. */
+.day-cell.lv0,.metric.lv0,.m0{background:#151c27;color:#8695ab}
+.day-cell.lv1,.metric.lv1,.m1{background:#203b67;color:#d4e5ff}
+.day-cell.lv2,.metric.lv2,.m2{background:#3265b7;color:#fff}
+.day-cell.lv3,.metric.lv3,.m3{background:#ffda57;color:#27210b}
+.day-cell.lv4,.metric.lv4,.m4{background:#ffe990;color:#24200f;box-shadow:inset 0 0 0 2px #ffda57;outline:0}
+.day-cell,.mini-day{transition:none}.mini-day{border:0;box-shadow:none}
+.money-col,.bonus,.reward,.total{background:#17252a;color:#78f0be}.reward b,.earned b,.metric.money b,.total b{color:#78f0be}
+.gold-days{background:#202738;color:#ffe17a}
+.prize-dot{background:#20314d;border-color:#466393;color:#c5dbff}
+.fill{background:#6b9dff;box-shadow:none}.track{background:#2a3649}
+.node{background:#212e41;border-color:#526783;color:#cedaf0;box-shadow:none}.node.reached{background:#ffda57;border-color:#ffe88e;color:#29220b;box-shadow:none}.node.reached span{color:#ffdf75}
+/* ТВ: просторная шапка, отдельные карточки и компактные медали. */
+.contest-tv .screen{padding:16px 20px 10px;gap:10px;grid-template-rows:142px minmax(0,1fr) 28px}
+.contest-tv .screen:has(.tv-pages:not([hidden])){grid-template-rows:142px 34px minmax(0,1fr) 28px}
+.contest-tv header{background:#151d2a;border:1px solid #303e55;border-top:3px solid #6b9dff;border-radius:18px;padding:16px 20px;gap:16px}
+.contest-tv .title{font-size:clamp(24px,2vw,38px);line-height:1.1}.contest-tv .title-line{gap:14px}
+.contest-tv .kicker{font-size:12px;letter-spacing:.1em}.contest-tv .sub{font-size:13px;line-height:1.4}
+.contest-tv .sync-stamp{font-size:12px;margin-bottom:5px}.contest-tv .stats{gap:8px}
+.contest-tv .stat{min-width:108px;padding:12px 14px}.contest-tv .stat span{font-size:11px;letter-spacing:.02em}.contest-tv .stat b{font-size:clamp(25px,2.2vw,38px);line-height:1.1;margin-top:6px}
+.contest-tv .tv-pages{display:flex;justify-content:flex-end;gap:12px}.contest-tv .tv-pages[hidden]{display:none}
+.contest-tv .page-controls button{height:32px;min-height:32px;padding:4px 14px;font-size:13px}.contest-tv #mobileScreenNo{color:#bdcce0;font-size:12px}
+.contest-tv .board{background:transparent;border:0;border-radius:12px;box-shadow:none}
+.contest-tv .head,.contest-tv .dept-head{background:#1c2636;border:0;border-radius:10px}
+.contest-tv .board:not(:has(table)){gap:7px}.contest-tv .hcell{color:#b6c7df;font-size:12px;font-weight:650;letter-spacing:.02em;border:0}
+.contest-tv .data-row,.contest-tv .dept-row,.contest-tv .row{background:#161e2b;border:1px solid #2c394d;border-radius:12px}
+.contest-tv .cell{border:0}.contest-tv .person{padding-left:14px}.contest-tv .person b{font-size:clamp(15px,1.4vw,25px);font-weight:750;letter-spacing:-.02em}.contest-tv .person small{font-size:12px;color:#a9b9d0}
+.contest-tv .count{background:#1d2b42}.contest-tv .count b{color:#bcd5ff}.contest-tv .count small{color:#b4c6e0}
+.contest-tv .rank,.contest-tv .dept-rank{width:34px;height:34px;justify-self:center;align-self:center;margin:0;padding:0;border:1px solid #3e506b;border-radius:10px;background:#202c3e;color:#bdcce1;display:grid;place-items:center;font-size:17px;font-weight:850}
+.contest-tv .rank.top1,.contest-tv .dept-rank.top1{background:#ffda57;border-color:#ffea95;color:#29220b}
+.contest-tv .rank.top2,.contest-tv .dept-rank.top2{background:#c6dbf6;border-color:#e5efff;color:#1e3656}
+.contest-tv .rank.top3,.contest-tv .dept-rank.top3{background:#9eafff;border-color:#cbd3ff;color:#202952}
+.contest-tv .reward{background:#172e2b}.contest-tv .reward small,.contest-tv .next small{font-size:11px;color:#afc6c4;letter-spacing:.02em}
+.contest-tv .reward b{font-size:clamp(19px,1.65vw,29px)}.contest-tv .next{background:#192335;padding:8px}.contest-tv .next b{font-size:clamp(13px,1.1vw,20px);color:#dce8fc}
+.contest-tv .achievement-strip{gap:5px;padding:8px;align-items:center}
+.contest-tv .achievement-strip .step{background:#1d293c;border:1px solid #3a4d69;border-radius:8px;color:#b7c9e3;font-size:15px;box-shadow:none}
+.contest-tv .achievement-strip .step small{font-size:11px;color:inherit}.contest-tv .achievement-strip .step.reached{background:#ffda57;border-color:#ffeb9d;color:#27210b}
+.contest-tv .achievement-strip .step.active{border-color:#7eacff;color:#fff}
+.contest-tv .dept-row>div,.contest-tv .dept-head>div{border:0}.contest-tv .dept-name{color:#f0f5ff;font-size:clamp(20px,2vw,34px);font-weight:750;letter-spacing:-.03em}
+.contest-tv .dept-total{background:#1d2b42;color:#bcd5ff}.contest-tv .dept-rank{width:42px;height:42px;font-size:22px}
+.contest-tv table{border-collapse:separate;border-spacing:0;background:#151c27;border:1px solid #2c394d;border-radius:12px;overflow:hidden}
+.contest-tv th,.contest-tv td{border-color:#29364a}.contest-tv thead th{background:#1e2a3c;color:#bed0e9;height:46px}
+.contest-tv .name{background:#192233}.contest-tv .name b{font-size:clamp(15px,1.35vw,24px);font-weight:750}.contest-tv .day b{font-size:18px;color:#e3edfc}.contest-tv .day small{font-size:12px}
+.contest-tv .total{background:#1d2b42;color:#c8ddff}.contest-tv .bonus{background:#17332f;color:#78f0be}
+.contest-tv .row .metric span,.contest-tv .row .total span{color:#a8bbd5;font-size:11px;letter-spacing:.01em}.contest-tv .row .total{border-left:2px solid #65e6b0;background:#17332f;border-radius:0 8px 8px 0}
+.contest-tv footer{font-size:12px}.contest-tv footer a:hover{color:#b9d2ff}
+/* Панель управления: тот же язык, спокойная рабочая плотность. */
+.contest-admin .top{background:#111824;border-bottom:1px solid #303e55;padding-top:20px}
+.contest-admin .mark{background:#487af2;color:white;box-shadow:none;font-size:23px;font-weight:800;border-radius:12px}
+.contest-admin .brand h1{font-size:23px}.contest-admin .brand p{font-size:12px;letter-spacing:.04em;color:#acbdd4}
+.contest-admin .content{padding-top:18px}.contest-admin .hero-details{background:#151e2b;border-color:#303e55;border-radius:14px}
+.contest-admin .hero-details>summary{color:#bcd4ff;font-size:14px}.contest-admin .hero-main,.contest-admin .rules{background:#151e2b}.hero-main:after{display:none}
+.contest-admin .sync-bar{background:#17222f;border-color:#31445b;border-radius:14px}.contest-admin .sync-bar b{color:#a0e8d0;font-size:14px}.contest-admin .sync-bar p{font-size:13px}
+.contest-admin .board{background:#141c28;border-color:#303e55;border-radius:16px;box-shadow:none}.contest-admin .board-head{background:#1a2434;padding:16px 18px}.contest-admin .board-head h3{font-size:17px;letter-spacing:-.02em}
+.contest-admin table{background:#151c27}.contest-admin th,.contest-admin td{border-color:#293548}.contest-admin thead th{background:#1e2b3f;color:#b4c7e2;font-size:12px}
+.contest-admin .name-col{background:#192334}.contest-admin .name-col b{font-size:14px}.contest-admin .name-col small{color:#a5b7d0}.contest-admin .summary-col{background:#1c2a40;color:#c9ddfc}.contest-admin .money-col{background:#17332f;color:#78f0be}
+.contest-admin .group-row td,.contest-admin .held-group{background:#1f304c;color:#afceff;font-size:12px;letter-spacing:.06em}.contest-admin .held-group{border-radius:8px;padding:8px 10px;margin:12px 0 8px}
+.contest-admin .held-list{background:#101722}.contest-admin .held-row{background:#182231;border-color:#2e4059;border-radius:14px}.contest-admin .person b{font-size:15px}.contest-admin .held-fact b{color:#bcd5ff}.contest-admin .next-box b{color:#dae7fc}
+.contest-admin .earned{background:#17332f;border-radius:10px;padding:10px}.contest-admin .earned b{color:#78f0be;text-shadow:none}.contest-admin .earned span{color:#b2cfca}
+.contest-admin .rule-note{font-size:12px}.contest-admin .rule h3{font-size:14px}
+@media(min-width:1001px) and (max-height:760px){.contest-tv .screen{grid-template-rows:118px minmax(0,1fr) 24px;padding:10px 14px 6px;gap:6px}.contest-tv .screen:has(.tv-pages:not([hidden])){grid-template-rows:118px 32px minmax(0,1fr) 24px}.contest-tv header{padding:10px 16px}.contest-tv .title{font-size:24px}.contest-tv .sub{font-size:12px}.contest-tv .board:not(:has(table)){gap:4px}}
+@media(max-width:1000px){
+ .contest-tv .screen,.contest-tv .screen:has(.tv-pages:not([hidden])){display:flex;min-height:100vh;height:auto;padding:12px;gap:12px}
+ .contest-tv header{padding:18px 16px;border-radius:16px;gap:16px}.contest-tv .title{font-size:28px;line-height:1.15}.contest-tv .title-line{gap:10px}.contest-tv .scope{height:44px}
+ .contest-tv .stat{min-width:0;padding:12px}.contest-tv .stat b{font-size:28px}.contest-tv .stat span{font-size:12px}
+ .contest-tv .tv-pages{justify-content:space-between}.contest-tv .page-controls button{min-height:44px;height:44px}.contest-tv #mobileScreenNo{font-size:14px}
+ .contest-tv .rank{width:28px;height:30px;font-size:15px;border-radius:8px}.contest-tv .person b,.contest-tv .name b{font-size:18px}.contest-tv .person small,.contest-tv .name small{font-size:13px;line-height:1.5}
+ .contest-tv .data-row{border-radius:14px}.contest-tv .data-row .achievement-strip{padding:12px;gap:7px}.contest-tv .achievement-strip .step{min-height:52px;font-size:17px}.contest-tv .achievement-strip .step small{font-size:12px}
+ .contest-tv .data-row .reward,.contest-tv .data-row .next{padding:12px 16px}.contest-tv .reward b{font-size:26px}.contest-tv .next b{font-size:16px}.contest-tv .reward small,.contest-tv .next small{font-size:12px}
+ .contest-tv table{border:0;background:transparent}.contest-tv tbody tr{border-color:#30415a;border-radius:14px}.contest-tv td.name{padding:16px}.contest-tv td.metric{padding:12px 2px}.contest-tv td.metric::before{color:inherit;opacity:.9;font-size:11px}
+ .contest-tv .dept-head,.contest-tv .dept-row{grid-template-columns:44px minmax(0,1fr) 80px}.contest-tv .dept-name{font-size:17px;padding:12px}.contest-tv .dept-rank{width:30px;height:34px;font-size:18px}.contest-tv .dept-total{font-size:28px}
+ .contest-tv .row .rank{width:36px;height:36px}.contest-tv .row .person{padding-left:52px}.contest-tv .row .person b{font-size:20px}.contest-tv .row .metric span,.contest-tv .row .total span{font-size:12px}
+ .contest-admin .brand{min-width:0}.contest-admin .brand h1{font-size:23px}.contest-admin .brand p{font-size:11px;letter-spacing:0}.contest-admin .top{padding:16px 12px}.contest-admin .content{padding:12px}
+ .contest-admin .assigned-card{padding:16px 12px;margin:12px 0;background:#192334;border:1px solid #31445e;border-radius:14px}.contest-admin .assigned-card h4{font-size:18px}.contest-admin .assigned-card>small{font-size:13px;color:#acbdd4}
+ .contest-admin .mobile-days{gap:3px}.contest-admin .card-summary{gap:4px}.contest-admin .card-summary .money-col{background:#17332f}.contest-admin .card-summary small{color:#b4c7e0}
+ .contest-admin .held-row .earned{padding:12px}.contest-admin .person b{font-size:18px}.contest-admin .tabs{width:100%}.contest-admin .controls>div:first-child{width:100%}
+ .contest-admin .sync-bar .btn{flex:1;height:auto;min-height:44px;padding:8px;text-align:center;font-size:13px}.contest-admin .board-head h3{font-size:17px}
+}
