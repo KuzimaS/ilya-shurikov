@@ -38,7 +38,6 @@
   <script>
     window.tvPublished=Contest.cached();
     const allPeople=window.ContestPeople,allDays=Array.from({length:30},(_,i)=>i+1),key='golden-meetings-september-7-30-2026-v1',daysPerScreen=7,weeks=[6,13,20,27],formatter=new Intl.NumberFormat('ru-RU');
-    const mobile=matchMedia('(max-width:1000px)');
     let scopeValue=new URLSearchParams(location.search).get('scope')||'all';
     let screen=0,state,people=[],rowLimit=8,peoplePages=1,screenCount=1,rows=[],dayHeaders=[],deptRows=[];
     const rub=n=>formatter.format(n)+' ₽',weekday=d=>['вс','пн','вт','ср','чт','пт','сб'][new Date(2026,8,d).getDay()],level=n=>n>=4?4:n;
@@ -57,7 +56,7 @@
     function forward(){if(scopeValue==='departments')return;screen=(screen+1)%screenCount;render()}function backward(){if(scopeValue==='departments')return;screen=(screen-1+screenCount)%screenCount;render()}function refresh(){state=load();setPeople();totals();scopeValue==='departments'?renderDepartments():render()}
     function rebuild(){screen=0;state=load();rows=[];dayHeaders=[];deptRows=[];setPeople();const board=document.getElementById('board');board.replaceChildren();board.className='board';document.getElementById('title').textContent='Назначенные встречи';document.getElementById('sub').textContent='3 встречи за день дают золото, каждая следующая приносит +1 000 ₽';document.getElementById('hint').textContent='Итоги и бонусы за весь конкурс · 7–30 сентября';document.getElementById('range').style.display='';document.getElementById('tvPages').hidden=scopeValue==='departments';if(scopeValue==='departments'){buildDepartments();totals();renderDepartments()}else{build();totals();render()}}
     addEventListener('popstate',()=>{scopeValue=new URLSearchParams(location.search).get('scope')||'all';document.getElementById('scope').value=scopeValue;rebuild();});document.getElementById('prevScreen').onclick=backward;document.getElementById('nextScreen').onclick=forward;
-    buildScope();rebuild();setInterval(()=>{if(!document.hidden&&!mobile.matches&&scopeValue!=='departments')forward()},30000);addEventListener('keydown',e=>{if(e.target.matches('select,input,textarea,button'))return;if(e.key==='ArrowRight'||e.key==='PageDown')forward();if(e.key==='ArrowLeft'||e.key==='PageUp')backward()});
+    buildScope();rebuild();addEventListener('keydown',e=>{if(e.target.matches('select,input,textarea,button'))return;if(e.key==='ArrowRight'||e.key==='PageDown')forward();if(e.key==='ArrowLeft'||e.key==='PageUp')backward()});
     Contest.watch((data,status)=>{window.tvPublished=data;document.getElementById('syncStamp').textContent=status.message;document.getElementById('syncStamp').classList.toggle('pending',!!status.error);if(status.changed)refresh();});
   </script>
 </body>

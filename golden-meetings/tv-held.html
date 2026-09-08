@@ -41,7 +41,6 @@
   <script>
     window.tvPublished=Contest.cached();
     const allPeople=window.ContestPeople,milestones=window.ContestMilestones,key='golden-meetings-september-7-30-2026-v1',formatter=new Intl.NumberFormat('ru-RU');
-    const mobile=matchMedia('(max-width:1000px)');
     let scopeValue=new URLSearchParams(location.search).get('scope')||'all';
     let page=0,held={},people=[],rowLimit=10,pageCount=1,rows=[],deptRows=[];
     const rub=n=>formatter.format(n)+' ₽';
@@ -60,7 +59,7 @@
     function forward(){if(scopeValue==='departments')return;page=(page+1)%pageCount;render()}function backward(){if(scopeValue==='departments')return;page=(page-1+pageCount)%pageCount;render()}function refresh(){held=load();setPeople();totals();scopeValue==='departments'?renderDepartments():render()}
     function rebuild(){page=0;held=load();rows=[];deptRows=[];setPeople();const board=document.getElementById('board');board.replaceChildren();board.className='board';document.getElementById('title').textContent='Проведённые встречи';document.getElementById('sub').textContent='Награда за максимальную ступень · суммы ступеней не складываются';document.getElementById('hint').textContent='Золотая ячейка означает пройденную ступень';document.getElementById('tvPages').hidden=scopeValue==='departments';if(scopeValue==='departments'){buildDepartments();totals();renderDepartments()}else{build();totals();render()}}
     addEventListener('popstate',()=>{scopeValue=new URLSearchParams(location.search).get('scope')||'all';document.getElementById('scope').value=scopeValue;rebuild();});document.getElementById('prevScreen').onclick=backward;document.getElementById('nextScreen').onclick=forward;
-    buildScope();rebuild();setInterval(()=>{if(!document.hidden&&!mobile.matches&&pageCount>1)forward()},30000);addEventListener('keydown',e=>{if(e.target.matches('select,input,textarea,button'))return;if(e.key==='ArrowRight'||e.key==='PageDown')forward();if(e.key==='ArrowLeft'||e.key==='PageUp')backward()});
+    buildScope();rebuild();addEventListener('keydown',e=>{if(e.target.matches('select,input,textarea,button'))return;if(e.key==='ArrowRight'||e.key==='PageDown')forward();if(e.key==='ArrowLeft'||e.key==='PageUp')backward()});
     Contest.watch((data,status)=>{window.tvPublished=data;document.getElementById('syncStamp').textContent=status.message;document.getElementById('syncStamp').classList.toggle('pending',!!status.error);if(status.changed)refresh();});
   </script>
 </body>
