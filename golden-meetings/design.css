@@ -10,7 +10,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,su
 .btn.active{background:#274469;border-color:#72a4ff;color:#fff}
 .tabs{background:#141c28;border-color:var(--line);padding:5px;border-radius:12px}.tab{color:#b7c5d9;font-size:14px;min-height:42px}
 .stat{background:#1a2331;border:0;border-radius:12px;box-shadow:none}.stat span{color:#afbdd1}.stat b{color:#f3f7ff;font-weight:800;letter-spacing:-.03em}.stat.money{background:#17332f}.stat.money b{color:#78f0be}
-.sync-stamp,.sub,.person small,.name small,.updated,footer,.tech,.nav a{color:#a8b6cb}
+.sync-stamp,.sub,.person small,.name small,.updated,footer,.tech,.nav a{color:#a8b6cb}.person small,.name small{font-weight:450}
 .sync-stamp.pending,.pending{color:#ffda57}.kicker,.eyebrow{color:#8bb2ff}.eyebrow:before{background:#8bb2ff}
 .title,.brand h1{letter-spacing:-.035em;font-weight:800}.scope{height:38px;font-weight:650}
 .range{border-color:#44629a;background:#1c2d4b;color:#c1d5ff;border-radius:8px}
@@ -57,7 +57,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,su
 .contest-tv .dept-total{background:#1d2b42;color:#bcd5ff}.contest-tv .dept-rank{width:42px;height:42px;font-size:22px}
 .contest-tv table{border-collapse:separate;border-spacing:0;background:#151c27;border:1px solid #2c394d;border-radius:12px;overflow:hidden}
 .contest-tv th,.contest-tv td{border-color:#29364a}.contest-tv thead th{background:#1e2a3c;color:#bed0e9;height:46px}
-.contest-tv .name{background:#192233}.contest-tv .name b{font-size:clamp(15px,1.35vw,24px);font-weight:750}.contest-tv .day b{font-size:18px;color:#e3edfc}.contest-tv .day small{font-size:12px}
+.contest-tv .name{background:#192233;width:300px}.contest-tv .name b{font-size:clamp(15px,1.35vw,24px);font-weight:750}.contest-tv .day b{font-size:18px;color:#e3edfc}.contest-tv .day small{font-size:12px}
 .contest-tv .total{background:#1d2b42;color:#c8ddff}.contest-tv .bonus{background:#17332f;color:#78f0be}
 .contest-tv .row .metric span,.contest-tv .row .total span{color:#a8bbd5;font-size:11px;letter-spacing:.01em}.contest-tv .row .total{border-left:2px solid #65e6b0;background:#17332f;border-radius:0 8px 8px 0}
 .contest-tv footer{font-size:12px}.contest-tv footer a:hover{color:#b9d2ff}
@@ -84,9 +84,9 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,su
  .contest-tv .rank{width:28px;height:30px;font-size:15px;border-radius:8px}.contest-tv .person b,.contest-tv .name b{font-size:18px}.contest-tv .person small,.contest-tv .name small{font-size:13px;line-height:1.5}
  .contest-tv .data-row{border-radius:14px}.contest-tv .data-row .achievement-strip{padding:12px;gap:7px}.contest-tv .achievement-strip .step{min-height:52px;font-size:17px}.contest-tv .achievement-strip .step small{font-size:12px}
  .contest-tv .data-row .reward,.contest-tv .data-row .next{padding:12px 16px}.contest-tv .reward b{font-size:26px}.contest-tv .next b{font-size:16px}.contest-tv .reward small,.contest-tv .next small{font-size:12px}
- .contest-tv table{border:0;background:transparent}.contest-tv tbody tr{border-color:#30415a;border-radius:14px}.contest-tv td.name{padding:16px}.contest-tv td.metric{padding:12px 2px}.contest-tv td.metric::before{color:inherit;opacity:.9;font-size:11px}
+ .contest-tv table{border:0;background:transparent}.contest-tv tbody tr{border-color:#30415a;border-radius:14px}.contest-tv td.name{padding:16px;width:auto}.contest-tv td.metric{padding:12px 2px}.contest-tv td.metric::before{color:inherit;opacity:.9;font-size:11px}
  .contest-tv .dept-head,.contest-tv .dept-row{grid-template-columns:44px minmax(0,1fr) 80px}.contest-tv .dept-name{font-size:17px;padding:12px}.contest-tv .dept-rank{width:30px;height:34px;font-size:18px}.contest-tv .dept-total{font-size:28px}
- .contest-tv .row .rank{width:36px;height:36px}.contest-tv .row .person{padding-left:52px}.contest-tv .row .person b{font-size:20px}.contest-tv .row .metric span,.contest-tv .row .total span{font-size:12px}
+ .contest-tv .row .rank{width:36px;height:36px;justify-self:start}.contest-tv .row .person{padding-left:52px}.contest-tv .row .person b{font-size:20px}.contest-tv .row .metric span,.contest-tv .row .total span{font-size:12px}
  .contest-admin .brand{min-width:0}.contest-admin .brand h1{font-size:23px}.contest-admin .brand p{font-size:11px;letter-spacing:0}.contest-admin .top{padding:16px 12px}.contest-admin .content{padding:12px}
  .contest-admin .assigned-card{padding:16px 12px;margin:12px 0;background:#192334;border:1px solid #31445e;border-radius:14px}.contest-admin .assigned-card h4{font-size:18px}.contest-admin .assigned-card>small{font-size:13px;color:#acbdd4}
  .contest-admin .mobile-days{gap:3px}.contest-admin .card-summary{gap:4px}.contest-admin .card-summary .money-col{background:#17332f}.contest-admin .card-summary small{color:#b4c7e0}
