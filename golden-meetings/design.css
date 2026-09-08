@@ -93,3 +93,49 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,su
  .contest-admin .held-row .earned{padding:12px}.contest-admin .person b{font-size:18px}.contest-admin .tabs{width:100%}.contest-admin .controls>div:first-child{width:100%}
  .contest-admin .sync-bar .btn{flex:1;height:auto;min-height:44px;padding:8px;text-align:center;font-size:13px}.contest-admin .board-head h3{font-size:17px}
 }
+/* Выполнение цели всегда ярко-зелёное. Незавершённая работа остаётся синей. */
+:root{--green:#3bff85;--gold:#3bff85;--gold2:#8cffb6;--gold3:#20de69}
+.day-cell.lv3,.metric.lv3,.m3{background:#3bff85;color:#052b13;box-shadow:none}
+.day-cell.lv4,.metric.lv4,.m4{background:#8cffb6;color:#052b13;box-shadow:inset 0 0 0 2px #3bff85}
+.node.reached,.contest-tv .achievement-strip .step.reached{background:#3bff85;border-color:#8cffb6;color:#052b13;box-shadow:none}
+.node.reached span{color:#3bff85}
+.contest-tv .rank.top1,.contest-tv .dept-rank.top1{background:#3bff85;border-color:#8cffb6;color:#052b13}
+.contest-tv .rank.top2,.contest-tv .dept-rank.top2{background:#174a2c;border-color:#3bff85;color:#81ffad}
+.contest-tv .rank.top3,.contest-tv .dept-rank.top3{background:#183327;border-color:#368952;color:#86edab}
+.gold-days{background:#1b2636;color:#c7d6eb}
+.stat.money,.contest-tv .reward,.contest-admin .earned,.contest-admin .money-col,.contest-tv .bonus,.contest-tv .row .total{background:#143523;color:#3bff85}
+.stat.money b,.contest-tv .reward b,.contest-admin .earned b,.contest-tv .metric.money b,.contest-tv .total b{color:#3bff85}
+.contest-tv .row .total{border-color:#3bff85}
+.money-col[data-amount]:not([data-amount="0"]),.bonus[data-amount]:not([data-amount="0"]),.stat.money[data-amount]:not([data-amount="0"]),.earned[data-amount]:not([data-amount="0"]),.reward[data-amount]:not([data-amount="0"]),.contest-tv .row .total[data-amount]:not([data-amount="0"]){background:#3bff85;color:#052b13}
+[data-amount]:not([data-amount="0"])>b,[data-amount]:not([data-amount="0"])>small,[data-amount]:not([data-amount="0"])>span{color:inherit!important}
+.stat.money[data-amount="0"],.contest-tv .reward[data-amount="0"],.contest-admin .earned[data-amount="0"],.contest-admin .money-col[data-amount="0"],.contest-tv .bonus[data-amount="0"],.contest-tv .row .total[data-amount="0"]{background:#1b2636;color:#a6b5ca;border-color:#35435a}
+[data-amount="0"]>b,[data-amount="0"]>span,[data-amount="0"]>small{color:#a6b5ca!important}
+/* Проведённые: общая лестница выплат и одна цель на человека. */
+.prize-scale{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.prize-stop{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 14px;border:1px solid #31415a;border-radius:10px;background:#172131}
+.prize-stop span{font-size:12px;color:#aebfd7;white-space:nowrap}.prize-stop b{font-size:16px;color:#e5eeff;white-space:nowrap;letter-spacing:-.02em}
+.held-redesign .screen,.held-redesign .screen:has(.tv-pages:not([hidden])){display:flex;flex-direction:column;height:100vh;gap:10px}
+.held-redesign header{flex:none;min-height:130px}.held-redesign .prize-scale,.held-redesign .tv-pages,.held-redesign footer{flex:none}
+.held-redesign .board{flex:1;min-height:0;display:grid;grid-template-rows:repeat(var(--rows),minmax(0,1fr));gap:7px}
+.held-redesign .dept-board{flex:1;min-height:0}
+.contest-tv .finish-row{grid-template-columns:48px minmax(230px,1.2fr) 86px minmax(280px,1.5fr) 170px;gap:14px;padding:0 12px 0 0;align-items:center;border-radius:12px}
+.contest-tv .finish-row .person{padding:0}.contest-tv .finish-row .count{background:transparent;border-left:1px solid #34445d;padding:0}.contest-tv .finish-row .count b{font-size:30px;line-height:1.1}.contest-tv .finish-row .count small{font-size:11px}
+.contest-tv .finish-row .reward{border-radius:9px;margin:6px 0;padding:8px;align-self:stretch;justify-content:center;min-height:0}.contest-tv .finish-row .reward b{font-size:clamp(21px,1.7vw,30px);line-height:1.1}.contest-tv .finish-row .reward small{font-size:11px;margin:0 0 3px}
+.finish-row.achieved{border-left:3px solid #3bff85;background:#13271f}.finish-row.achieved .count b,.finish-row.achieved .held-fact b{color:#3bff85}
+.journey{min-width:0;padding:8px 0}.journey-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;line-height:1.2}.goal-label{font-size:14px;font-weight:750;color:#dce9ff}.remaining{font-size:12px;color:#b4c9e9;white-space:nowrap}
+.journey-bar{height:8px;border-radius:5px;background:#2b3a51;margin:7px 0;overflow:hidden}.journey-fill{height:100%;background:#6da3ff;border-radius:5px;max-width:100%;transition:none}
+.journey-target{font-size:12px;line-height:1.2;color:#a7bbda}.complete .journey-fill{background:#3bff85}.complete .goal-label,.complete .remaining{color:#3bff85}
+.contest-admin .held-list>.prize-scale{margin:8px 0 14px}.contest-admin .finish-row{grid-template-columns:minmax(190px,1fr) 72px minmax(240px,1.6fr) 165px;gap:20px;min-height:104px;padding:12px 16px}
+.contest-admin .finish-row .journey{grid-column:auto;grid-row:auto}.contest-admin .finish-row .earned{grid-column:auto;grid-row:auto;padding:12px;text-align:center}.contest-admin .finish-row .earned b{font-size:24px}.contest-admin .finish-row .journal-btn{display:block;margin-top:6px}
+@media(min-width:1001px) and (max-width:1400px){.contest-tv .finish-row{grid-template-columns:42px minmax(205px,1fr) 72px minmax(260px,1.3fr) 152px;gap:12px}.prize-stop{padding:10px;gap:6px}.prize-stop b{font-size:15px}.contest-tv .finish-row .person b{font-size:17px}}
+@media(min-width:1001px) and (max-height:800px){.held-redesign header{min-height:110px}.held-redesign .screen{gap:6px}.held-redesign .prize-stop{padding:6px 10px}.held-redesign .board{gap:4px}.contest-tv .finish-row .person b{font-size:15px}.contest-tv .finish-row .person small{font-size:11px}.contest-tv .finish-row .count b{font-size:24px}.journey-bar{height:6px;margin:4px 0}.journey-target{font-size:11px}.contest-tv .finish-row .reward{margin:3px 0;padding:4px}.contest-tv .finish-row .reward b{font-size:20px}}
+@media(max-width:1000px){
+ .held-redesign .screen,.held-redesign .screen:has(.tv-pages:not([hidden])){height:auto;min-height:100vh;gap:12px}.held-redesign header{min-height:0}
+ .prize-scale{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.prize-stop{flex-direction:column;align-items:flex-start;padding:10px;gap:4px}.prize-stop b{font-size:16px}.prize-stop span{font-size:12px}
+ .held-redesign .board{display:block}.contest-tv .finish-row{grid-template-columns:32px minmax(0,1fr) 62px;gap:0;padding:14px 12px 0;margin-bottom:12px}
+ .contest-tv .finish-row .rank{width:26px}.contest-tv .finish-row .person{padding:0 10px}.contest-tv .finish-row .person b{font-size:17px;line-height:1.25}.contest-tv .finish-row .person small{font-size:12px}.contest-tv .finish-row .count{border:0}.contest-tv .finish-row .count b{font-size:30px}.contest-tv .finish-row .count small{font-size:10px}
+ .contest-tv .finish-row .journey{grid-column:1/-1;padding:18px 2px}.journey-meta .goal-label{font-size:15px}.remaining{font-size:13px}.journey-target{font-size:13px;line-height:1.4}.journey-bar{height:10px;margin:10px 0}
+ .contest-tv .finish-row .reward{grid-column:1/-1;display:flex;flex-direction:row;align-items:center;justify-content:space-between;margin:0 -12px;padding:14px;border-radius:0 0 10px 10px}.contest-tv .finish-row .reward small{font-size:13px;margin:0}.contest-tv .finish-row .reward b{font-size:26px}
+ .contest-admin .finish-row{grid-template-columns:minmax(0,1fr) 66px;gap:12px;padding:16px 12px}.contest-admin .finish-row .journey{grid-column:1/-1;grid-row:auto;padding:4px 0 10px}.contest-admin .finish-row .earned{grid-column:1/-1;grid-row:auto;display:flex;align-items:center;justify-content:space-between;text-align:left}.contest-admin .finish-row .earned span{font-size:12px}.contest-admin .finish-row .earned b{font-size:26px;margin:0}
+}
+[hidden]{display:none!important}.empty-state{grid-column:1/-1;grid-row:1/-1;min-height:180px;display:grid;place-items:center;text-align:center;padding:24px;color:#afc1dc;font-size:18px}

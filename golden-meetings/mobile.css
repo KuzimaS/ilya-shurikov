@@ -48,7 +48,7 @@
   .screen td.total,.screen td.gold-days{grid-column:span 2;font-size:18px}.screen td.bonus{grid-column:span 3;font-size:18px}
   .screen td.total{grid-column:1/span 2}
   .screen td.total::before,.screen td.gold-days::before,.screen td.bonus::before{display:block;font-size:12px;font-weight:400;margin-bottom:6px}
-  .screen td.total::before{content:'Всего встреч'}.screen td.gold-days::before{content:'Золотых дней'}.screen td.bonus::before{content:'Начислено'}
+  .screen td.total::before{content:'Всего встреч'}.screen td.gold-days::before{content:'Дней с целью'}.screen td.bonus::before{content:'Начислено'}
   /* Общий топ-10. */
   .screen .row{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px;gap:14px;margin-bottom:12px}
   .screen .row .rank{grid-column:1;grid-row:1;z-index:1;align-self:start}.screen .row .person{grid-column:1/-1;grid-row:1;min-width:0;padding-left:54px}

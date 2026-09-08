@@ -5,6 +5,9 @@
   const period = {start:'2026-09-07',end:'2026-09-30'};
   const people = root.ContestPeople;
   const ids = new Set(people.map(p=>p.id));
+  const excludedIds = new Set(root.ContestExcludedIds||[]);
+  const departments = root.ContestDepartments||[...new Set(people.map(p=>p.dept))];
+  function scope(value){if(!value||value==='all'||value==='top10'||value==='departments')return value||'all';if(value.startsWith('dept:')&&departments.includes(value.slice(5)))return value;return 'all';}
   const milestones = root.ContestMilestones;
   const cacheKey = contestId+'-published-v2';
   const draftKey = contestId+'-draft-v2';
@@ -18,21 +21,21 @@
     if(!raw.assigned||typeof raw.assigned!=='object'||Array.isArray(raw.assigned))throw Error('В файле нет назначенных встреч');
     const s=empty();
     for(const [id,values] of Object.entries(raw.assigned)) {
-      if(!ids.has(id))throw Error('Неизвестный сотрудник: '+id);
+      if(!ids.has(id)&&!excludedIds.has(id))throw Error('Неизвестный сотрудник: '+id);
       if(!Array.isArray(values)||values.length!==30)throw Error('Ожидается календарь из 30 дат');
-      s.assigned[id]=values.map((n,i)=>{count(n);if(i<6&&n!==0)throw Error('Назначения до 7 сентября не входят в конкурс');return n;});
+      const checked=values.map((n,i)=>{count(n);if(i<6&&n!==0)throw Error('Назначения до 7 сентября не входят в конкурс');return n;});if(ids.has(id))s.assigned[id]=checked;
     }
     if(!legacy&&!Array.isArray(raw.heldEvents))throw Error('В файле нет журнала проведённых встреч');
     const seen=new Set();
     for(const e of raw.heldEvents||[]) {
-      if(!e||!ids.has(e.personId)||!/^\d{4}-\d{2}-\d{2}$/.test(e.date)||e.date<period.start||e.date>period.end||!/^[a-f0-9]{64}$/.test(e.id))throw Error('Проверьте сотрудника, дату и идентификатор проведённой встречи');
+      if(!e||(!ids.has(e.personId)&&!excludedIds.has(e.personId))||!/^\d{4}-\d{2}-\d{2}$/.test(e.date)||e.date<period.start||e.date>period.end||!/^[a-f0-9]{64}$/.test(e.id))throw Error('Проверьте сотрудника, дату и идентификатор проведённой встречи');
       if(seen.has(e.id))throw Error('Одна и та же встреча внесена дважды');
-      seen.add(e.id);s.heldEvents.push({id:e.id,personId:e.personId,date:e.date});s.held[e.personId]++;
+      seen.add(e.id);if(excludedIds.has(e.personId))continue;s.heldEvents.push({id:e.id,personId:e.personId,date:e.date});s.held[e.personId]++;
     }
     const unverified=legacy?raw.held:raw.unverifiedHeld;
     for(const [id,n] of Object.entries(unverified||{})) {
-      if(!ids.has(id))throw Error('Неизвестный сотрудник: '+id);
-      count(n);if(n){s.unverifiedHeld[id]=n;s.held[id]+=n;}
+      if(!ids.has(id)&&!excludedIds.has(id))throw Error('Неизвестный сотрудник: '+id);
+      count(n);if(n&&ids.has(id)){s.unverifiedHeld[id]=n;s.held[id]+=n;}
     }
     if(raw.updatedAt!==null&&raw.updatedAt!==undefined) {
       if(typeof raw.updatedAt!=='string'||!Number.isFinite(Date.parse(raw.updatedAt)))throw Error('Некорректное время обновления');
@@ -68,5 +71,5 @@
     }catch(e){lastError=e.message;notify(false);return false;}finally{clearTimeout(timer);busy=false;}
   }
   function watch(fn){listeners.push(fn);fn(published,{changed:true,message:message(),error:lastError,lastSuccess});if(!started){started=true;refresh();setInterval(()=>{if(!document.hidden)refresh();},30000);addEventListener('focus',refresh);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});}}
-  root.Contest={contestId,period,people,milestones,cacheKey,draftKey,empty,count,normalize,reward,next,bonus,total,rank,progress,summary,signature,cached,refresh,watch};
+  root.Contest={contestId,period,people,departments,scope,milestones,cacheKey,draftKey,empty,count,normalize,reward,next,bonus,total,rank,progress,summary,signature,cached,refresh,watch};
 })(typeof window==='undefined'?globalThis:window);

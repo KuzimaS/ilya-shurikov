@@ -16,8 +16,14 @@ assert.throws(()=>C.normalize({...s,heldEvents:[{...s.heldEvents[0],date:'2026-0
 assert.throws(()=>C.normalize({...s,heldEvents:[{...s.heldEvents[0],personId:'missing'}]}));
 const legacy=C.normalize({assigned:{},held:{[id]:7}},{legacy:true});assert.equal(legacy.unverifiedHeld[id],7);assert.equal(legacy.held[id],7);
 for(const name of ['index.html','tv-assigned.html','tv-held.html','tv-top10.html']){const html=fs.readFileSync(__dirname+'/'+name,'utf8');for(const [,script] of html.matchAll(/<script>([\s\S]*?)<\/script>/g))new vm.Script(script);for(const [,path] of html.matchAll(/<script src="\.\/([^"?]+)/g))assert.ok(fs.existsSync(__dirname+'/'+path));}
-assert.equal(C.people.length,65);assert.equal(new Set(C.people.map(p=>p.id)).size,65);
+assert.equal(C.people.length,39);assert.equal(new Set(C.people.map(p=>p.id )).size,39);
 C.normalize(JSON.parse(fs.readFileSync(__dirname+'/state.json','utf8')));
-console.log('PASS: выплаты, даты, дубли, импорт, миграция, места, прогресс, 65 участников и синтаксис страниц');
+console.log('PASS: выплаты, даты, дубли, импорт, миграция, места, прогресс, 39 участников и синтаксис страниц');
 
 assert.equal(C.milestones.length,6);assert.equal(C.next(3).n,5);assert.equal(C.next(5).n,7);
+
+const previous=JSON.parse(fs.readFileSync(__dirname+'/state.json','utf8'));previous.assigned['vlasov-nikita']=Array(30).fill(0);previous.assigned['vlasov-nikita'][6]=5;previous.heldEvents.push({personId:'vlasov-nikita',date:'2026-09-07',id:'e'.repeat(64)});
+const migrated=C.normalize(previous);assert.equal(JSON.stringify(C.summary(migrated)),JSON.stringify(C.summary(C.normalize(JSON.parse(fs.readFileSync(__dirname+'/state.json','utf8'))))));assert.equal(Object.keys(migrated.assigned).length,39);
+assert.equal(C.departments.length,11);assert.equal(C.scope('dept:Отдел Ерёменкова'),'all');assert.equal(C.scope('dept:ОП-4 · Демидова'),'dept:ОП-4 · Демидова');
+assert(!C.people.some(p=>['Власов Никита','Сметанкина Римма','Конвисар Дарья','Фрейман Елена'].includes(p.name)));assert.equal(C.people.find(p=>p.id==='amelchenko-sergey').dept,'Инвестиционный отдел');
+console.log('PASS: состав, перенос отделов и миграция старого кэша без участников адаптации');
