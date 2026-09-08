@@ -1,0 +1,80 @@
+/* Светлый спринт. Статичные цвета, без анимации и размытия. */
+:root{color-scheme:light;--bg:#eef4ff;--bg2:#f7faff;--panel:#fff;--panel2:#eaf1ff;--cell:#f3f6fb;--line:#d7e2f2;--text:#14294a;--muted:#58708f;--blue:#3465ef;--green:#3bff85;--gold:#3bff85;--shadow:none}
+html,body{background:#eef4ff;color:#14294a}
+.btn,.select,.search,.scope,.page-controls button,.round-btn,.held-number{background:#fff;border-color:#c7d7ee;color:#24456e}
+.btn:hover,.page-controls button:hover{background:#e5eeff;border-color:#3465ef}
+.btn.gold{background:#e7efff;border-color:#bed0ff;color:#2452bd}
+#editBtn,.tab.active,.btn.active{background:#3465ef;border-color:#3465ef;color:#fff}
+.tabs{background:#e4ecfb;border-color:#cfddf3}.tab{color:#4a6386}
+input::placeholder,textarea::placeholder{color:#657b98;opacity:1}
+.sync-stamp,.sub,.person small,.name small,.updated,footer,.tech,.nav a,.empty-state{color:#58708f}
+.sync-stamp.pending,.pending,.edit-tip{color:#a35a00}.kicker,.eyebrow{color:#3465ef}.eyebrow:before{background:#3465ef}
+.range{background:#fff0d9;border-color:#ffd092;color:#995400}
+.stat{background:#e9f0ff;border:1px solid #d6e3ff}.stat span{color:#496181}.stat b{color:#2452c4}
+.stat:nth-child(2){background:#ede9ff;border-color:#ded5ff}.stat:nth-child(2) b{color:#7143d8}
+.stat:nth-child(3){background:#fff0de;border-color:#ffdfb5}.stat:nth-child(3) b{color:#a55409}
+.stat.money{background:#3bff85;color:#052b13;border-color:#30df73}.stat.money b{color:inherit}
+.weekend{background:#f1eaff!important;color:#78519e!important}
+.day-cell.lv0,.metric.lv0,.m0{background:#f1f5fb;color:#8090a7}
+.day-cell.lv1,.metric.lv1,.m1{background:#dbeaff;color:#265aa7}
+.day-cell.lv2,.metric.lv2,.m2{background:#6ea3ff;color:#102f69}
+.day-cell.lv3,.metric.lv3,.m3{background:#3bff85;color:#052b13}
+.day-cell.lv4,.metric.lv4,.m4{background:#8cffb6;color:#052b13;box-shadow:inset 0 0 0 2px #29d971}
+.gold-days{background:#ecf3ff;color:#345880}.money-col,.bonus,.reward,.total{background:#edf3fa;color:#58708f}
+.prize-dot{background:#e9efff;border-color:#bbcfff;color:#3454b2}.prize-arrow{color:#7792b6}
+.contest-tv header{background:#fff;border-color:#d5e1f4;border-top:4px solid #3465ef}
+.contest-tv #mobileScreenNo{color:#58708f}
+.contest-tv .head,.contest-tv .dept-head{background:#e0eaff;color:#345880}
+.contest-tv .hcell{color:#345880}.contest-tv .data-row,.contest-tv .dept-row,.contest-tv .row{background:#fff;border-color:#d5e1f1}
+.contest-tv .person small,.contest-tv .name small{color:#58708f}
+.contest-tv .count{background:#eaf1ff}.contest-tv .count b,.contest-admin .held-fact b{color:#3465ef}.contest-tv .count small,.held-fact small{color:#607696}
+.contest-tv .rank,.contest-tv .dept-rank{background:#edf3fc;border-color:#d3e0f2;color:#647b9b}
+.contest-tv .rank.top1,.contest-tv .dept-rank.top1{background:#3bff85;border-color:#2cdd70;color:#052b13}
+.contest-tv .rank.top2,.contest-tv .dept-rank.top2{background:#a8ffca;border-color:#5ee894;color:#075629}
+.contest-tv .rank.top3,.contest-tv .dept-rank.top3{background:#ddffea;border-color:#8be5ae;color:#17633a}
+.contest-tv .reward,.contest-admin .earned{background:#edf3fa;color:#58708f}
+.contest-tv .reward small,.contest-tv .next small,.contest-admin .earned span{color:#58708f}
+.contest-tv .reward b,.contest-admin .earned b,.contest-tv .metric.money b,.contest-tv .total b{color:inherit}
+.contest-tv .next{background:#eaf1ff}.contest-tv .next b{color:#294b80}
+.contest-tv .dept-name{color:#14294a}.contest-tv .dept-total{background:#eaf1ff;color:#3465ef}
+.contest-tv table{background:#fff;border-color:#d5e1f1}.contest-tv th,.contest-tv td{border-color:#dae4f2}
+.contest-tv thead th{background:#e6eeff;color:#3c587e}.contest-tv .name{background:#fff}.contest-tv .day b{color:#294b80}
+.contest-tv .total{background:#eaf1ff;color:#294b80}.contest-tv .bonus{background:#edf3fa;color:#58708f}
+.contest-tv .row .metric span,.contest-tv .row .total span{color:#607696}.contest-tv .row .total{background:#edf3fa;border-color:#d1dfef;color:#58708f}
+.contest-tv .metric.money[data-amount]:not([data-amount="0"]){color:#087334}
+.contest-tv footer a:hover{color:#2452c4}
+.contest-admin .top{background:#fff;border-color:#d5e1f4;border-top:4px solid #3465ef}
+.contest-admin .mark{background:#3465ef;color:#fff}.contest-admin .brand p{color:#58708f}
+.contest-admin .hero-details,.contest-admin .hero-main,.contest-admin .rules{background:#fff;border-color:#d5e1f4}
+.contest-admin .hero-details>summary{color:#3465ef}.hero-main>p,.rule h3{color:#345880}
+.contest-admin .sync-bar{background:#e3f9ed;border-color:#b9e9cf}.contest-admin .sync-bar b{color:#147040}.contest-admin .sync-bar p{color:#427459}
+.contest-admin .board{background:#fff;border-color:#d5e1f4}.contest-admin .board-head{background:#f7faff}
+.contest-admin table{background:#fff}.contest-admin th,.contest-admin td{border-color:#dae4f2}
+.contest-admin thead th{background:#e6eeff;color:#3c587e}.contest-admin .name-col{background:#fff}.contest-admin .name-col b,.contest-admin .day-head b{color:#14294a}.contest-admin .name-col small{color:#607696}
+.contest-admin .summary-col{background:#eaf1ff;color:#294b80}.contest-admin .money-col{background:#edf3fa;color:#58708f}
+.contest-admin .group-row td,.contest-admin .held-group{background:#e3ecff;color:#3465bd}
+.contest-admin .held-list{background:#f3f7ff}.contest-admin .held-row{background:#fff;border-color:#d5e1f1}.contest-admin .held-row:hover{border-color:#a7c2f1}
+.contest-admin .next-box b{color:#294b80}.contest-admin .admin-menu>summary{color:#345880;border-color:#c7d7ee;background:#f7faff}
+.contest-admin .assigned-card{background:#fff;border-color:#d5e1f1}.contest-admin .assigned-card>small,.mobile-day>small,.contest-admin .card-summary small{color:#58708f}
+.contest-admin .card-summary .summary-col,.contest-admin .card-summary .money-col{background:#eaf1ff}
+dialog,.dialog{background:#fff;color:#14294a;border-color:#c1d3ed;box-shadow:0 12px 40px #14294a20}dialog::backdrop{background:#20375566}
+dialog p,dialog small{color:#58708f}dialog input:not([type=checkbox]),dialog textarea{background:#f7faff;color:#14294a;border-color:#b9cde8}.event-row{border-color:#d7e2f2}.error{color:#b63c20!important}.toast{background:#fff;color:#14294a;border-color:#b9cde8}
+.stat.money[data-amount="0"],.contest-tv .reward[data-amount="0"],.contest-admin .earned[data-amount="0"],.contest-admin .money-col[data-amount="0"],.contest-tv .bonus[data-amount="0"],.contest-tv .row .total[data-amount="0"]{background:#edf3fa;color:#657b98;border-color:#d1dfef}
+[data-amount="0"]>b,[data-amount="0"]>small,[data-amount="0"]>span{color:#657b98!important}
+.money-col[data-amount]:not([data-amount="0"]),.bonus[data-amount]:not([data-amount="0"]),.stat.money[data-amount]:not([data-amount="0"]),.earned[data-amount]:not([data-amount="0"]),.reward[data-amount]:not([data-amount="0"]),.contest-tv .row .total[data-amount]:not([data-amount="0"]){background:#3bff85;color:#052b13;border-color:#2cdd70}
+/* Цветные призы и шесть точек на единой шкале всего конкурса. */
+.prize-stop{background:#e7eeff;border-color:#c7d8ff;border-top:3px solid #4a75f5}.prize-stop span{color:#4b6288}.prize-stop b{color:#2452bd}
+.prize-stop:nth-child(2){background:#eee9ff;border-color:#d8c9ff;border-top-color:#8d64ef}.prize-stop:nth-child(2) b{color:#7143c4}
+.prize-stop:nth-child(3){background:#ffe9f2;border-color:#f7cde0;border-top-color:#ee75a5}.prize-stop:nth-child(3) b{color:#b53d73}
+.prize-stop:nth-child(4){background:#fff0df;border-color:#ffdcaf;border-top-color:#f4a33d}.prize-stop:nth-child(4) b{color:#9d5807}
+.prize-stop:nth-child(5){background:#def7ff;border-color:#b5e8f8;border-top-color:#39bada}.prize-stop:nth-child(5) b{color:#117b97}
+.prize-stop:nth-child(6){background:#dcffe9;border-color:#abecc5;border-top-color:#31d873}.prize-stop:nth-child(6) b{color:#087334}
+.contest-tv .finish-row .count{border-color:#d7e2f2}.finish-row.achieved,.contest-admin .finish-row.achieved{background:#f0fff5;border-left:3px solid #3bff85}.finish-row.achieved .count b,.finish-row.achieved .held-fact b{color:#087334}
+.goal-label{color:#294b80}.remaining{color:#3465ef;font-weight:700}.journey-target{color:#58708f}
+.journey-bar,.held-redesign .journey-bar{position:relative;overflow:visible;height:6px;margin:10px 11px 10px 0;background:#dce6f6;border-radius:8px}
+.journey-fill{background:#4c7bff;border-radius:8px}
+.journey-dot{position:absolute;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:20px;height:20px;border-radius:50%;border:2px solid #cbdaf0;background:#f7faff;color:#7187a5;font-size:10px;font-weight:800;line-height:1}
+.journey-dot.current{border-color:#3465ef;background:#e5edff;color:#2452bd}.journey-dot.reached{border-color:#22cb64;background:#3bff85;color:#052b13}
+.complete .goal-label,.complete .remaining{color:#087334}.complete .journey-fill{background:#3bff85}
+@media(min-width:1001px){.held-redesign .journey-meta{font-size:12px}.held-redesign .goal-label{font-size:12px}.held-redesign .journey-bar{margin-top:8px;margin-bottom:8px}.held-redesign .journey-dot{width:17px;height:17px;font-size:9px}.held-redesign .journey-target{font-size:10px}}
+@media(max-width:1000px){.contest-tv tbody tr{border-color:#d5e1f1}.contest-tv .data-row .reward{border-color:#d7e2f2}.journey-bar,.held-redesign .journey-bar{height:8px;margin-top:16px;margin-bottom:16px;margin-right:12px}.journey-dot{width:24px;height:24px;font-size:11px}.contest-admin .card-summary .money-col[data-amount]:not([data-amount="0"]){background:#3bff85}.contest-admin .card-summary .money-col[data-amount="0"]{background:#edf3fa}}
