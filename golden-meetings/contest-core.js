@@ -15,6 +15,20 @@
     return {schemaVersion:2,contestId,period:{...period},assigned:Object.fromEntries(people.map(p=>[p.id,Array(30).fill(0)])),heldEvents:[],unverifiedHeld:{},held:Object.fromEntries(people.map(p=>[p.id,0])),updatedAt:null};
   }
   function count(n) {if(typeof n!=='number'||!Number.isSafeInteger(n)||n<0||n>100000)throw Error('Количество встреч должно быть целым неотрицательным числом');return n;}
+  function journal(events,kind){
+    if(!Array.isArray(events))throw Error('Ожидается журнал встреч');
+    const result=[],seen=new Set(),clients=new Map();
+    for(const e of events){
+      if(!e||(!ids.has(e.personId)&&!excludedIds.has(e.personId))||!/^2026-09-\d{2}$/.test(e.date)||e.date<period.start||e.date>period.end||!/^[a-f0-9]{64}$/.test(e.id))throw Error('Проверьте сотрудника, дату и идентификатор встречи');
+      if(e.clientKey!==undefined&&!/^[a-f0-9]{64}$/.test(e.clientKey))throw Error('Некорректный идентификатор клиента');
+      if(excludedIds.has(e.personId))continue;
+      if(seen.has(e.id))throw Error('Одна и та же встреча внесена дважды');seen.add(e.id);
+      if(e.clientKey){if(clients.has(e.clientKey)){const first=clients.get(e.clientKey),p=people.find(p=>p.id===first.personId);throw Error('Этот клиент уже зачтён: '+p.name+', '+first.date+'. Повтор в '+(kind==='assigned'?'назначениях':'проведениях')+' не засчитывается');}clients.set(e.clientKey,e);}
+      const item={id:e.id,personId:e.personId,date:e.date};if(e.clientKey)item.clientKey=e.clientKey;if(e.occurredAt){if(!/^2026-09-\d{2}T\d{2}:\d{2}:\d{2}\+03:00$/.test(e.occurredAt)||e.occurredAt.slice(0,10)!==e.date||!Number.isFinite(Date.parse(e.occurredAt)))throw Error('Некорректное время встречи');item.occurredAt=e.occurredAt;}result.push(item);
+    }return result;
+  }
+  function assignedCounts(events){const a=Object.fromEntries(people.map(p=>[p.id,Array(30).fill(0)]));for(const e of events)a[e.personId][Number(e.date.slice(-2))-1]++;return a;}
+  function validateForPublish(raw){const s=normalize(raw);if(!Array.isArray(s.assignedEvents)||[...s.assignedEvents,...s.heldEvents].some(e=>!e.clientKey)||Object.values(s.unverifiedHeld).some(n=>n>0))throw Error('Для защиты от повторов нужны журналы с ID клиента. Возьмите свежие данные с сайта или загрузите полную выгрузку встреч.');return s;}
   function normalize(raw,{legacy=false}={}) {
     if(!raw||typeof raw!=='object'||Array.isArray(raw))throw Error('Неверный формат файла');
     if(!legacy&&(raw.schemaVersion!==2||raw.contestId!==contestId||raw.period?.start!==period.start||raw.period?.end!==period.end))throw Error('Файл должен относиться к конкурсу 7–30 сентября 2026');
@@ -26,12 +40,8 @@
       const checked=values.map((n,i)=>{count(n);if(i<6&&n!==0)throw Error('Назначения до 7 сентября не входят в конкурс');return n;});if(ids.has(id))s.assigned[id]=checked;
     }
     if(!legacy&&!Array.isArray(raw.heldEvents))throw Error('В файле нет журнала проведённых встреч');
-    const seen=new Set();
-    for(const e of raw.heldEvents||[]) {
-      if(!e||(!ids.has(e.personId)&&!excludedIds.has(e.personId))||!/^\d{4}-\d{2}-\d{2}$/.test(e.date)||e.date<period.start||e.date>period.end||!/^[a-f0-9]{64}$/.test(e.id))throw Error('Проверьте сотрудника, дату и идентификатор проведённой встречи');
-      if(seen.has(e.id))throw Error('Одна и та же встреча внесена дважды');
-      seen.add(e.id);if(excludedIds.has(e.personId))continue;s.heldEvents.push({id:e.id,personId:e.personId,date:e.date});s.held[e.personId]++;
-    }
+    if(raw.assignedEvents!==undefined){s.assignedEvents=journal(raw.assignedEvents,'assigned');const expected=assignedCounts(s.assignedEvents);for(const p of people)if(expected[p.id].some((n,i)=>n!==s.assigned[p.id][i]))throw Error('Назначения должны совпадать с журналом клиентов: '+p.name);s.assigned=expected;}
+    s.heldEvents=journal(raw.heldEvents||[],'held');for(const e of s.heldEvents)s.held[e.personId]++;
     const unverified=legacy?raw.held:raw.unverifiedHeld;
     for(const [id,n] of Object.entries(unverified||{})) {
       if(!ids.has(id)&&!excludedIds.has(id))throw Error('Неизвестный сотрудник: '+id);
@@ -50,7 +60,7 @@
   const rank=(values,value)=>value>0?1+values.filter(v=>v>value).length:null;
   function progress(n) {const index=milestones.findIndex(m=>n<m.n);if(index<0)return 100;const previous=index?milestones[index-1].n:0;return (index+(n-previous)/(milestones[index].n-previous))/milestones.length*100;}
   const summary=s=>({assigned:people.reduce((n,p)=>n+total(s.assigned[p.id]),0),held:people.reduce((n,p)=>n+s.held[p.id],0),money:people.reduce((n,p)=>n+bonus(s.assigned[p.id])+reward(s.held[p.id]),0)});
-  const signature=s=>JSON.stringify([s.assigned,s.heldEvents,s.unverifiedHeld]);
+  const signature=s=>JSON.stringify([s.assigned,s.assignedEvents,s.heldEvents,s.unverifiedHeld]);
   function cached(){try{return normalize(JSON.parse(localStorage.getItem(cacheKey)))}catch{return empty();}}
   let localStorageHasCache=false;
   let published=cached(),listeners=[],busy=false,lastSuccess=null,lastError=null,started=false;
@@ -62,7 +72,7 @@
     try {
       const response=await fetch('./state.json?t='+Date.now(),{cache:'no-store',signal:controller.signal});
       if(!response.ok)throw Error('HTTP '+response.status);
-      const s=normalize(await response.json());
+      const s=validateForPublish(await response.json());
       if(Object.values(s.unverifiedHeld).some(n=>n>0))throw Error('Опубликованы встречи без дат');
       const changed=signature(s)!==signature(published)||s.updatedAt!==published.updatedAt;
       published=s;lastSuccess=Date.now();lastError=null;
@@ -71,5 +81,5 @@
     }catch(e){lastError=e.message;notify(false);return false;}finally{clearTimeout(timer);busy=false;}
   }
   function watch(fn){listeners.push(fn);fn(published,{changed:true,message:message(),error:lastError,lastSuccess});if(!started){started=true;refresh();setInterval(()=>{if(!document.hidden)refresh();},30000);addEventListener('focus',refresh);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});}}
-  root.Contest={contestId,period,people,departments,scope,milestones,cacheKey,draftKey,empty,count,normalize,reward,next,bonus,total,rank,progress,summary,signature,cached,refresh,watch};
+  root.Contest={contestId,period,people,departments,scope,milestones,cacheKey,draftKey,empty,count,normalize,validateForPublish,assignedCounts,reward,next,bonus,total,rank,progress,summary,signature,cached,refresh,watch};
 })(typeof window==='undefined'?globalThis:window);

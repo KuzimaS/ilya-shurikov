@@ -27,3 +27,21 @@ const migrated=C.normalize(previous);assert.equal(JSON.stringify(C.summary(migra
 assert.equal(C.departments.length,11);assert.equal(C.scope('dept:Отдел Ерёменкова'),'all');assert.equal(C.scope('dept:ОП-4 · Демидова'),'dept:ОП-4 · Демидова');
 assert(!C.people.some(p=>['Власов Никита','Сметанкина Римма','Конвисар Дарья','Фрейман Елена'].includes(p.name)));assert.equal(C.people.find(p=>p.id==='amelchenko-sergey').dept,'Инвестиционный отдел');
 console.log('PASS: состав, перенос отделов и миграция старого кэша без участников адаптации');
+
+// Клиент уникален в категории за весь конкурс, включая другого сотрудника и день.
+const live=C.validateForPublish(JSON.parse(fs.readFileSync(__dirname+'/state.json','utf8')));
+const clone=()=>JSON.parse(JSON.stringify(live));
+for(const kind of ['assigned','held']){
+ const candidate=clone(),field=kind+'Events',original=candidate[field][0];
+ candidate[field].push({...original,id:'f'.repeat(64),personId:C.people.find(p=>p.id!==original.personId).id,date:'2026-09-30',occurredAt:undefined});
+ if(kind==='assigned')candidate.assigned=C.assignedCounts(candidate.assignedEvents);
+ assert.throws(()=>C.validateForPublish(candidate),/клиент уже зачтён/);
+}
+const manual=clone();manual.assigned[id][8]++;assert.throws(()=>C.validateForPublish(manual),/совпадать с журналом/);
+const noJournal=clone();delete noJournal.assignedEvents;assert.throws(()=>C.validateForPublish(noJournal),/журналы с ID клиента/);
+const noClient=clone();delete noClient.heldEvents[0].clientKey;assert.throws(()=>C.validateForPublish(noClient),/журналы с ID клиента/);
+const both=C.empty();both.assignedEvents=[{id:'a'.repeat(64),clientKey:'b'.repeat(64),personId:id,date:'2026-09-07'}];both.assigned=C.assignedCounts(both.assignedEvents);both.heldEvents=[{id:'c'.repeat(64),clientKey:'b'.repeat(64),personId:id,date:'2026-09-08'}];assert.equal(C.summary(C.validateForPublish(both)).held,1);
+assert.equal(new Set(live.assignedEvents.map(e=>e.clientKey)).size,live.assignedEvents.length);
+assert.equal(new Set(live.heldEvents.map(e=>e.clientKey)).size,live.heldEvents.length);
+new vm.Script(fs.readFileSync(__dirname+'/admin.js','utf8'));
+console.log('PASS: повторы клиентов между сотрудниками и датами, запрет чисел без журнала, отдельный зачёт назначения и проведения');

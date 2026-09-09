@@ -69,9 +69,9 @@
     [hidden]{display:none!important}body{min-width:0}.top{position:static;backdrop-filter:none;background:#09121f}.topline{flex-wrap:wrap}.brand{min-width:240px}.actions{flex-wrap:wrap}.content{padding-top:12px}.hero-details{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;background:#0d1928}.hero-details>summary{padding:12px 18px;cursor:pointer;font-weight:700;color:#f4c766}.hero{margin:0;grid-template-columns:1fr 1fr}.hero-main,.rules{border:0;border-radius:0;box-shadow:none}.hero-main{padding:14px 18px}.hero h2{font-size:24px}.stats{margin-top:14px}.sync-bar{display:flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:#101b2b}.sync-bar>div{flex:1}.sync-bar b{font-size:13px}.sync-bar p{margin:3px 0 0;color:#a3b4ca;font-size:12px}.pending,.sync-bar p.pending{color:#ffd36a}.controls{flex-wrap:wrap;margin:12px 0}.filters{flex-wrap:wrap}.search{width:190px}.table-wrap{max-height:calc(100vh - 270px);min-height:280px}.held-list{max-height:calc(100vh - 270px)}.name-col{min-width:205px;width:205px;max-width:205px;padding:0 9px!important}.day-head,.day-cell{width:38px;min-width:38px}.day-input{font-size:13px;min-width:0}.summary-col{width:84px;min-width:84px}.money-col{width:115px;min-width:115px;position:sticky;right:0;z-index:7;background:#16202b}.money-col b{font-size:14px}thead .money-col{z-index:10}.held-row{grid-template-columns:220px 65px minmax(290px,1fr) 165px 145px;gap:12px;min-height:96px}.journal-btn{height:28px;font-size:11px;margin-top:7px}.held-fact{text-align:center}.held-fact b{font-size:28px;display:block}.held-fact small{font-size:11px;display:block;color:#a5b5c9}.track-wrap{padding-right:14px}.nodes{display:block}.node{position:absolute;top:50%;transform:translate(-50%,-50%)}.node span{color:#b1bed0;font-size:10px}.next-box span,.earned span{color:#a7b7ca}.next-box b{font-size:14px}.person small{color:#a7b7ca}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #72baff;outline-offset:2px}dialog{width:min(640px,95vw);max-height:85vh;overflow:auto;background:#101b2a;color:var(--text);border:1px solid #45607d;border-radius:18px;padding:24px}dialog::backdrop{background:#02060cd9}dialog h2{font-size:21px;margin-top:0}dialog p,dialog small{color:#b5c4d7;line-height:1.5}.dialog-title{display:flex;justify-content:space-between;gap:10px;align-items:center}dialog label{display:block;margin:12px 0}dialog input:not([type=checkbox]),dialog textarea{display:block;width:100%;padding:10px;margin-top:6px;background:#09121f;color:white;border:1px solid #45607d;border-radius:8px;font:inherit}.event-row{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #30445f;padding:9px 0}.error{color:#ffbd86!important}.toast{max-width:min(600px,90vw)}
     @media(max-width:1000px){.held-row{grid-template-columns:minmax(160px,1fr) 65px 145px;gap:12px}.track-wrap{grid-column:1/-1;grid-row:2;padding-bottom:25px}.next-box{grid-column:1/3;grid-row:3}.earned{grid-column:3;grid-row:3}.hero{grid-template-columns:1fr}.top{padding:12px}.content{padding:12px}.sync-bar{flex-wrap:wrap}.sync-bar>div{flex-basis:100%}.held-list{max-height:none}.name-col{min-width:165px;width:165px;max-width:165px}.name-col b{font-size:12px}.filters .select,.search{min-width:0;width:auto;max-width:100%}.board-head{gap:10px}.board-head p{font-size:11px}}
   </style>
-  <link rel="stylesheet" href="./mobile.css?v=15">
-  <link rel="stylesheet" href="./design.css?v=15">
-  <link rel="stylesheet" href="./light.css?v=15">
+  <link rel="stylesheet" href="./mobile.css?v=16">
+  <link rel="stylesheet" href="./design.css?v=16">
+  <link rel="stylesheet" href="./light.css?v=16">
 </head>
 <body class="contest-admin">
   <div class="shell" id="app">
@@ -82,9 +82,9 @@
           <button class="btn" id="importBtn">Импорт</button><input class="file" id="importFile" type="file" accept="application/json">
           <button class="btn" id="exportBtn">Резервная копия</button>
           <button class="btn" id="undoBtn" disabled>Отменить</button><button class="btn gold" id="publishBtn">Опубликовать для ТВ</button>
-          <a class="btn" href="./tv-assigned.html?v=15" target="_blank">ТВ: назначенные</a>
-          <a class="btn" href="./tv-held.html?v=15" target="_blank">ТВ: проведённые</a>
-          <a class="btn gold" href="./tv-top10.html?v=15" target="_blank">ТВ: топ-10</a>
+          <a class="btn" href="./tv-assigned.html?v=16" target="_blank">ТВ: назначенные</a>
+          <a class="btn" href="./tv-held.html?v=16" target="_blank">ТВ: проведённые</a>
+          <a class="btn gold" href="./tv-top10.html?v=16" target="_blank">ТВ: топ-10</a>
           
 </div></details></div>
       </div>
@@ -104,7 +104,7 @@
           </div>
         </div>
         <div class="rules">
-          <div class="rule"><h3>Назначения за день</h3><div class="mini-days"><div class="mini-day m0">0</div><div class="mini-day m1">1</div><div class="mini-day m2">2</div><div class="mini-day m3">3</div><div class="mini-day m4">4+</div></div><p class="rule-note">С четвёртой встречи: +1 000 ₽ за каждую</p></div>
+          <div class="rule"><h3>Назначения за день</h3><div class="mini-days"><div class="mini-day m0">0</div><div class="mini-day m1">1</div><div class="mini-day m2">2</div><div class="mini-day m3">3</div><div class="mini-day m4">4+</div></div><p class="rule-note">С четвёртой встречи: +1 000 ₽ за каждую. Один клиент за конкурс учитывается один раз в каждой категории.</p></div>
           <div class="rule"><h3>Награды за проведённые</h3><div class="prize-line"><div class="prize-dot">3</div><span class="prize-arrow">›</span><div class="prize-dot">5</div><span class="prize-arrow">›</span><div class="prize-dot">7</div><span class="prize-arrow">›</span><div class="prize-dot">9</div><span class="prize-arrow">›</span><div class="prize-dot">12</div><span class="prize-arrow">›</span><div class="prize-dot">15</div></div><p class="rule-note">Одна итоговая сумма за максимальную ступень. Награды ступеней не складываются.</p></div>
         </div>
       </section></details>
@@ -115,7 +115,7 @@
       </section>
 
       <section class="board">
-        <div class="board-head"><div><h3 id="boardTitle">Ежедневные назначения</h3><p id="boardSubtitle">Нажмите «Ввести результаты», чтобы заполнить календарь</p></div><p id="updatedAt">Данные ещё не обновлялись</p></div>
+        <div class="board-head"><div><h3 id="boardTitle">Ежедневные назначения</h3><p id="boardSubtitle">Нажмите «Ввести результаты», затем день сотрудника, чтобы открыть журнал</p></div><p id="updatedAt">Данные ещё не обновлялись</p></div>
         <nav id="adminPager" class="page-controls" aria-label="Страницы сотрудников" hidden><button id="prevPeople" type="button">Назад</button><span id="peoplePage" role="status"></span><button id="nextPeople" type="button">Далее</button></nav>
         <div id="assignedView" class="table-wrap"></div>
         <div id="heldView" class="held-list" hidden></div>
@@ -125,14 +125,14 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <dialog id="journalDialog"><div class="dialog-title"><h2 id="journalTitle"></h2><button class="btn" data-close="journalDialog">Закрыть</button></div>
-    <p>Одна строка = одна фактически проведённая встреча. Используйте уникальный ID встречи из CRM. Повторное внесение этого ID исключено.</p>
-    <form id="eventForm"><label>Дата проведения<input id="eventDate" type="date" min="2026-09-07" max="2026-09-30" required></label><label>ID встреч, по одному на строку<textarea id="eventIds" rows="3" placeholder="Например: meeting-12345" required></textarea></label>
+    <p>Один клиент учитывается один раз в назначениях и один раз в проведениях за весь конкурс, независимо от сотрудника. Повторный ID встречи или клиента не принимается.</p>
+    <form id="eventForm"><label><span id="eventDateLabel">Дата проведения</span><input id="eventDate" type="date" min="2026-09-07" max="2026-09-30" required></label><label>ID встречи; ID лида, по одной паре на строку<textarea id="eventIds" rows="3" placeholder="10001; 90000001" required></textarea></label>
     <label id="legacyBox" hidden><input type="checkbox" id="replaceLegacy"> Распределить старые встречи без дат (осталось <b id="legacyCount"></b>), без повторного начисления</label><button class="btn gold" id="addEventBtn" type="submit">Добавить встречи</button></form>
-    <p class="error" id="journalError" role="alert"></p><div id="journalEntries"></div><small>ID сохраняется в виде отпечатка, исходное значение не публикуется. Перенос встречи: уберите старую запись и внесите её с правильной датой.</small>
+    <p class="error" id="journalError" role="alert"></p><div id="journalEntries"></div><small>ID сохраняется в виде отпечатка, исходное значение не публикуется. Перенос и повторное назначение не дают нового зачёта. При исправлении даты измените исходную запись без добавления второй.</small>
   </dialog>
   <dialog id="importDialog"><h2>Проверка импорта</h2><p id="importSummary"></p><div class="dialog-actions"><button class="btn" data-close="importDialog">Отмена</button><button class="btn gold" id="confirmImport">Применить импорт</button></div></dialog>
   <dialog id="publishDialog"><h2>Опубликовать результаты для ТВ</h2><p>1. Скачайте подготовленные данные.</p><button class="btn gold" id="downloadPublic">Скачать state.json</button><p>2. Загрузите этот файл в папку конкурса на GitHub и нажмите Commit changes.</p><a class="btn" href="https://github.com/KuzimaS/ilya-shurikov/upload/gh-pages/golden-meetings" target="_blank" rel="noopener">Открыть загрузку на GitHub</a><p>После завершения публикации GitHub все ТВ-панели подхватят данные автоматически. Проверка выполняется каждые 30 секунд. Изменения в техничке до этого остаются локальными.</p><button class="btn" data-close="publishDialog">Закрыть</button></dialog>
-  <script src="./contest-data.js?v=15"></script>
-  <script src="./contest-core.js?v=15"></script>
-  <script src="./admin.js?v=15"></script>
+  <script src="./contest-data.js?v=16"></script>
+  <script src="./contest-core.js?v=16"></script>
+  <script src="./admin.js?v=16"></script>
 </body></html>
