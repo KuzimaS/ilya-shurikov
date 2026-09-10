@@ -1404,11 +1404,11 @@
       "occurredAt": "2026-09-09T16:24:00+03:00"
     },
     {
-      "id": "523c5d94310cc27c166078a854c63f82029a5d1246fd5e3a77e07b5ab1600aa0",
-      "personId": "faybushevich-evgeny",
+      "id": "7f49df9cf5afb9faca6dae928ffd1789ee3d04c15982f94f8086b27398d59350",
+      "personId": "mitrochenkov-andrey",
       "date": "2026-09-09",
       "clientKey": "8b0642a2ece88ecb4cf6c7e5ea3970e4a519734f386e083b5c0da0492c583317",
-      "occurredAt": "2026-09-09T18:58:00+03:00"
+      "occurredAt": "2026-09-09T19:38:00+03:00"
     },
     {
       "id": "41954569d69ddf54efbe95474f7593f32fbd3d20b56d0fd764338c7fdf005d1a",
@@ -1419,7 +1419,7 @@
     }
   ],
   "unverifiedHeld": {},
-  "updatedAt": "2026-09-10T06:51:34.067Z",
+  "updatedAt": "2026-09-10T16:02:51.049Z",
   "assignedEvents": [
     {
       "id": "9c319b27ae6df754fdbc61a016f8c0a7381fea5cbb231b2792dd5c16cf7ac44f",

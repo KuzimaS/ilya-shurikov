@@ -23,6 +23,23 @@ for(const r of source){
 if(!old.assignedEvents){const coverage=C.assignedCounts(incoming.assigned);for(const p of C.people)for(let i=6;i<30;i++)assert.ok(coverage[p.id][i]>=old.assigned[p.id][i],'Нужна полная история назначений: '+p.name);}
 for(const e of old.heldEvents)if(!e.clientKey)assert.ok(incoming.held.some(r=>r.id===e.id),'Нужна исходная запись проведённой встречи');
 const rejected=[];
-function merge(kind,previous){const rows=[...previous.filter(e=>!sourceDates[kind].has(e.date)),...incoming[kind]].sort((a,b)=>(a.occurredAt||a.date).localeCompare(b.occurredAt||b.date)||a.id.localeCompare(b.id));const ids=new Set(),clients=new Map(),out=[];for(const e of rows){assert.ok(e.clientKey,'Нет клиента в старом журнале');const first=clients.get(e.clientKey);if(ids.has(e.id)||first){rejected.push({type:kind,personId:e.personId,date:e.date,keptPersonId:first?.personId,reason:ids.has(e.id)?'meeting':'client'});continue;}ids.add(e.id);clients.set(e.clientKey,e);out.push(e);}return out;}
+const overrides=JSON.parse(fs.readFileSync(path.join(base,'attribution-overrides.json'),'utf8'));
+assert.ok(Array.isArray(overrides));
+const overrideKeys=new Set();
+for(const o of overrides){
+ assert.ok(['assigned','held'].includes(o.kind));assert.match(o.clientKey,/^[a-f0-9]{64}$/);assert.match(o.preferredEventId,/^[a-f0-9]{64}$/);
+ assert.ok(C.people.some(p=>p.id===o.personId));assert.ok(o.date>=C.period.start&&o.date<=C.period.end);
+ const key=o.kind+':'+o.clientKey;assert.ok(!overrideKeys.has(key),'Дубли ручных решений');overrideKeys.add(key);
+}
+function merge(kind,previous){
+ let rows=[...previous.filter(e=>!sourceDates[kind].has(e.date)),...incoming[kind]];
+ for(const o of overrides.filter(o=>o.kind===kind)){
+  const matches=rows.filter(e=>e.clientKey===o.clientKey);if(!matches.length)continue;
+  assert.ok(matches.some(e=>e.id===o.preferredEventId&&e.personId===o.personId&&e.date===o.date),'В выгрузке нет встречи, выбранной ручным решением: '+o.personId+' '+o.date);
+  rows=rows.filter(e=>{if(e.clientKey!==o.clientKey||e.id===o.preferredEventId)return true;rejected.push({type:kind,personId:e.personId,date:e.date,keptPersonId:o.personId,reason:'manual-attribution'});return false;});
+ }
+ rows.sort((a,b)=>(a.occurredAt||a.date).localeCompare(b.occurredAt||b.date)||a.id.localeCompare(b.id));
+ const ids=new Set(),clients=new Map(),out=[];for(const e of rows){assert.ok(e.clientKey,'Нет клиента в старом журнале');const first=clients.get(e.clientKey);if(ids.has(e.id)||first){rejected.push({type:kind,personId:e.personId,date:e.date,keptPersonId:first?.personId,reason:ids.has(e.id)?'meeting':'client'});continue;}ids.add(e.id);clients.set(e.clientKey,e);out.push(e);}return out;
+}
 const state={...old,assignedEvents:merge('assigned',old.assignedEvents||[]),heldEvents:merge('held',old.heldEvents)};state.assigned=C.assignedCounts(state.assignedEvents);const valid=C.validateForPublish(state);valid.updatedAt=C.signature(valid)===C.signature(old)?old.updatedAt:new Date().toISOString();delete valid.held;
 fs.writeFileSync(target,JSON.stringify(valid,null,2)+'\n');console.log(JSON.stringify({summary:C.summary(C.normalize(valid)),rejected},null,2));
