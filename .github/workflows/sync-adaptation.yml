@@ -37,4 +37,4 @@ jobs:
           git commit -m "Sync adaptation dashboard data"
           git push origin HEAD:gh-pages
 
-# Manual refresh: Vlasov payments and settled bonuses 2026-09-10
+# Manual refresh: September 10 held meetings 2026-09-11
