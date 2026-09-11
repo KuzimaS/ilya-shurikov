@@ -24,7 +24,7 @@ assert.equal(C.milestones.length,6);assert.equal(C.next(3).n,5);assert.equal(C.n
 
 const previous=JSON.parse(fs.readFileSync(__dirname+'/state.json','utf8'));previous.assigned['vlasov-nikita']=Array(30).fill(0);previous.assigned['vlasov-nikita'][6]=5;previous.heldEvents.push({personId:'vlasov-nikita',date:'2026-09-07',id:'e'.repeat(64)});
 const migrated=C.normalize(previous);assert.equal(JSON.stringify(C.summary(migrated)),JSON.stringify(C.summary(C.normalize(JSON.parse(fs.readFileSync(__dirname+'/state.json','utf8'))))));assert.equal(Object.keys(migrated.assigned).length,39);
-assert.equal(C.departments.length,11);assert.equal(C.scope('dept:Отдел Ерёменкова'),'all');assert.equal(C.scope('dept:ОП-4 · Демидова'),'dept:ОП-4 · Демидова');
+assert.equal(C.departments.length,6);assert.equal(C.scope('dept:Отдел Ерёменкова'),'all');assert.equal(C.scope('dept:ОП-4 · Демидова'),'dept:ОП-4 · Демидова');
 assert(!C.people.some(p=>['Власов Никита','Сметанкина Римма','Конвисар Дарья','Фрейман Елена'].includes(p.name)));assert.equal(C.people.find(p=>p.id==='amelchenko-sergey').dept,'Инвестиционный отдел');
 console.log('PASS: состав, перенос отделов и миграция старого кэша без участников адаптации');
 

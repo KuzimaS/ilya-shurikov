@@ -21,9 +21,9 @@
     footer{display:flex;align-items:center;justify-content:space-between;padding:0 4px;color:#71849a;font-size:11px}.screen-no{color:#a6b3c2}.screen-no b{color:#efb83d}.tech{color:#71849a;text-decoration:none}.tech:hover{color:#ffd875}
     @media(max-width:1500px){.screen{padding:10px 12px 6px;grid-template-rows:116px minmax(0,1fr) 28px}.title{font-size:25px}.name{width:260px}.stat{min-width:105px}.name b{font-size:14px}.name small{font-size:10px}.bonus{width:105px}.dept-head,.dept-row{grid-template-columns:72px minmax(280px,1fr) 210px}.dept-name{padding:0 22px;font-size:20px}.dept-total{font-size:29px}.dept-rank{font-size:23px}}
  .sync-stamp{font-size:11px;color:#aab9cc;margin-bottom:6px}.sync-stamp.pending{color:#ffd36a}.screen{grid-template-rows:126px minmax(0,1fr) 30px}.sub{font-size:12px}.stat span{font-size:10px}.stat b{font-size:23px}.scope:focus-visible,a:focus-visible{outline:2px solid #72baff}.dept-name{font-size:clamp(20px,1.8vw,34px)}.dept-total{font-size:clamp(28px,2.3vw,44px)}   </style>
-  <link rel="stylesheet" href="./mobile.css?v=16">
-  <link rel="stylesheet" href="./design.css?v=16">
-  <link rel="stylesheet" href="./light.css?v=16">
+  <link rel="stylesheet" href="./mobile.css?v=17">
+  <link rel="stylesheet" href="./design.css?v=17">
+  <link rel="stylesheet" href="./light.css?v=17">
 </head>
 <body class="contest-tv">
   <div class="screen">
@@ -33,10 +33,10 @@
     </header>
     <nav class="page-controls tv-pages" id="tvPages" aria-label="Переключение экрана"><button id="prevScreen" type="button">Назад</button><span id="mobileScreenNo" role="status"></span><button id="nextScreen" type="button">Далее</button></nav>
     <main class="board" id="board"></main>
-    <footer><span id="hint">Стрелки на пульте переключают экран</span><span class="screen-no" id="screenNo"></span><a class="tech" href="./index.html?v=16">Техническая панель</a></footer>
+    <footer><span id="hint">Стрелки на пульте переключают экран</span><span class="screen-no" id="screenNo"></span><a class="tech" href="./index.html?v=17">Техническая панель</a></footer>
   </div>
-  <script src="./contest-data.js?v=16"></script>
-  <script src="./contest-core.js?v=16"></script>
+  <script src="./contest-data.js?v=17"></script>
+  <script src="./contest-core.js?v=17"></script>
   <script>
     window.tvPublished=Contest.cached();
     const allPeople=window.ContestPeople,allDays=Array.from({length:30},(_,i)=>i+1),key='golden-meetings-september-7-30-2026-v1',daysPerScreen=7,weeks=[6,13,20,27],formatter=new Intl.NumberFormat('ru-RU');

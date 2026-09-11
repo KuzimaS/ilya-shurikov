@@ -241,11 +241,6 @@ window.ContestDepartments = [
   "ОП-3 · Гужова",
   "ОП-4 · Демидова",
   "ОП-5 · Левченко",
-  "ОП-6 · Новый отдел",
-  "ОП-7 · Новый отдел",
-  "ОП-8 · Новый отдел",
-  "ОП-9 · Новый отдел",
-  "ОП-10 · Новый отдел",
   "Инвестиционный отдел"
 ];
 window.ContestExcludedIds = ["kuznetsov-anton","kuznetsov-alexander","fomenko-roman","skorobogatova-ekaterina","vlasov-nikita","dombrauskaite-victoria","gurov-vitaly","kryuchkova-nadezhda","eremenkov-sergey","usachev-yury","vorobev-vyacheslav","kosyreva-alena","ryzhov-alexander","dolzhikov-anton","ostroglyad-sergey","zholtyak-artem","smetankina-rimma","gagarintseva-angelina","balyuk-kirill","sinitsin-roman","konvisar-darya","shlenkov-vadim","vafin-vyacheslav","novik-igor","gromov-alexander","vagabova-elvira","freiman-elena"];
