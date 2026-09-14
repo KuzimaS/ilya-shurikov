@@ -145,7 +145,7 @@
       0,
       1,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -177,9 +177,9 @@
       1,
       7,
       0,
+      2,
       0,
-      0,
-      0,
+      3,
       0,
       0,
       0,
@@ -211,7 +211,7 @@
       1,
       0,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -243,7 +243,7 @@
       0,
       0,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -273,7 +273,7 @@
       2,
       2,
       3,
-      0,
+      1,
       0,
       0,
       0,
@@ -401,8 +401,8 @@
       2,
       0,
       2,
-      0,
-      0,
+      1,
+      1,
       0,
       0,
       0,
@@ -465,8 +465,8 @@
       0,
       0,
       0,
-      0,
-      0,
+      2,
+      1,
       0,
       0,
       0,
@@ -497,7 +497,7 @@
       0,
       2,
       3,
-      0,
+      1,
       0,
       0,
       0,
@@ -561,7 +561,7 @@
       4,
       2,
       1,
-      0,
+      4,
       0,
       0,
       0,
@@ -593,9 +593,9 @@
       3,
       3,
       1,
-      0,
-      0,
-      0,
+      3,
+      3,
+      4,
       0,
       0,
       0,
@@ -625,8 +625,8 @@
       2,
       9,
       2,
-      0,
-      0,
+      1,
+      2,
       0,
       0,
       0,
@@ -722,8 +722,8 @@
       1,
       2,
       0,
-      0,
-      0,
+      2,
+      2,
       0,
       0,
       0,
@@ -785,9 +785,9 @@
       5,
       3,
       1,
+      7,
       0,
-      0,
-      0,
+      1,
       0,
       0,
       0,
@@ -817,7 +817,7 @@
       0,
       2,
       1,
-      0,
+      2,
       0,
       0,
       0,
@@ -850,7 +850,7 @@
       2,
       1,
       0,
-      0,
+      2,
       0,
       0,
       0,
@@ -881,7 +881,7 @@
       0,
       1,
       0,
-      0,
+      3,
       0,
       0,
       0,
@@ -914,8 +914,8 @@
       0,
       0,
       0,
-      0,
-      0,
+      4,
+      1,
       0,
       0,
       0,
@@ -978,7 +978,7 @@
       0,
       0,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -1105,8 +1105,8 @@
       2,
       4,
       2,
-      0,
-      0,
+      1,
+      2,
       0,
       0,
       0,
@@ -1169,7 +1169,7 @@
       0,
       1,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -1465,10 +1465,178 @@
       "date": "2026-09-10",
       "clientKey": "617495fe45dfc1e6bda97accb1d07ad35845965abe4402cc70cb341b58e5a142",
       "occurredAt": "2026-09-10T20:08:00+03:00"
+    },
+    {
+      "id": "1bb95eb005a2c22fae746664d59210cf1bed757d83bdf04ef090bd9d87d8589e",
+      "personId": "kocharovsky-arseny",
+      "date": "2026-09-11",
+      "clientKey": "50707c5662e6fc8ec5621585dd490eeeac4da56ff8bd601366842076d4898ca5",
+      "occurredAt": "2026-09-11T11:03:00+03:00"
+    },
+    {
+      "id": "40ff7bf8b8eea6212e5746e4ec73a084dd0c0515acbca7e2fae04e68da794845",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-11",
+      "clientKey": "72c29051729d15fdf13cce81239d1450f28fb164e97f2cb0a465c0d9208a8b53",
+      "occurredAt": "2026-09-11T11:20:00+03:00"
+    },
+    {
+      "id": "306b385b003fba7390ffcda0585fc3ab821c9b6442c27110cf175250b5d0bca7",
+      "personId": "lazovoy-sergey",
+      "date": "2026-09-11",
+      "clientKey": "0e73397ef7c9604a349cac9cdeaf52f0d6a19b44184187494546c8e3bd0634eb",
+      "occurredAt": "2026-09-11T11:55:00+03:00"
+    },
+    {
+      "id": "0451f77cf0285a2aea6959015a31c5a8b3ea20143aeaaff85ada7b4dd9dc3f06",
+      "personId": "gradesko-tamara",
+      "date": "2026-09-11",
+      "clientKey": "eaadd38f773d511449d205536754a78b4b33befabbb07db139abf8cf90e98180",
+      "occurredAt": "2026-09-11T12:10:00+03:00"
+    },
+    {
+      "id": "5b1e5126c3c70ad3854a42c548df0870822c1bbe5202e008f7a637c6b47e2711",
+      "personId": "lebedev-artem",
+      "date": "2026-09-11",
+      "clientKey": "9240fb18dbc99c5d1a9ce02bdb35db6acbdb17d21b070f6b12cbd16237ac54ce",
+      "occurredAt": "2026-09-11T13:07:00+03:00"
+    },
+    {
+      "id": "64279a3c0bc450101886ab0728a1b29b7712d790360f10b0429e0c2266f5acc5",
+      "personId": "egorov-dmitry",
+      "date": "2026-09-11",
+      "clientKey": "b9dacb6457813028cacb721f09295114e90cd81b2c49a340ff833ce80bf1ace5",
+      "occurredAt": "2026-09-11T18:01:00+03:00"
+    },
+    {
+      "id": "dbda5a4e7703a8d6f1226714bfc3b1f840c08551a812263e5938a3eb99492aef",
+      "personId": "kimaev-stanislav",
+      "date": "2026-09-11",
+      "clientKey": "7e8b3ee31038f54d9b0b1b10959b47130278f260f8ae3ee04e62c1df37ff355b",
+      "occurredAt": "2026-09-11T18:04:00+03:00"
+    },
+    {
+      "id": "b13a5ea3a24773a76505717d0b3fed49f645e71704464fc678abbba229d4396d",
+      "personId": "shcherbakov-andrey",
+      "date": "2026-09-11",
+      "clientKey": "d54874cdae8bf294a6ffb49394fc62ad15310030e0098db5b2052b7dd322ace0",
+      "occurredAt": "2026-09-11T18:20:00+03:00"
+    },
+    {
+      "id": "aeae7099ffcca3061ab6a4b8fd1ca677eb32272777748d10a449924851a480f3",
+      "personId": "panasiy-ekaterina",
+      "date": "2026-09-11",
+      "clientKey": "39014512f867f15efd384d5a84b6ff1b2287540cd09081fe87adf3ade55503cd",
+      "occurredAt": "2026-09-11T18:54:00+03:00"
+    },
+    {
+      "id": "ae92b8a31a8dce1300d1c05a8a6dcb6df17e1eba38640b4b076c2f1612e26dcb",
+      "personId": "lebedev-artem",
+      "date": "2026-09-11",
+      "clientKey": "ca55faa335d805993059e7e220c845a274fabed3b2199514edccafd321e07e79",
+      "occurredAt": "2026-09-11T19:29:00+03:00"
+    },
+    {
+      "id": "6836cf6cbb0f8186e2ce53d27e798d85fa6a3447652ffb6cd6b68ac5c4eb88d1",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-11",
+      "clientKey": "6efff40b98b80b24e0b407c8c1e4950b94a2a3dfe6541efa8eafc61b83707b98",
+      "occurredAt": "2026-09-11T19:47:00+03:00"
+    },
+    {
+      "id": "3dc469044f894ac1b481a0842bf991bf84ce18b464ef8af769b5bb2c8930eeb1",
+      "personId": "demkin-denis",
+      "date": "2026-09-12",
+      "clientKey": "104b818181834f8e63c6f6f393f5e8d5e7b8d6e1611b8fbdd7b1bfd26a5161f3",
+      "occurredAt": "2026-09-12T12:03:00+03:00"
+    },
+    {
+      "id": "939d4bd4a11c4b0fa687ab221822214a1f489144936cb06b1caff32cb6501618",
+      "personId": "lazovoy-sergey",
+      "date": "2026-09-12",
+      "clientKey": "4753f82feb4f9380f3ae7ca2c51f849389706b98ffe3073a89e0e25177bc28ea",
+      "occurredAt": "2026-09-12T14:12:00+03:00"
+    },
+    {
+      "id": "60fe7e4acf2d33ad17ad2a49cc8c5e4be80edc43666543e04162b35e57a535cd",
+      "personId": "kocharovsky-arseny",
+      "date": "2026-09-12",
+      "clientKey": "502c0faa5b61dca384c5e2d900497045b3e5cb4f4e0527d68e90fbce42607577",
+      "occurredAt": "2026-09-12T15:49:00+03:00"
+    },
+    {
+      "id": "c96cb7115a44ceab8e159baf31416552ce0bbc876aa8d537e671b4505265cd0a",
+      "personId": "semchenko-stepan",
+      "date": "2026-09-12",
+      "clientKey": "5d4c59fe75620a1dcb378af0a982b707010640168d559f29ebe581d58b9f2d03",
+      "occurredAt": "2026-09-12T15:55:00+03:00"
+    },
+    {
+      "id": "3ee2b8394f803b8d6bc0e2b11bf493af12cf609c781c5fde274ca0541d7914dd",
+      "personId": "artemov-evgeny",
+      "date": "2026-09-12",
+      "clientKey": "29c2b83882be3d7814645c37887101b1590ce6fcf72be09bf7c00d049942532c",
+      "occurredAt": "2026-09-12T18:03:00+03:00"
+    },
+    {
+      "id": "c40e6820f6068653bfe1ab4c6491c3c0f240c7762d1a9664adb58b71869aca30",
+      "personId": "lebedev-artem",
+      "date": "2026-09-12",
+      "clientKey": "65ba544656f474bb6d1d6c30654f6e1f4cfc1c6a81ca50182deb4e8657ccc67f",
+      "occurredAt": "2026-09-12T18:04:00+03:00"
+    },
+    {
+      "id": "720a795f953b4a2cb68c261b1071c80ddaa627bab497ea2ac5059ac2560439fa",
+      "personId": "kocharovsky-arseny",
+      "date": "2026-09-13",
+      "clientKey": "f92ca88eee347d6c80fcab07dba63436462ca0dbe95cd24419df69c6a51a9965",
+      "occurredAt": "2026-09-13T11:54:00+03:00"
+    },
+    {
+      "id": "d284e473f32801969b2b6067f0bcdc0415ffb7e7fb899031634d6d74c46c426e",
+      "personId": "artemov-evgeny",
+      "date": "2026-09-13",
+      "clientKey": "84084782df33a0addcdaa8868b8a42ccfd58d6c97cc5da7e280a3a672426858c",
+      "occurredAt": "2026-09-13T12:35:00+03:00"
+    },
+    {
+      "id": "3d99304518b780ad52f87c15f94685dcc2b7709a22133b96dca06f2cc0a530d6",
+      "personId": "zemlyukov-ilya",
+      "date": "2026-09-13",
+      "clientKey": "af47dc3d552a155d2389cc7ad237adf7a30b93921d45f9df81c1cbf592917a2f",
+      "occurredAt": "2026-09-13T12:42:00+03:00"
+    },
+    {
+      "id": "3effb1c669cfdd188c609074bf136cd15ec36ae818b4c3f521e660468a9ce4e7",
+      "personId": "bushin-dmitry",
+      "date": "2026-09-13",
+      "clientKey": "5ca2da4c375158b40567c9eedfe8986dcc8b5e284759c501b523e26aef4f93a5",
+      "occurredAt": "2026-09-13T14:08:00+03:00"
+    },
+    {
+      "id": "9d25f19e965d82b61aa46693b03064858487055a29cc7d416e421bf75270320a",
+      "personId": "kocharovsky-arseny",
+      "date": "2026-09-13",
+      "clientKey": "40225183bf6a1d5bd6390e06a12d7ebb311b2d121799b4760ec4604f3d238348",
+      "occurredAt": "2026-09-13T15:55:00+03:00"
+    },
+    {
+      "id": "757ba3cf3e6b9202be9b01cdaf7effc8d4ec0ccb83ce1ae994f057abeed53939",
+      "personId": "gradesko-tamara",
+      "date": "2026-09-13",
+      "clientKey": "0a7d06485cfd4e0282bf9bf1831464d3fbe791d089cabc6fcf3e3b750e8ba048",
+      "occurredAt": "2026-09-13T16:26:00+03:00"
+    },
+    {
+      "id": "6167b65a98979a2468ba16675029e7e9853afde92972988f1189dacd6b1756bb",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-13",
+      "clientKey": "cb802e4abf9ba9f274acdd9cff5c2629d53e0b37ce3cc0ac286ec71e246a021a",
+      "occurredAt": "2026-09-13T16:35:00+03:00"
     }
   ],
   "unverifiedHeld": {},
-  "updatedAt": "2026-09-11T06:50:43.912Z",
+  "updatedAt": "2026-09-14T07:06:48.029Z",
   "assignedEvents": [
     {
       "id": "9c319b27ae6df754fdbc61a016f8c0a7381fea5cbb231b2792dd5c16cf7ac44f",
@@ -2414,6 +2582,433 @@
       "date": "2026-09-10",
       "clientKey": "98e21ac77a60b1998526766b44178942494882d936655ad1c1b4ba4465c4b178",
       "occurredAt": "2026-09-10T20:13:05+03:00"
+    },
+    {
+      "id": "944f3e53dd51578704769304460e4598cc44c889a065adf2d25daeabfe309fdb",
+      "personId": "krasikov-konstantin",
+      "date": "2026-09-11",
+      "clientKey": "64f9b5cb345bf3e0367ba769274d8367c0938079eaf6280f1a45abf431c6c477",
+      "occurredAt": "2026-09-11T09:58:49+03:00"
+    },
+    {
+      "id": "280526dd62d6bdb8b4e2c0fa43194c3d03415e616f483bd2a6051150274e9644",
+      "personId": "shcherbakov-andrey",
+      "date": "2026-09-11",
+      "clientKey": "d54874cdae8bf294a6ffb49394fc62ad15310030e0098db5b2052b7dd322ace0",
+      "occurredAt": "2026-09-11T09:59:08+03:00"
+    },
+    {
+      "id": "e121aa99f9c3e07348449aecaf919a7827784b796129c31fe5671ff7d59b43f7",
+      "personId": "morev-pavel",
+      "date": "2026-09-11",
+      "clientKey": "70ad532a38fe2d1665ef94346c0d92f644fb875cd4a1c4ba03b581ea71fbb7f4",
+      "occurredAt": "2026-09-11T11:09:09+03:00"
+    },
+    {
+      "id": "682e593c72503f34e6c0597ff0926d01f993c7969429b3c09ea073480858112f",
+      "personId": "krasikov-konstantin",
+      "date": "2026-09-11",
+      "clientKey": "e0280550c7c59609422d8bb4ca7b5f0dc58051121d8df347349ba5325583d00d",
+      "occurredAt": "2026-09-11T11:15:52+03:00"
+    },
+    {
+      "id": "c99da4f4817a53a76c97903c1d31dc6d9351f20a0eacf796627e414c4a692791",
+      "personId": "semchenko-stepan",
+      "date": "2026-09-11",
+      "clientKey": "5d4c59fe75620a1dcb378af0a982b707010640168d559f29ebe581d58b9f2d03",
+      "occurredAt": "2026-09-11T12:40:55+03:00"
+    },
+    {
+      "id": "d66d67da36bfef76a4573aaec9948b04afb901c2813ca060dcff96a62acfb4d6",
+      "personId": "vakhlaev-daniil",
+      "date": "2026-09-11",
+      "clientKey": "e1f90f6452f6cbc8bfa80d08cb76817fd036484df606dc7ae67c2a1f0624dbbd",
+      "occurredAt": "2026-09-11T13:41:01+03:00"
+    },
+    {
+      "id": "5328e312fef43406b81b69f5be442c080b2287792213fe47ba5234454013108f",
+      "personId": "krasikov-konstantin",
+      "date": "2026-09-11",
+      "clientKey": "8771180e81f2c8fc60044b8db571fd21d8da70437869cc64281fdf208fda6e3e",
+      "occurredAt": "2026-09-11T13:47:20+03:00"
+    },
+    {
+      "id": "298950c49b3869c6e121f6dd95e94a136cc38fc190365ae493bbc38b6c160914",
+      "personId": "panasiy-ekaterina",
+      "date": "2026-09-11",
+      "clientKey": "39014512f867f15efd384d5a84b6ff1b2287540cd09081fe87adf3ade55503cd",
+      "occurredAt": "2026-09-11T14:02:31+03:00"
+    },
+    {
+      "id": "7645d7064c9f57634ae191d13dce01077ba0724f8bb8dcab2232662a7d677a32",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-11",
+      "clientKey": "cb802e4abf9ba9f274acdd9cff5c2629d53e0b37ce3cc0ac286ec71e246a021a",
+      "occurredAt": "2026-09-11T14:30:36+03:00"
+    },
+    {
+      "id": "8572b735cb10fd9ead4012c1b0446e3f8d031fdbe4a543889f8c1432b33ba283",
+      "personId": "morev-pavel",
+      "date": "2026-09-11",
+      "clientKey": "3ed8e52586424b23c09fcd26f956e144eee506889977eb6441185b84334c8945",
+      "occurredAt": "2026-09-11T14:54:36+03:00"
+    },
+    {
+      "id": "63507dac1e78975eeb95ac28dcbc717988f64720cd9e304e554d6f2246f86b89",
+      "personId": "kimaev-stanislav",
+      "date": "2026-09-11",
+      "clientKey": "a6d80503a55ddb222a10a5241297e3802cdda13a62738fa8813ade42d52564c6",
+      "occurredAt": "2026-09-11T15:09:51+03:00"
+    },
+    {
+      "id": "499cbabd5ba6f1fd8786d6b918b4019c6f9a05b00560565728ba8a983f91afcf",
+      "personId": "bushin-dmitry",
+      "date": "2026-09-11",
+      "clientKey": "9e89ba13f5eb78829f4508a7c152d8b19005ca1650be50e9544a3ae85d8eaa05",
+      "occurredAt": "2026-09-11T15:39:19+03:00"
+    },
+    {
+      "id": "7e2357bfa5a1a1d64b6465e0954d1d56ef969bdd6562be4ae84238fbfa08c85c",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-11",
+      "clientKey": "e00f04da209ab0d350fa8600a513b3f288a8b70e4851d3f6f953dc89c36d2b5a",
+      "occurredAt": "2026-09-11T15:43:40+03:00"
+    },
+    {
+      "id": "d1c7968c1cccf417bf610126c3feef5db188fa78cdff6de14842bb3a50128856",
+      "personId": "vakhlaev-daniil",
+      "date": "2026-09-11",
+      "clientKey": "c8cce554e1492b82e56fabb8d07a3af0358107edf1a2abc199791ca9944d4df4",
+      "occurredAt": "2026-09-11T16:43:33+03:00"
+    },
+    {
+      "id": "11629f6372440f5ea8019e500eb4a43b8409ddf175de30ae41e25f704e2b685b",
+      "personId": "bushin-dmitry",
+      "date": "2026-09-11",
+      "clientKey": "e7e499b0787e5718642c221d9d362e6a9e7a12f4529955d183596ba70104ce77",
+      "occurredAt": "2026-09-11T16:47:05+03:00"
+    },
+    {
+      "id": "151db3aa5c82d98e1115fa0c6690e57a74aa24027ab7d473b5fdde7220cd7424",
+      "personId": "morev-pavel",
+      "date": "2026-09-11",
+      "clientKey": "62a0dfc7ae59a97e0665eccf104dde212daebdc53f069168b7786817f5a390dd",
+      "occurredAt": "2026-09-11T16:47:30+03:00"
+    },
+    {
+      "id": "d10b0020ccf75ee22ceae4d1c397d0375c9946343bcc54d767610da1b99f9fdd",
+      "personId": "lebedev-artem",
+      "date": "2026-09-11",
+      "clientKey": "ca8c65a8996ed0b9e51681a6784a639ee7e94fef7abf058b0171db53bd1a3b59",
+      "occurredAt": "2026-09-11T16:53:48+03:00"
+    },
+    {
+      "id": "45225d748dba7729d6fd0a322547e2cad6a9ca10728280db0433eaf2ad82d4f5",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-11",
+      "clientKey": "6efff40b98b80b24e0b407c8c1e4950b94a2a3dfe6541efa8eafc61b83707b98",
+      "occurredAt": "2026-09-11T17:01:19+03:00"
+    },
+    {
+      "id": "691a579201931faa62ab0e61576e14694598bbad1e09166ad510fcb61b6b8e98",
+      "personId": "semchenko-stepan",
+      "date": "2026-09-11",
+      "clientKey": "7b23c8700d2e95b7a8c79b4a06bb7fa942ba42b8986c1426ef4a2458d5962361",
+      "occurredAt": "2026-09-11T17:21:58+03:00"
+    },
+    {
+      "id": "9e59b962cc6d5aaf57abc96fae5753aa2250f6ed91c8906687b8d1a64ec3325e",
+      "personId": "gradesko-tamara",
+      "date": "2026-09-11",
+      "clientKey": "d37ff96b14591ae47f8af8cf3c370d01f7ae06ea33a11e43c65f6a4051bd13bb",
+      "occurredAt": "2026-09-11T17:31:04+03:00"
+    },
+    {
+      "id": "4d95aa48a1447dbccc3b09f924a116677f89834a5e0b1155e1ba1c982d50ff23",
+      "personId": "morev-pavel",
+      "date": "2026-09-11",
+      "clientKey": "9be20a6faa879dfb0432b87e259f6f073ba6181f6cebe4696594340edc8c4df0",
+      "occurredAt": "2026-09-11T17:44:13+03:00"
+    },
+    {
+      "id": "9c086654941c8659bfa936a34e2743a99124217b455ce6d0b3811711550b2b06",
+      "personId": "semchenko-stepan",
+      "date": "2026-09-11",
+      "clientKey": "f454d4d38fc6cf12d34a6391c524d41e30e68d41fb5391e6689ad1ce828d752c",
+      "occurredAt": "2026-09-11T18:14:27+03:00"
+    },
+    {
+      "id": "cbe686e6da4d4f7f1cad858aee2ed0a0a2bd1d22ac94503d3fd264d1c3a7cccd",
+      "personId": "lazovoy-sergey",
+      "date": "2026-09-11",
+      "clientKey": "1c49a1db4a1f70f676142c7d1ea961d2c1e356e9c413d207141dbf17b36222a5",
+      "occurredAt": "2026-09-11T18:18:05+03:00"
+    },
+    {
+      "id": "edabc39a582cbc1f56a2a5fea4548dea40761c713cdcdd34733a3b001802cc52",
+      "personId": "semchenko-stepan",
+      "date": "2026-09-11",
+      "clientKey": "1dbfa305260060fe3a5651f5208c2ffabcb35a89856b984d7eb59e7d1f4fae91",
+      "occurredAt": "2026-09-11T19:04:48+03:00"
+    },
+    {
+      "id": "d7933d8a488f2aa374d154dc8d65ec3eff3ee72ada15f0bf9a4e5c9ebd36d309",
+      "personId": "gradesko-tamara",
+      "date": "2026-09-11",
+      "clientKey": "f4de171197f4bf033be11a5aae5998b185b27a8e4f226a513c45ad0dfeabf236",
+      "occurredAt": "2026-09-11T19:06:09+03:00"
+    },
+    {
+      "id": "c9109565127b9d0424806b2c414a4714556f0255d3495a1914a31d33e58275b0",
+      "personId": "mzhelsky-anton",
+      "date": "2026-09-11",
+      "clientKey": "70e1c7c25982eae0ea39390eab595ffa28238f9ad3d4a8de81a994af911affeb",
+      "occurredAt": "2026-09-11T19:12:26+03:00"
+    },
+    {
+      "id": "455f9dfb75be2dd7e1adb45385e83ea6384637c9e6ef65c1f7a190d4106f8e2c",
+      "personId": "semchenko-stepan",
+      "date": "2026-09-11",
+      "clientKey": "b028d5b73c53c8ada86a1ca197cac1188b1c876ff6b15d24adaba50069208889",
+      "occurredAt": "2026-09-11T19:58:55+03:00"
+    },
+    {
+      "id": "aa183b9864ea5b959cb1295470745dd06c5985c88204f0dfae7fbc90ec228fb3",
+      "personId": "semchenko-stepan",
+      "date": "2026-09-11",
+      "clientKey": "b8b78967da43cc02cc57760f535a0d9637bd4282c711c28b6bea405899a6b0fa",
+      "occurredAt": "2026-09-11T20:03:14+03:00"
+    },
+    {
+      "id": "458bfc109e9c8fc5a4d2b035d2241db1f4946a032b27f28844d64fae1475a004",
+      "personId": "artemov-evgeny",
+      "date": "2026-09-11",
+      "clientKey": "cb7455fb1065811b2348ac07d62910fb11b27e3ac5c6341e0b7f1a052123b035",
+      "occurredAt": "2026-09-11T20:07:42+03:00"
+    },
+    {
+      "id": "fb5cedbaca81ffea82aad3bfda41aabe5cec7d9773a7a17b639aaae409c8d2ca",
+      "personId": "semchenko-stepan",
+      "date": "2026-09-11",
+      "clientKey": "6da53eb6f79b6d631564ad06b6320a506dbe7a9568fbb576a32ac8f6e98154ab",
+      "occurredAt": "2026-09-11T20:25:50+03:00"
+    },
+    {
+      "id": "d3e555fbbcdff1d8355b400b6dce45b504cac2769cf6eca13713f8b0f4ae9b28",
+      "personId": "barikov-yury",
+      "date": "2026-09-12",
+      "clientKey": "b77df4042fc70606bbb8f7a76ad8a0b68c70a6ecfda9475356da874efd543a14",
+      "occurredAt": "2026-09-12T10:15:50+03:00"
+    },
+    {
+      "id": "cdb02e1db1e316fd96c65bcf833011eddc3a52c0fabab9e640a320f6edfd4728",
+      "personId": "kimaev-stanislav",
+      "date": "2026-09-12",
+      "clientKey": "49a0c5b22c5fc1ded81c22546e9e4015378b5b4e7a52ad2e90982d91378b3a8c",
+      "occurredAt": "2026-09-12T10:42:41+03:00"
+    },
+    {
+      "id": "5eff55e6ef26b4e3b4631baab3e18632188e479823bf78eff80f5fe92e107482",
+      "personId": "demkin-denis",
+      "date": "2026-09-12",
+      "clientKey": "89dfd20cc3e39ac92ebc5e8301b550f848a41a2ae30a461dcff2ff9e970bbd39",
+      "occurredAt": "2026-09-12T11:26:03+03:00"
+    },
+    {
+      "id": "89108bf85542d5d34311a8a7ad2ded85df4927d75a8965d973b795d0eb355e7e",
+      "personId": "barikov-yury",
+      "date": "2026-09-12",
+      "clientKey": "5762d7a00cc1c14a9acee06dcd3950003b980a42c4f4ae3a642aa505ac564499",
+      "occurredAt": "2026-09-12T13:50:51+03:00"
+    },
+    {
+      "id": "7fb0fa7689ae64adb44883f959268fc56662e13b39a9414aae6d6f1eb6f4d838",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-12",
+      "clientKey": "a99ca166201f18ad6989d966d3c0e6a34927528b3d159d1858cad59636a31dff",
+      "occurredAt": "2026-09-12T14:08:52+03:00"
+    },
+    {
+      "id": "db46114c70c6981a5463a222d47bde2ad243e483a79193eaeb5569a1fbf55b2a",
+      "personId": "kimaev-stanislav",
+      "date": "2026-09-12",
+      "clientKey": "2d6501fa2069b6ffaf2ce6a8e1f4798ebd081dda1f66fbfd28bf2aa5ded5f08e",
+      "occurredAt": "2026-09-12T14:20:56+03:00"
+    },
+    {
+      "id": "1fc651dd7ca39f66447547159255099e23b29afac0aa032514372362fe3ed088",
+      "personId": "lebedev-artem",
+      "date": "2026-09-12",
+      "clientKey": "75c02dc0c35cd0b3bb8b8d01d7301305f52cf3ce36e35a40ad4188e70b3aed21",
+      "occurredAt": "2026-09-12T14:33:57+03:00"
+    },
+    {
+      "id": "3b051a818b59f6ab5a8456b3500f9a07879a2a3a1859a55c12cff0c9068ff4de",
+      "personId": "demkin-denis",
+      "date": "2026-09-12",
+      "clientKey": "2ce66490ca341b8c83fae3f295a7e18b4a62ec9835222bc451a6ab82a836b6a3",
+      "occurredAt": "2026-09-12T14:45:30+03:00"
+    },
+    {
+      "id": "60e7ec0f25e566ba0dfcedd6678e4ffc7d7d3258eb2787640bf8e41662de21ca",
+      "personId": "zemlyukov-ilya",
+      "date": "2026-09-12",
+      "clientKey": "af47dc3d552a155d2389cc7ad237adf7a30b93921d45f9df81c1cbf592917a2f",
+      "occurredAt": "2026-09-12T15:11:50+03:00"
+    },
+    {
+      "id": "0a8971a7861c57ea1a0c802bd78827e528fb86bc742b14623a5d6ac0e9219371",
+      "personId": "lebedev-artem",
+      "date": "2026-09-12",
+      "clientKey": "0568a1893228851169dd6ee12b34b0354b16e0c10f2602b2364930724e2eefb3",
+      "occurredAt": "2026-09-12T15:46:09+03:00"
+    },
+    {
+      "id": "f7308d31db0977f9f15a292a6dd490032e667a4fd8a64d9577f2de09b516222d",
+      "personId": "mitrochenkov-andrey",
+      "date": "2026-09-12",
+      "clientKey": "4312db5bf78b938c5485e18b073d78731985a852666bd9bea803592ca7e58c8c",
+      "occurredAt": "2026-09-12T16:10:40+03:00"
+    },
+    {
+      "id": "6f86efdafc44675274cf82d00d671abfad74a59f733652813e8a015f337a54c6",
+      "personId": "mitrochenkov-andrey",
+      "date": "2026-09-12",
+      "clientKey": "e26f4df6aa4c613635a92bef47d19cd0a65dbc9bf88c29d911627211ec1d16c2",
+      "occurredAt": "2026-09-12T16:18:39+03:00"
+    },
+    {
+      "id": "9fad225018cd1b8d480707ac2fa0dbb444dac63f0baf260892ee318a72b4d06f",
+      "personId": "artemov-evgeny",
+      "date": "2026-09-12",
+      "clientKey": "0745f94305c267d72897702319efce20838410f03facf060a93d2ca0710366e7",
+      "occurredAt": "2026-09-12T17:21:28+03:00"
+    },
+    {
+      "id": "07297ee93612eae4e0637f7cb5eb077eb345783ed68919a1e657f4965ad43201",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-12",
+      "clientKey": "04173962246531a9684230b4ce186f29ff24b520d9883a49fcf041521d0bc13e",
+      "occurredAt": "2026-09-12T17:25:19+03:00"
+    },
+    {
+      "id": "00ff41c02b8dd4a119f59afe7fc88530ccee3912d061dc8440069c1a3403bb9c",
+      "personId": "barikov-yury",
+      "date": "2026-09-12",
+      "clientKey": "ac1e5c806a21627d81e38da57b92a672c97d416c91ed3d8fde0e157dd859f007",
+      "occurredAt": "2026-09-12T17:59:03+03:00"
+    },
+    {
+      "id": "b3398cd1fdf32a49cb2a9d640a82666e979fa61d1379871fb0f59a75cef55f96",
+      "personId": "barikov-yury",
+      "date": "2026-09-12",
+      "clientKey": "2992cbbcf508d0d3568dcf8788fc588796043e35bfce203b0e909197e79e110f",
+      "occurredAt": "2026-09-12T18:42:01+03:00"
+    },
+    {
+      "id": "31c0b4453ec6d9aed9023a0733fabe538c439b4df40100a5ddb0683de9cdba89",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-12",
+      "clientKey": "db66a7df18cc3b90d6dfdd70852f2c6b78897d025a110640fa11b29776bab99f",
+      "occurredAt": "2026-09-12T19:17:19+03:00"
+    },
+    {
+      "id": "0904be511618968c9b0ffd7aaad8a93a7223fe13eb9f43cc823f2366b71ad58e",
+      "personId": "bushin-dmitry",
+      "date": "2026-09-12",
+      "clientKey": "5ca2da4c375158b40567c9eedfe8986dcc8b5e284759c501b523e26aef4f93a5",
+      "occurredAt": "2026-09-12T19:46:49+03:00"
+    },
+    {
+      "id": "dfd87fc96d50f08c6338a81a07015cec3707f88714ede0b1f4fc7a64303656fd",
+      "personId": "barikov-yury",
+      "date": "2026-09-13",
+      "clientKey": "4e47caa2aacdcd59249b97cf3a3a1cfca679deb239da168cbb108d9b15e0e26a",
+      "occurredAt": "2026-09-13T10:45:21+03:00"
+    },
+    {
+      "id": "e66cd6985b4a2a37d87e774e16471262ee26cae6a65aceb13bf450de82c56f16",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-13",
+      "clientKey": "aed90ae18049548b1382779b8eaaa276606ed1287fc1895652e926e3a7fff4ee",
+      "occurredAt": "2026-09-13T11:16:57+03:00"
+    },
+    {
+      "id": "a67fd449fed9f0b430629fb1395a88e918f3ab6177dc9599721110b56661dd26",
+      "personId": "demkin-denis",
+      "date": "2026-09-13",
+      "clientKey": "768aafe52b75df5364b24e4f0e31c4bae82c0187ac7a91d9b56c7a63431d607d",
+      "occurredAt": "2026-09-13T11:46:45+03:00"
+    },
+    {
+      "id": "ca8d0d2976887bc7413454ac0be414a92a86d36d57ea8a66f46a2b8bec229d7e",
+      "personId": "semchenko-stepan",
+      "date": "2026-09-13",
+      "clientKey": "b4c5afb2624d8d0d5e9c9924c48d307a5b24e4a1ca976b78f925c8b8e31fe18d",
+      "occurredAt": "2026-09-13T12:20:37+03:00"
+    },
+    {
+      "id": "7be2b5e552c1027317bde374d98d4dc661b5b4c5abb5708f0e368cfbf5a3d9c3",
+      "personId": "balakireva-victoria",
+      "date": "2026-09-13",
+      "clientKey": "e3495e7bb7d9eaab86148d3d0a9931dbac3050e9092b78d5e2f83b3405162779",
+      "occurredAt": "2026-09-13T12:39:56+03:00"
+    },
+    {
+      "id": "866851a8ef4fca7301a80f7a688b644e6fffc9417ee7f1fb98660f5efca742a3",
+      "personId": "kocharovsky-arseny",
+      "date": "2026-09-13",
+      "clientKey": "40225183bf6a1d5bd6390e06a12d7ebb311b2d121799b4760ec4604f3d238348",
+      "occurredAt": "2026-09-13T13:10:56+03:00"
+    },
+    {
+      "id": "da038d9cf811c8b6e64bdd79ee9ae2e6163d41e2545b521ad21c2e87e27f40be",
+      "personId": "demkin-denis",
+      "date": "2026-09-13",
+      "clientKey": "a74e7146c330c0dbc4c4cdd2a9ca516ea23fc3ea204e1fa30298199acddb9391",
+      "occurredAt": "2026-09-13T14:06:59+03:00"
+    },
+    {
+      "id": "046685ada7901ec70c930c4a8481ed0da47abe072c24ef613a349d6e0b7d7374",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-13",
+      "clientKey": "e1e07929aa5610dc4cde52ef7e83b9f4907ce1206e1c1139b4dc2725048c5ba8",
+      "occurredAt": "2026-09-13T15:03:27+03:00"
+    },
+    {
+      "id": "9849c6ed7c899cb5a579f005d7477c04635934a1ded28b27bdd7b58a718d5e54",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-13",
+      "clientKey": "e04fa225909d77f3dcedb843d5214361ba09b6fe7ce48dac142f710fe164e888",
+      "occurredAt": "2026-09-13T18:57:10+03:00"
+    },
+    {
+      "id": "4064a635a5e8d554c86a3d662e1aaea449f6c7e325635e95392b22ea6982b1f6",
+      "personId": "golovachev-dmitry",
+      "date": "2026-09-13",
+      "clientKey": "881ef0d6a3ff2c1a85f8b642407f7d712aa56d3ae2ed59505d8ed7ef49466476",
+      "occurredAt": "2026-09-13T19:36:38+03:00"
+    },
+    {
+      "id": "dd714d99a8d3a36b8d899bed541043273e6fd4695df6ea45626f8e9e76d2fe06",
+      "personId": "gradesko-tamara",
+      "date": "2026-09-13",
+      "clientKey": "b3fa290f523fbe499081009373ce0d16817ad5cf8c656bdafe0979b907c4dfcb",
+      "occurredAt": "2026-09-13T19:53:07+03:00"
+    },
+    {
+      "id": "010cbd3946d444655b0a6cb8d4d80ef024d603aeaba37ffb6daee2ce63211fad",
+      "personId": "gradesko-tamara",
+      "date": "2026-09-13",
+      "clientKey": "478fe3bd697475633298346953a0f56ea8080ce847be64e8e380019555ad5add",
+      "occurredAt": "2026-09-13T20:27:31+03:00"
+    },
+    {
+      "id": "95c4046221e280fda71174ecd685ec1d999805fa0d4eff8286a5589d51388b42",
+      "personId": "gradesko-tamara",
+      "date": "2026-09-13",
+      "clientKey": "88b8367acdf16ed1a38390ca1de7ad7cb82f74895c99001860a19ead801eb313",
+      "occurredAt": "2026-09-13T21:46:51+03:00"
     }
   ]
 }
