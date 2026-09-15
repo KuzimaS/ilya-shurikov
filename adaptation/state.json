@@ -21,7 +21,7 @@
         "held1": "paid",
         "appointed5": "unpaid"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
@@ -38,7 +38,7 @@
       "paidBonus": 0,
       "note": "31.08.2026: увольнение по соглашению сторон. Забрать доступы сейчас, лиды передать действующим менеджерам ОП Гужов.",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
@@ -55,7 +55,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
@@ -81,7 +81,7 @@
         "paid500": "paid",
         "appointed5": "unpaid"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
@@ -98,7 +98,7 @@
       "paidBonus": 0,
       "note": "Руководитель отдела продаж",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "hideFromTv": true
     },
@@ -109,14 +109,14 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
+      "appointed": 2,
       "held": 0,
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
       "note": "Руководитель отдела продаж",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "hideFromTv": true
     },
@@ -134,13 +134,13 @@
       "paidBonus": 0,
       "note": "31.08.2026: увольнение по собственному желанию. Забрать доступы сейчас, лиды передать действующим менеджерам ОП Кузнецов.",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-08",
       "name": "Воробьев Вячеслав",
-      "team": "Ерёменков",
+      "team": "Демидов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -151,13 +151,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-09",
       "name": "Острогляд Сергей",
-      "team": "Должиков",
+      "team": "Левченко",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -168,7 +168,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
@@ -178,7 +178,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 8,
+      "appointed": 10,
       "held": 0,
       "booking": 0,
       "paid": 0,
@@ -187,7 +187,7 @@
       "dates": {
         "appointed5": "2026-09-04"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid"
@@ -196,7 +196,7 @@
     {
       "id": "mgr-20260827-12",
       "name": "Фоменко Роман",
-      "team": "Кузнецов",
+      "team": "Инвестиции",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -214,17 +214,17 @@
         "held1": "paid",
         "appointed5": "paid"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-13",
       "name": "Усачев Юрий",
-      "team": "Ерёменков",
+      "team": "Демидов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 16,
+      "appointed": 19,
       "held": 0,
       "booking": 0,
       "paid": 0,
@@ -236,7 +236,7 @@
       "payoutStatuses": {
         "appointed5": "paid"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
@@ -255,7 +255,7 @@
       "dates": {
         "held1": "2026-09-03"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid"
@@ -278,7 +278,7 @@
         "appointed5": "2026-09-04",
         "held1": "2026-09-11"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -301,7 +301,7 @@
       "dates": {
         "held1": "2026-09-10"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid"
@@ -310,7 +310,7 @@
     {
       "id": "mgr-20260827-17",
       "name": "Жолтяк Артем",
-      "team": "Должиков",
+      "team": "Демидов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -321,17 +321,17 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-18",
       "name": "Сметанкина Римма",
-      "team": "Должиков",
+      "team": "Демидов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 2,
+      "appointed": 3,
       "held": 1,
       "booking": 0,
       "paid": 0,
@@ -340,7 +340,7 @@
       "dates": {
         "held1": "2026-08-29"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid"
@@ -349,7 +349,7 @@
     {
       "id": "mgr-20260827-19",
       "name": "Гагаринцева Ангелина",
-      "team": "Должиков",
+      "team": "Левченко",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -360,13 +360,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-20",
       "name": "Балюк Кирилл",
-      "team": "Должиков",
+      "team": "Левченко",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -377,13 +377,13 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
       "id": "mgr-20260827-22",
       "name": "Синицин Роман",
-      "team": "Должиков",
+      "team": "Левченко",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -397,7 +397,7 @@
         "held1": "2026-08-29",
         "appointed5": "2026-09-07"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
@@ -407,7 +407,7 @@
     {
       "id": "mgr-20260827-23",
       "name": "Конвисар Дарья",
-      "team": "Должиков",
+      "team": "Демидов",
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
@@ -418,7 +418,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
@@ -428,7 +428,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 15,
+      "appointed": 17,
       "held": 4,
       "booking": 30000,
       "paid": 565000,
@@ -448,7 +448,7 @@
         "held3": "paid",
         "paid500": "paid"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
@@ -482,7 +482,7 @@
       "paidBonus": 0,
       "note": "01.09.2026: увольнение по собственному желанию. Забрать доступы.",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
@@ -499,7 +499,7 @@
       "paidBonus": 0,
       "note": "02.09.2026: увольнение по инициативе компании. Забрать доступы.",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     },
     {
@@ -509,7 +509,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 6,
+      "appointed": 8,
       "held": 1,
       "booking": 0,
       "paid": 0,
@@ -519,7 +519,7 @@
         "appointed5": "2026-09-10",
         "held1": "2026-09-12"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -533,7 +533,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 8,
+      "appointed": 9,
       "held": 2,
       "booking": 0,
       "paid": 0,
@@ -543,7 +543,7 @@
         "appointed5": "2026-09-07",
         "held1": "2026-09-06"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -566,7 +566,7 @@
       "dates": {
         "held1": "2026-09-12"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "unpaid"
@@ -588,7 +588,7 @@
       "dates": {
         "appointed5": "2026-09-09"
       },
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid"
@@ -608,12 +608,12 @@
       "paidBonus": 0,
       "note": "31.08.2026: увольнение по инициативе компании. Забрать доступы сейчас, лиды передать действующим менеджерам ОП Ерёменков.",
       "dates": {},
-      "updatedAt": "2026-09-14T07:11:10.783Z",
+      "updatedAt": "2026-09-15T08:07:52.729Z",
       "demo": false
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-09-14T07:11:10.783Z",
+  "lastUpdated": "2026-09-15T08:07:52.729Z",
   "dataVersion": "2026-08-31-contest-money-v1",
   "daySevenVersion": "2026-09-02-all-active-day-7-v1"
 }
