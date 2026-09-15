@@ -37,4 +37,4 @@ jobs:
           git commit -m "Sync adaptation dashboard data"
           git push origin HEAD:gh-pages
 
-# Manual refresh: archive September 15 trainees 2026-09-15
+# Manual refresh: Bagabova in-person meeting 2026-09-15
