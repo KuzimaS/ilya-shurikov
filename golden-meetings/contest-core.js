@@ -12,7 +12,7 @@
   const cacheKey = contestId+'-published-v2';
   const draftKey = contestId+'-draft-v2';
   function empty() {
-    return {schemaVersion:2,contestId,period:{...period},assigned:Object.fromEntries(people.map(p=>[p.id,Array(30).fill(0)])),heldEvents:[],unverifiedHeld:{},held:Object.fromEntries(people.map(p=>[p.id,0])),updatedAt:null};
+    return {schemaVersion:2,contestId,period:{...period},assigned:Object.fromEntries(people.map(p=>[p.id,Array(30).fill(0)])),heldEvents:[],unverifiedHeld:{},payments:[],held:Object.fromEntries(people.map(p=>[p.id,0])),updatedAt:null};
   }
   function count(n) {if(typeof n!=='number'||!Number.isSafeInteger(n)||n<0||n>100000)throw Error('Количество встреч должно быть целым неотрицательным числом');return n;}
   function journal(events,kind){
@@ -51,6 +51,16 @@
       if(typeof raw.updatedAt!=='string'||!Number.isFinite(Date.parse(raw.updatedAt)))throw Error('Некорректное время обновления');
       s.updatedAt=raw.updatedAt;
     }
+    if(raw.payments!==undefined){
+      if(!Array.isArray(raw.payments))throw Error('Неверный журнал выплат');
+      const seen=new Set();
+      s.payments=raw.payments.map(p=>{
+        if(!p||!ids.has(p.personId)||!['assigned','held'].includes(p.kind)||!['paid','queued'].includes(p.status)||!Number.isSafeInteger(p.amount)||p.amount<=0||p.amount>1000000||!Number.isFinite(Date.parse(p.markedAt)))throw Error('Проверьте запись выплаты');
+        if(p.kind==='assigned'?(!/^2026-09-\d{2}$/.test(p.target)||p.target<period.start||p.target>period.end):!milestones.some(m=>String(m.n)===p.target))throw Error('Неверная цель выплаты');
+        const key=p.personId+':'+p.kind+':'+p.target;if(seen.has(key))throw Error('Повтор выплаты');seen.add(key);
+        return {personId:p.personId,kind:p.kind,target:p.target,amount:p.amount,status:p.status,markedAt:p.markedAt};
+      });
+    }
     return s;
   }
   const reward=n=>milestones.reduce((p,m)=>n>=m.n?m.p:p,0);
@@ -60,7 +70,19 @@
   const rank=(values,value)=>value>0?1+values.filter(v=>v>value).length:null;
   function progress(n) {const index=milestones.findIndex(m=>n<m.n);if(index<0)return 100;const previous=index?milestones[index-1].n:0;return (index+(n-previous)/(milestones[index].n-previous))/milestones.length*100;}
   const summary=s=>({assigned:people.reduce((n,p)=>n+total(s.assigned[p.id]),0),held:people.reduce((n,p)=>n+s.held[p.id],0),money:people.reduce((n,p)=>n+bonus(s.assigned[p.id])+reward(s.held[p.id]),0)});
-  const signature=s=>JSON.stringify([s.assigned,s.assignedEvents,s.heldEvents,s.unverifiedHeld]);
+  function paymentRows(s){
+    const rows=[];
+    for(const p of people){
+      for(let d=7;d<=30;d++){const amount=Math.max(0,s.assigned[p.id][d-1]-3)*1000;if(amount)rows.push({personId:p.id,kind:'assigned',target:'2026-09-'+String(d).padStart(2,'0'),date:'2026-09-'+String(d).padStart(2,'0'),amount,label:s.assigned[p.id][d-1]+' назначенных за день'});}
+      const events=s.heldEvents.filter(e=>e.personId===p.id).sort((a,b)=>a.date.localeCompare(b.date));
+      milestones.forEach((m,i)=>{if(events.length>=m.n)rows.push({personId:p.id,kind:'held',target:String(m.n),date:events[m.n-1].date,amount:m.p-(i?milestones[i-1].p:0),label:m.n+' проведённых'+(i?' · доплата до '+m.p.toLocaleString('ru-RU')+' ₽':'')});});
+    }
+    const key=r=>r.personId+':'+r.kind+':'+r.target;
+    for(const p of s.payments||[])if(!rows.some(r=>key(r)===key(p)))rows.push({personId:p.personId,kind:p.kind,target:p.target,date:p.kind==='assigned'?p.target:null,amount:0,label:'Цель больше не подтверждена'});
+    return rows.map(r=>{const payment=(s.payments||[]).find(p=>key(p)===key(r)),paid=payment?.status==='paid'?payment.amount:0,queued=payment?.status==='queued'?Math.min(payment.amount,r.amount):0;return {...r,key:key(r),payment,paid,queued,due:Math.max(0,r.amount-paid),overpaid:Math.max(0,paid-r.amount)};});
+  }
+  const paymentSummary=s=>paymentRows(s).reduce((t,r)=>({earned:t.earned+r.amount,paid:t.paid+r.paid,queued:t.queued+r.queued,due:t.due+r.due,overpaid:t.overpaid+r.overpaid}),{earned:0,paid:0,queued:0,due:0,overpaid:0});
+  const signature=s=>JSON.stringify([s.assigned,s.assignedEvents,s.heldEvents,s.unverifiedHeld,s.payments||[]]);
   function cached(){try{return normalize(JSON.parse(localStorage.getItem(cacheKey)))}catch{return empty();}}
   let localStorageHasCache=false;
   let published=cached(),listeners=[],busy=false,lastSuccess=null,lastError=null,started=false;
@@ -81,5 +103,5 @@
     }catch(e){lastError=e.message;notify(false);return false;}finally{clearTimeout(timer);busy=false;}
   }
   function watch(fn){listeners.push(fn);fn(published,{changed:true,message:message(),error:lastError,lastSuccess});if(!started){started=true;refresh();setInterval(()=>{if(!document.hidden)refresh();},30000);addEventListener('focus',refresh);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});}}
-  root.Contest={contestId,period,people,departments,scope,milestones,cacheKey,draftKey,empty,count,normalize,validateForPublish,assignedCounts,reward,next,bonus,total,rank,progress,summary,signature,cached,refresh,watch};
+  root.Contest={contestId,period,people,departments,scope,milestones,cacheKey,draftKey,empty,count,normalize,validateForPublish,assignedCounts,reward,next,bonus,total,rank,progress,summary,paymentRows,paymentSummary,signature,cached,refresh,watch};
 })(typeof window==='undefined'?globalThis:window);

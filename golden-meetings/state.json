@@ -1650,7 +1650,193 @@
     }
   ],
   "unverifiedHeld": {},
-  "updatedAt": "2026-09-15T08:05:55.543Z",
+  "payments": [
+    {
+      "personId": "nebaykin-sergey",
+      "kind": "assigned",
+      "target": "2026-09-07",
+      "amount": 1000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "panasiy-ekaterina",
+      "kind": "held",
+      "target": "3",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "gradesko-tamara",
+      "kind": "assigned",
+      "target": "2026-09-09",
+      "amount": 4000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "gradesko-tamara",
+      "kind": "held",
+      "target": "3",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "gradesko-tamara",
+      "kind": "held",
+      "target": "5",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "kocharovsky-arseny",
+      "kind": "assigned",
+      "target": "2026-09-08",
+      "amount": 1000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "kocharovsky-arseny",
+      "kind": "held",
+      "target": "3",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "artemov-evgeny",
+      "kind": "held",
+      "target": "3",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "lazovoy-sergey",
+      "kind": "held",
+      "target": "3",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "morev-pavel",
+      "kind": "assigned",
+      "target": "2026-09-08",
+      "amount": 1000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "morev-pavel",
+      "kind": "assigned",
+      "target": "2026-09-11",
+      "amount": 1000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "golovachev-dmitry",
+      "kind": "assigned",
+      "target": "2026-09-13",
+      "amount": 1000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "golovachev-dmitry",
+      "kind": "held",
+      "target": "3",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "lebedev-artem",
+      "kind": "assigned",
+      "target": "2026-09-09",
+      "amount": 6000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "lebedev-artem",
+      "kind": "held",
+      "target": "3",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "semchenko-stepan",
+      "kind": "assigned",
+      "target": "2026-09-08",
+      "amount": 2000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "semchenko-stepan",
+      "kind": "assigned",
+      "target": "2026-09-11",
+      "amount": 4000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "semchenko-stepan",
+      "kind": "held",
+      "target": "3",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "mitrochenkov-andrey",
+      "kind": "held",
+      "target": "3",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "barikov-yury",
+      "kind": "assigned",
+      "target": "2026-09-12",
+      "amount": 1000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "kimaev-stanislav",
+      "kind": "assigned",
+      "target": "2026-09-09",
+      "amount": 1000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "kimaev-stanislav",
+      "kind": "held",
+      "target": "3",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    },
+    {
+      "personId": "kimaev-stanislav",
+      "kind": "held",
+      "target": "5",
+      "amount": 10000,
+      "status": "paid",
+      "markedAt": "2026-09-15T08:46:36.588Z"
+    }
+  ],
+  "updatedAt": "2026-09-15T08:46:36.588Z",
   "assignedEvents": [
     {
       "id": "9c319b27ae6df754fdbc61a016f8c0a7381fea5cbb231b2792dd5c16cf7ac44f",

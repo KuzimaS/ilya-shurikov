@@ -1,0 +1,26 @@
+.contest-admin #paymentsView{padding:18px;background:#f5f8ff}
+.payment-totals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.payment-totals>div{border-radius:14px;padding:16px;background:#e9efff;color:#183153}
+.payment-totals small,.payment-entry small,.payment-person small{display:block;font-size:13px;line-height:1.5}
+.payment-totals b{display:block;font-size:26px;margin-top:4px}
+.payment-note{color:#526681;font-size:14px;margin:16px 0}
+.payment-person{background:white;border:1px solid #d9e4f6;border-radius:14px;margin-top:10px;overflow:hidden}
+.payment-person>summary{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px;cursor:pointer;color:#183153;list-style:none}
+.payment-person>summary:before{content:'›';font-size:24px;color:#3564da}
+.payment-person[open]>summary:before{transform:rotate(90deg)}
+.payment-person>summary>span:first-of-type{flex:1}
+.payment-person>summary b{font-size:16px}
+.payment-person small{color:#63758d}
+.payment-person-amount{text-align:right;font-size:14px}
+.payment-person-amount strong{display:block;margin-top:4px}
+.payment-entry{display:grid;grid-template-columns:minmax(200px,1fr) 170px 225px;gap:16px;align-items:center;border-top:1px solid #e3eafa;padding:14px 18px;color:#183153}
+.payment-entry b{display:block;font-size:14px;margin:3px 0}
+.payment-entry small{color:#63758d}
+.payment-entry-amount{text-align:right}
+.payment-status{display:block;width:100%;border:1px solid transparent;border-radius:9px;padding:10px;font:700 13px/1.4 system-ui;text-align:center;white-space:normal;min-height:40px}
+.payment-totals .pay-paid,.pay-paid{background:#3bff85;color:#07552c}
+.payment-totals .pay-unpaid,.pay-unpaid,.pay-partial,.pay-review{background:#ffe9ed;color:#a31c39}
+.payment-totals .pay-queued,.pay-queued{background:#fff0b8;color:#795100}
+.text-paid{color:#087940}.text-unpaid{color:#b32642}
+.payment-warning{background:#ffe9ed;padding:12px;border-radius:10px;color:#a31c39}
+@media(max-width:700px){.contest-admin #paymentsView{padding:10px}.payment-totals{grid-template-columns:1fr 1fr;gap:8px}.payment-totals>div{padding:12px}.payment-totals b{font-size:21px}.payment-person>summary{padding:12px;gap:8px;flex-wrap:wrap}.payment-person-amount{width:100%;text-align:left;padding-left:19px}.payment-entry{grid-template-columns:minmax(0,1fr) 105px;padding:12px;gap:8px}.payment-entry>div:last-child{grid-column:1/-1}.payment-status{font-size:14px}.contest-admin .tabs{display:flex;flex-wrap:wrap}.contest-admin .tab{padding:9px 11px}}

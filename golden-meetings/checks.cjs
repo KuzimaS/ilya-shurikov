@@ -20,6 +20,23 @@ assert.equal(C.people.length,39);assert.equal(new Set(C.people.map(p=>p.id )).si
 C.normalize(JSON.parse(fs.readFileSync(__dirname+'/state.json','utf8')));
 console.log('PASS: выплаты, даты, дубли, импорт, миграция, места, прогресс, 39 участников и синтаксис страниц');
 
+// Paid lower milestones must only leave the increment due at the next goal.
+const paymentCase=C.empty();paymentCase.assigned[id][6]=4;
+for(let i=0;i<7;i++)paymentCase.heldEvents.push({personId:id,date:'2026-09-'+String(7+i).padStart(2,'0'),id:String(i+900).padStart(64,'0')});
+paymentCase.payments=[{personId:id,kind:'held',target:'3',amount:10000,status:'paid',markedAt:'2026-09-15T09:00:00Z'},{personId:id,kind:'held',target:'5',amount:10000,status:'paid',markedAt:'2026-09-15T09:00:00Z'}];
+const paymentValid=C.normalize(paymentCase),paymentTotals=C.paymentSummary(paymentValid);
+assert.equal(paymentTotals.earned,36000);assert.equal(paymentTotals.paid,20000);assert.equal(paymentTotals.due,16000);
+assert.equal(C.paymentRows(paymentValid).find(r=>r.target==='7').amount,15000);
+assert.notEqual(C.signature(paymentValid),C.signature({...paymentValid,payments:[]}));
+assert.equal(JSON.stringify(C.normalize(JSON.parse(JSON.stringify(paymentValid))).payments),JSON.stringify(paymentCase.payments));
+assert.throws(()=>C.normalize({...paymentCase,payments:[...paymentCase.payments,paymentCase.payments[0]]}));
+assert.throws(()=>C.normalize({...paymentCase,payments:[{...paymentCase.payments[0],amount:-1}]}));
+assert.throws(()=>C.normalize({...paymentCase,payments:[{...paymentCase.payments[0],target:'4'}]}));
+const revised=C.normalize({...paymentCase,heldEvents:paymentCase.heldEvents.slice(0,3)});
+assert.equal(C.paymentSummary(revised).paid,20000);assert.equal(C.paymentSummary(revised).overpaid,10000);
+new vm.Script(fs.readFileSync(__dirname+'/admin.js','utf8'));
+console.log('PASS: статусы выплат, сохранение истории, доплаты до следующей ступени и корректировки встреч');
+
 assert.equal(C.milestones.length,6);assert.equal(C.next(3).n,5);assert.equal(C.next(5).n,7);
 
 const previous=JSON.parse(fs.readFileSync(__dirname+'/state.json','utf8'));previous.assigned['vlasov-nikita']=Array(30).fill(0);previous.assigned['vlasov-nikita'][6]=5;previous.heldEvents.push({personId:'vlasov-nikita',date:'2026-09-07',id:'e'.repeat(64)});
