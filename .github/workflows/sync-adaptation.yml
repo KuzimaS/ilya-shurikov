@@ -37,4 +37,4 @@ jobs:
           git commit -m "Sync adaptation dashboard data"
           git push origin HEAD:gh-pages
 
-# Manual refresh: September 14 new adaptation cohort 2026-09-15
+# Manual refresh: archive September 15 trainees 2026-09-15
