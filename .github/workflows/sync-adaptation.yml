@@ -37,4 +37,4 @@ jobs:
           git commit -m "Sync adaptation dashboard data"
           git push origin HEAD:gh-pages
 
-# Manual refresh: payments September 15 2026-09-16
+# Manual refresh: Sinitsin bookings correction 2026-09-16
