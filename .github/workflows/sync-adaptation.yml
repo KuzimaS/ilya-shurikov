@@ -37,4 +37,4 @@ jobs:
           git commit -m "Sync adaptation dashboard data"
           git push origin HEAD:gh-pages
 
-# Manual refresh: Sinitsin bookings correction 2026-09-16
+# Manual refresh: held meetings Zholtyak and Kryuchkova 2026-09-16
