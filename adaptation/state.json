@@ -21,7 +21,7 @@
         "held1": "paid",
         "appointed5": "paid"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -38,7 +38,7 @@
       "paidBonus": 0,
       "note": "31.08.2026: увольнение по соглашению сторон. Забрать доступы сейчас, лиды передать действующим менеджерам ОП Гужов.",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -55,7 +55,7 @@
       "paidBonus": 0,
       "note": "15.09.2026: увольнение по инициативе компании. Забрать доступы сейчас, лиды передать действующим менеджерам ОП Демидова.",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "hideFromTv": true
     },
@@ -66,7 +66,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 5,
+      "appointed": 7,
       "held": 1,
       "booking": 0,
       "paid": 750000,
@@ -82,7 +82,7 @@
         "paid500": "paid",
         "appointed5": "paid"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -99,7 +99,7 @@
       "paidBonus": 0,
       "note": "Руководитель отдела продаж",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "hideFromTv": true
     },
@@ -117,7 +117,7 @@
       "paidBonus": 0,
       "note": "Руководитель отдела продаж",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "hideFromTv": true
     },
@@ -135,7 +135,7 @@
       "paidBonus": 0,
       "note": "31.08.2026: увольнение по собственному желанию. Забрать доступы сейчас, лиды передать действующим менеджерам ОП Кузнецов.",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -152,7 +152,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -169,7 +169,7 @@
       "paidBonus": 0,
       "note": "15.09.2026: увольнение по собственному желанию. Забрать доступы сейчас, лиды передать действующим менеджерам ОП Левченко.",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "hideFromTv": true
     },
@@ -190,7 +190,7 @@
         "appointed5": "2026-09-04",
         "held1": "2026-09-15"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -218,7 +218,7 @@
         "held1": "paid",
         "appointed5": "paid"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -228,7 +228,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 19,
+      "appointed": 21,
       "held": 0,
       "booking": 0,
       "paid": 0,
@@ -240,7 +240,7 @@
       "payoutStatuses": {
         "appointed5": "paid"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -250,7 +250,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 5,
+      "appointed": 7,
       "held": 1,
       "booking": 0,
       "paid": 0,
@@ -260,7 +260,7 @@
         "held1": "2026-09-03",
         "appointed5": "2026-09-15"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
@@ -284,7 +284,7 @@
         "appointed5": "2026-09-04",
         "held1": "2026-09-11"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -307,7 +307,7 @@
       "dates": {
         "held1": "2026-09-10"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid"
@@ -329,7 +329,7 @@
       "dates": {
         "held1": "2026-09-15"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "unpaid"
@@ -342,19 +342,21 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 4,
+      "appointed": 8,
       "held": 1,
       "booking": 0,
       "paid": 0,
       "paidBonus": 5000,
       "note": "29.08.2026: очная встреча засчитана вручную по решению Антона Должикова, 2-я переговорная, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43236578",
       "dates": {
-        "held1": "2026-08-29"
+        "held1": "2026-08-29",
+        "appointed5": "2026-09-16"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
-        "held1": "paid"
+        "held1": "paid",
+        "appointed5": "unpaid"
       }
     },
     {
@@ -371,7 +373,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -388,7 +390,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -398,7 +400,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 13,
+      "appointed": 15,
       "held": 2,
       "booking": 60000,
       "paid": 0,
@@ -408,7 +410,7 @@
         "held1": "2026-08-29",
         "appointed5": "2026-09-07"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
@@ -430,7 +432,7 @@
       "paidBonus": 0,
       "note": "",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -440,8 +442,8 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 17,
-      "held": 4,
+      "appointed": 21,
+      "held": 5,
       "booking": 30000,
       "paid": 565000,
       "paidBonus": 62000,
@@ -451,16 +453,18 @@
         "held1": "2026-08-28",
         "booking30": "2026-09-01",
         "held3": "2026-08-31",
-        "paid500": "2026-09-08"
+        "paid500": "2026-09-08",
+        "held5": "2026-09-16"
       },
       "payoutStatuses": {
         "appointed5": "paid",
         "held1": "paid",
         "booking30": "paid",
         "held3": "paid",
-        "paid500": "paid"
+        "paid500": "paid",
+        "held5": "unpaid"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -477,7 +481,7 @@
       "paidBonus": 0,
       "note": "15.09.2026: увольнение по инициативе компании. Забрать доступы.",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "hideFromTv": true
     },
@@ -495,7 +499,7 @@
       "paidBonus": 0,
       "note": "01.09.2026: увольнение по собственному желанию. Забрать доступы.",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -512,7 +516,7 @@
       "paidBonus": 0,
       "note": "02.09.2026: увольнение по инициативе компании. Забрать доступы.",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -532,7 +536,7 @@
         "appointed5": "2026-09-10",
         "held1": "2026-09-12"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -556,7 +560,7 @@
         "appointed5": "2026-09-07",
         "held1": "2026-09-06"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -581,7 +585,7 @@
         "appointed5": "2026-09-09",
         "held3": "2026-09-10"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
@@ -606,7 +610,7 @@
         "appointed5": "2026-09-09",
         "held1": "2026-09-13"
       },
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -627,7 +631,7 @@
       "paidBonus": 0,
       "note": "31.08.2026: увольнение по инициативе компании. Забрать доступы сейчас, лиды передать действующим менеджерам ОП Ерёменков.",
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -645,7 +649,7 @@
       "note": "",
       "hideFromTv": false,
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -663,7 +667,7 @@
       "note": "",
       "hideFromTv": false,
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -745,7 +749,7 @@
       "startDate": "2026-09-14",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
+      "appointed": 1,
       "held": 0,
       "booking": 0,
       "paid": 0,
@@ -753,7 +757,7 @@
       "note": "",
       "hideFromTv": false,
       "dates": {},
-      "updatedAt": "2026-09-15T20:02:59.210Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -771,7 +775,7 @@
       "note": "",
       "hideFromTv": false,
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -781,7 +785,7 @@
       "startDate": "2026-09-14",
       "status": "active",
       "leftDate": "",
-      "appointed": 1,
+      "appointed": 2,
       "held": 0,
       "booking": 0,
       "paid": 0,
@@ -789,7 +793,7 @@
       "note": "",
       "hideFromTv": false,
       "dates": {},
-      "updatedAt": "2026-09-16T13:05:27.536Z",
+      "updatedAt": "2026-09-17T07:04:55.240Z",
       "demo": false
     },
     {
@@ -902,7 +906,7 @@
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-09-16T13:05:27.536Z",
+  "lastUpdated": "2026-09-17T07:04:55.240Z",
   "dataVersion": "2026-08-31-contest-money-v1",
   "daySevenVersion": "2026-09-02-all-active-day-7-v1"
 }
