@@ -23,7 +23,34 @@ jobs:
       - name: Fetch current dashboard state
         run: |
           curl --fail --silent --show-error --retry 3 "https://adaptation-race.clinf.chatgpt.site/api/state" --output /tmp/adaptation-response.json
-          jq '.state' /tmp/adaptation-response.json > adaptation/state.json.tmp
+          jq '
+            .state
+            | .managers |= map(
+                (if .name == "Григорьева Екатерина" then .id = "mgr-20260827-11" else . end)
+                | .note = (
+                    (.note // "")
+                    | split("\n\n")
+                    | reduce .[] as $part ([];
+                        if ($part == "" or index($part)) then . else . + [$part] end
+                      )
+                    | join("\n\n")
+                  )
+              )
+          ' /tmp/adaptation-response.json > adaptation/state.json.tmp
+
+          duplicate_ids="$(jq -r '
+            .managers
+            | sort_by(.id)
+            | group_by(.id)
+            | map(select(length > 1) | .[0].id)
+            | .[]
+          ' adaptation/state.json.tmp)"
+
+          if [ -n "$duplicate_ids" ]; then
+            echo "::error::Duplicate manager IDs detected: $duplicate_ids"
+            exit 1
+          fi
+
           mv adaptation/state.json.tmp adaptation/state.json
 
       - name: Publish changes
