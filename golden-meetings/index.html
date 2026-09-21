@@ -79,10 +79,7 @@
     <header class="top">
       <div class="topline">
         <div class="brand"><div class="mark">24</div><div><h1>Спринт встреч</h1><p>Техническая панель · 7-30 сентября 2026</p></div></div>
-        <div class="actions"><button class="btn gold" id="editBtn">✎ Ввести результаты</button><details class="admin-menu" id="adminMenu" open><summary>Управление и ТВ</summary><div class="menu-actions">
-          <button class="btn" id="importBtn">Импорт</button><input class="file" id="importFile" type="file" accept="application/json">
-          <button class="btn" id="exportBtn">Резервная копия</button>
-          <button class="btn" id="undoBtn" disabled>Отменить</button><button class="btn gold" id="publishBtn">Опубликовать для ТВ</button>
+        <div class="actions"><details class="admin-menu" id="adminMenu" open><summary>ТВ-панели</summary><div class="menu-actions">
           <a class="btn" href="./tv-assigned.html?v=18" target="_blank">ТВ: назначенные</a>
           <a class="btn" href="./tv-held.html?v=18" target="_blank">ТВ: проведённые</a>
           <a class="btn gold" href="./tv-top10.html?v=18" target="_blank">ТВ: топ-10</a>
@@ -109,14 +106,14 @@
           <div class="rule"><h3>Награды за проведённые</h3><div class="prize-line"><div class="prize-dot">3</div><span class="prize-arrow">›</span><div class="prize-dot">5</div><span class="prize-arrow">›</span><div class="prize-dot">7</div><span class="prize-arrow">›</span><div class="prize-dot">9</div><span class="prize-arrow">›</span><div class="prize-dot">12</div><span class="prize-arrow">›</span><div class="prize-dot">15</div></div><p class="rule-note">Одна итоговая сумма за максимальную ступень. Награды ступеней не складываются.</p></div>
         </div>
       </section></details>
-<div class="sync-bar"><div><b id="syncStatus">Подключение к опубликованным данным</b><p id="draftStatus"></p></div><button class="btn" id="refreshBtn">Обновить</button><button class="btn" id="usePublished">Взять данные с сайта</button></div><p class="pending" id="legacyNote" hidden></p>
+<div class="sync-bar"><div><b id="syncStatus">Подключение к опубликованным данным</b><p id="accessStatus"></p></div><button class="btn" id="refreshBtn">Обновить</button></div>
       <section class="controls">
-        <div><div class="tabs"><button class="tab active" data-view="assigned">Назначенные</button><button class="tab" data-view="held">Проведённые</button><button class="tab" data-view="payments">Выплаты</button></div><span class="edit-tip">Режим ввода включён. Изменения сохраняются на этом устройстве до публикации.</span></div>
+        <div><div class="tabs"><button class="tab active" data-view="assigned">Назначенные</button><button class="tab" data-view="held">Проведённые</button><button class="tab" data-view="payments">Выплаты</button></div></div>
         <div class="filters"><select class="select" id="calendarRange" aria-label="Период календаря"><option value="7:30">Все даты: 7–30</option><option value="7:13">7–13 сентября</option><option value="14:20">14–20 сентября</option><option value="21:27">21–27 сентября</option><option value="28:30">28–30 сентября</option></select><input class="search" id="search" placeholder="Найти сотрудника"><select class="select" id="deptFilter" aria-label="Отдел"><option value="all">Все подразделения</option></select></div>
       </section>
 
       <section class="board">
-        <div class="board-head"><div><h3 id="boardTitle">Ежедневные назначения</h3><p id="boardSubtitle">Нажмите «Ввести результаты», затем день сотрудника, чтобы открыть журнал</p></div><p id="updatedAt">Данные ещё не обновлялись</p></div>
+        <div class="board-head"><div><h3 id="boardTitle">Ежедневные назначения</h3><p id="boardSubtitle">Итоги справа всегда за весь конкурс</p></div><p id="updatedAt">Данные ещё не обновлялись</p></div>
         <nav id="adminPager" class="page-controls" aria-label="Страницы сотрудников" hidden><button id="prevPeople" type="button">Назад</button><span id="peoplePage" role="status"></span><button id="nextPeople" type="button">Далее</button></nav>
         <div id="assignedView" class="table-wrap"></div>
         <div id="heldView" class="held-list" hidden></div>
@@ -128,13 +125,9 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <dialog id="journalDialog"><div class="dialog-title"><h2 id="journalTitle"></h2><button class="btn" data-close="journalDialog">Закрыть</button></div>
     <p>Один клиент учитывается один раз в назначениях и один раз в проведениях за весь конкурс, независимо от сотрудника. Повторный ID встречи или клиента не принимается.</p>
-    <form id="eventForm"><label><span id="eventDateLabel">Дата проведения</span><input id="eventDate" type="date" min="2026-09-07" max="2026-09-30" required></label><label>ID встречи; ID лида, по одной паре на строку<textarea id="eventIds" rows="3" placeholder="10001; 90000001" required></textarea></label>
-    <label id="legacyBox" hidden><input type="checkbox" id="replaceLegacy"> Распределить старые встречи без дат (осталось <b id="legacyCount"></b>), без повторного начисления</label><button class="btn gold" id="addEventBtn" type="submit">Добавить встречи</button></form>
-    <p class="error" id="journalError" role="alert"></p><div id="journalEntries"></div><small>ID сохраняется в виде отпечатка, исходное значение не публикуется. Перенос и повторное назначение не дают нового зачёта. При исправлении даты измените исходную запись без добавления второй.</small>
+    <div id="journalEntries"></div><small>ID сохраняется в виде отпечатка, исходное значение не публикуется. Перенос и повторное назначение не дают нового зачёта.</small>
   </dialog>
-  <dialog id="importDialog"><h2>Проверка импорта</h2><p id="importSummary"></p><div class="dialog-actions"><button class="btn" data-close="importDialog">Отмена</button><button class="btn gold" id="confirmImport">Применить импорт</button></div></dialog>
-  <dialog id="publishDialog"><h2>Опубликовать результаты для ТВ</h2><p>1. Скачайте подготовленные данные.</p><button class="btn gold" id="downloadPublic">Скачать state.json</button><p>2. Загрузите этот файл в папку конкурса на GitHub и нажмите Commit changes.</p><a class="btn" href="https://github.com/KuzimaS/ilya-shurikov/upload/gh-pages/golden-meetings" target="_blank" rel="noopener">Открыть загрузку на GitHub</a><p>После завершения публикации GitHub все ТВ-панели подхватят данные автоматически. Проверка выполняется каждые 30 секунд. Изменения в техничке до этого остаются локальными.</p><button class="btn" data-close="publishDialog">Закрыть</button></dialog>
   <script src="./contest-data.js?v=18"></script>
   <script src="./contest-core.js?v=18"></script>
-  <script src="./admin.js?v=18"></script>
+  <script src="./admin.js?v=19"></script>
 </body></html>
