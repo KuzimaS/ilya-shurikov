@@ -1880,6 +1880,12 @@
       "occurredAt": "2026-09-19T18:00:00+03:00"
     },
     {
+      "id": "10eac522517e19972a8702b7c0dd0080a5e8ed0a646e1df0b7e5d5146cf62701",
+      "personId": "mitrochenkov-andrey",
+      "date": "2026-09-19",
+      "clientKey": "16edcecf5b1b348a380b0de2bacf6304299cc46ed9c16a7fc1ac57da83ae4a8c"
+    },
+    {
       "id": "e6b8166468e5fc63320b9ef17157106c3b6d87c47214350238e2d0f953ed744f",
       "personId": "bushin-dmitry",
       "date": "2026-09-20",
@@ -2074,7 +2080,7 @@
       "markedAt": "2026-09-15T08:46:36.588Z"
     }
   ],
-  "updatedAt": "2026-09-21T07:02:52.230Z",
+  "updatedAt": "2026-09-21T12:19:17.536Z",
   "assignedEvents": [
     {
       "id": "9c319b27ae6df754fdbc61a016f8c0a7381fea5cbb231b2792dd5c16cf7ac44f",
