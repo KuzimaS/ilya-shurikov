@@ -191,17 +191,17 @@
       "held": 1,
       "booking": 0,
       "paid": 0,
-      "paidBonus": 5000,
+      "paidBonus": 10000,
       "note": "15.09.2026: проведённая очная встреча, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43311882",
       "dates": {
         "appointed5": "2026-09-04",
         "held1": "2026-09-15"
       },
-      "updatedAt": "2026-09-21T12:16:08.340Z",
+      "updatedAt": "2026-09-21T12:39:03.088Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
-        "held1": "unpaid"
+        "held1": "paid"
       }
     },
     {
@@ -262,17 +262,17 @@
       "held": 2,
       "booking": 30000,
       "paid": 0,
-      "paidBonus": 5000,
+      "paidBonus": 10000,
       "note": "",
       "dates": {
         "held1": "2026-09-03",
         "appointed5": "2026-09-15"
       },
-      "updatedAt": "2026-09-21T12:16:08.340Z",
+      "updatedAt": "2026-09-21T12:39:03.088Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
-        "appointed5": "unpaid",
+        "appointed5": "paid",
         "booking30": "unpaid"
       }
     },
@@ -421,18 +421,18 @@
       "held": 2,
       "booking": 60000,
       "paid": 0,
-      "paidBonus": 10000,
+      "paidBonus": 17000,
       "note": "29.08.2026: очная встреча засчитана вручную по решению Антона Должикова, 3-я переговорная, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43231816\nПо выгрузке за 15.09.2026: 2 брони на общую сумму 60 000 ₽.",
       "dates": {
         "held1": "2026-08-29",
         "appointed5": "2026-09-07"
       },
-      "updatedAt": "2026-09-21T12:16:08.340Z",
+      "updatedAt": "2026-09-21T12:39:03.088Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
         "appointed5": "paid",
-        "booking30": "unpaid"
+        "booking30": "paid"
       }
     },
     {
@@ -597,19 +597,19 @@
       "held": 4,
       "booking": 0,
       "paid": 0,
-      "paidBonus": 5000,
+      "paidBonus": 20000,
       "note": "08.09.2026: проведённая очная, Кирилл, https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43287374; 09.09.2026: проведённая очная, Александр, https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43262354; 10.09.2026: проведённая очная, Юлий Анатольевич, https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43262190; 11.09.2026: назначенная очная, Ольга, https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43299922",
       "dates": {
         "held1": "2026-09-08",
         "appointed5": "2026-09-09",
         "held3": "2026-09-10"
       },
-      "updatedAt": "2026-09-21T12:16:08.340Z",
+      "updatedAt": "2026-09-21T12:39:03.088Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
-        "appointed5": "unpaid",
-        "held3": "unpaid"
+        "appointed5": "paid",
+        "held3": "paid"
       }
     },
     {
@@ -623,17 +623,17 @@
       "held": 1,
       "booking": 0,
       "paid": 0,
-      "paidBonus": 5000,
+      "paidBonus": 10000,
       "note": "13.09.2026: проведённая очная встреча добавлена вручную, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43265164",
       "dates": {
         "appointed5": "2026-09-09",
         "held1": "2026-09-13"
       },
-      "updatedAt": "2026-09-21T12:16:08.340Z",
+      "updatedAt": "2026-09-21T12:39:03.088Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
-        "held1": "unpaid"
+        "held1": "paid"
       }
     },
     {
@@ -930,7 +930,7 @@
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-09-21T12:16:08.340Z",
+  "lastUpdated": "2026-09-21T12:39:03.088Z",
   "dataVersion": "2026-08-31-contest-money-v1",
   "daySevenVersion": "2026-09-02-all-active-day-7-v1"
 }
