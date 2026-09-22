@@ -286,14 +286,14 @@
       "appointed": 15,
       "held": 1,
       "booking": 0,
-      "paid": 0,
+      "paid": 30000,
       "paidBonus": 10000,
       "note": "",
       "dates": {
         "appointed5": "2026-09-04",
         "held1": "2026-09-11"
       },
-      "updatedAt": "2026-09-22T04:46:45.016Z",
+      "updatedAt": "2026-09-22T07:42:32.240Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -931,7 +931,7 @@
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-09-22T07:00:08.344Z",
+  "lastUpdated": "2026-09-22T07:42:32.240Z",
   "dataVersion": "2026-08-31-contest-money-v1",
   "daySevenVersion": "2026-09-02-all-active-day-7-v1"
 }
