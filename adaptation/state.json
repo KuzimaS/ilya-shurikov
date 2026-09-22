@@ -7,7 +7,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 7,
+      "appointed": 8,
       "held": 2,
       "booking": 0,
       "paid": 0,
@@ -21,7 +21,7 @@
         "held1": "paid",
         "appointed5": "paid"
       },
-      "updatedAt": "2026-09-22T04:46:45.016Z",
+      "updatedAt": "2026-09-22T07:00:08.344Z",
       "demo": false
     },
     {
@@ -66,7 +66,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 10,
+      "appointed": 12,
       "held": 3,
       "booking": 0,
       "paid": 750000,
@@ -84,7 +84,7 @@
         "appointed5": "paid",
         "held3": "unpaid"
       },
-      "updatedAt": "2026-09-22T04:46:45.016Z",
+      "updatedAt": "2026-09-22T07:00:08.344Z",
       "demo": false
     },
     {
@@ -187,8 +187,8 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 15,
-      "held": 1,
+      "appointed": 16,
+      "held": 2,
       "booking": 0,
       "paid": 0,
       "paidBonus": 10000,
@@ -197,7 +197,7 @@
         "appointed5": "2026-09-04",
         "held1": "2026-09-15"
       },
-      "updatedAt": "2026-09-22T04:46:45.016Z",
+      "updatedAt": "2026-09-22T07:00:08.344Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -236,7 +236,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 22,
+      "appointed": 23,
       "held": 0,
       "booking": 0,
       "paid": 0,
@@ -248,7 +248,7 @@
       "payoutStatuses": {
         "appointed5": "paid"
       },
-      "updatedAt": "2026-09-22T04:46:45.016Z",
+      "updatedAt": "2026-09-22T07:00:08.344Z",
       "demo": false
     },
     {
@@ -417,7 +417,7 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 21,
+      "appointed": 27,
       "held": 2,
       "booking": 60000,
       "paid": 0,
@@ -427,7 +427,7 @@
         "held1": "2026-08-29",
         "appointed5": "2026-09-07"
       },
-      "updatedAt": "2026-09-22T04:46:45.016Z",
+      "updatedAt": "2026-09-22T07:00:08.344Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
@@ -568,8 +568,8 @@
       "startDate": "2026-08-27",
       "status": "active",
       "leftDate": "",
-      "appointed": 22,
-      "held": 3,
+      "appointed": 23,
+      "held": 4,
       "booking": 0,
       "paid": 0,
       "paidBonus": 10000,
@@ -579,7 +579,7 @@
         "held1": "2026-09-06",
         "held3": "2026-09-19"
       },
-      "updatedAt": "2026-09-22T04:46:45.016Z",
+      "updatedAt": "2026-09-22T07:00:08.344Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
@@ -756,7 +756,7 @@
       "startDate": "2026-09-14",
       "status": "active",
       "leftDate": "",
-      "appointed": 0,
+      "appointed": 2,
       "held": 0,
       "booking": 0,
       "paid": 0,
@@ -764,7 +764,7 @@
       "note": "",
       "hideFromTv": false,
       "dates": {},
-      "updatedAt": "2026-09-15T20:02:59.210Z",
+      "updatedAt": "2026-09-22T07:00:08.344Z",
       "demo": false
     },
     {
@@ -931,7 +931,7 @@
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-09-22T04:46:45.016Z",
+  "lastUpdated": "2026-09-22T07:00:08.344Z",
   "dataVersion": "2026-08-31-contest-money-v1",
   "daySevenVersion": "2026-09-02-all-active-day-7-v1"
 }
