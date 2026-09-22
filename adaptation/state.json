@@ -285,19 +285,21 @@
       "leftDate": "",
       "appointed": 15,
       "held": 1,
-      "booking": 0,
-      "paid": 30000,
-      "paidBonus": 10000,
+      "booking": 30000,
+      "paid": 0,
+      "paidBonus": 17000,
       "note": "",
       "dates": {
         "appointed5": "2026-09-04",
-        "held1": "2026-09-11"
+        "held1": "2026-09-11",
+        "booking30": "2026-09-21"
       },
-      "updatedAt": "2026-09-22T14:09:40.856Z",
+      "updatedAt": "2026-09-22T16:01:03.195Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
-        "held1": "paid"
+        "held1": "paid",
+        "booking30": "unpaid"
       }
     },
     {
@@ -847,15 +849,20 @@
       "status": "active",
       "leftDate": "",
       "appointed": 3,
-      "held": 0,
+      "held": 1,
       "booking": 0,
       "paid": 0,
-      "paidBonus": 0,
-      "note": "",
+      "paidBonus": 5000,
+      "note": "18.09.2026: проведённая очная встреча, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43334136",
       "hideFromTv": false,
-      "dates": {},
-      "updatedAt": "2026-09-22T14:09:40.856Z",
-      "demo": false
+      "dates": {
+        "held1": "2026-09-18"
+      },
+      "updatedAt": "2026-09-22T16:01:03.195Z",
+      "demo": false,
+      "payoutStatuses": {
+        "held1": "unpaid"
+      }
     },
     {
       "id": "mgr-20260914-57",
@@ -931,7 +938,7 @@
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-09-22T14:09:40.856Z",
+  "lastUpdated": "2026-09-22T16:01:03.195Z",
   "dataVersion": "2026-08-31-contest-money-v1",
   "daySevenVersion": "2026-09-02-all-active-day-7-v1"
 }
