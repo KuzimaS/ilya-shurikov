@@ -420,21 +420,25 @@
       "status": "active",
       "leftDate": "",
       "appointed": 27,
-      "held": 2,
+      "held": 5,
       "booking": 60000,
       "paid": 0,
-      "paidBonus": 17000,
-      "note": "29.08.2026: очная встреча засчитана вручную по решению Антона Должикова, 3-я переговорная, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43231816\nПо выгрузке за 15.09.2026: 2 брони на общую сумму 60 000 ₽.",
+      "paidBonus": 47000,
+      "note": "29.08.2026: очная встреча засчитана вручную по решению Антона Должикова, 3-я переговорная, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43231816\nПо выгрузке за 15.09.2026: 2 брони на общую сумму 60 000 ₽.\n10.09.2026: проведённая очная встреча, стримерская, Болдырев +, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43231776\n15.09.2026 12:00: проведённая очная встреча, переговорная 4 этаж, Кимаев +, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43307294\n15.09.2026 12:00: проведённая очная встреча, первая переговорная 5 этаж, Бари +, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43299248\n18.09.2026 19:02: проведённая очная встреча, инвест-ужин, переговорная в ДП возле Бари, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43333968",
       "dates": {
         "held1": "2026-08-29",
-        "appointed5": "2026-09-07"
+        "appointed5": "2026-09-07",
+        "held3": "2026-09-15",
+        "held5": "2026-09-18"
       },
-      "updatedAt": "2026-09-23T06:55:09.893Z",
+      "updatedAt": "2026-09-23T07:41:38.011Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
         "appointed5": "paid",
-        "booking30": "paid"
+        "booking30": "paid",
+        "held3": "unpaid",
+        "held5": "unpaid"
       }
     },
     {
@@ -938,7 +942,7 @@
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-09-23T07:00:21.988Z",
+  "lastUpdated": "2026-09-23T07:41:38.011Z",
   "dataVersion": "2026-08-31-contest-money-v1",
   "daySevenVersion": "2026-09-02-all-active-day-7-v1"
 }
