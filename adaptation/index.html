@@ -528,7 +528,9 @@
         goals.slice(0, 5).forEach(g => { if (isReached(m, g)) result += g.amount; });
         if (isReached(m, goals[6])) result += 100000;
         else if (isReached(m, goals[5])) result += 35000;
-        return result;
+        const statuses = m.payoutStatuses && typeof m.payoutStatuses === 'object' ? m.payoutStatuses : {};
+        const canceled = goals.reduce((sum, g) => sum + (isReached(m, g) && statuses[g.key] === 'canceled' ? g.amount : 0), 0);
+        return Math.max(0, result - canceled);
       }
       function furthest(m) {
         let index = -1;
