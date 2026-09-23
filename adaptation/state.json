@@ -82,9 +82,9 @@
         "held1": "paid",
         "paid500": "paid",
         "appointed5": "paid",
-        "held3": "unpaid"
+        "held3": "paid"
       },
-      "updatedAt": "2026-09-23T07:00:21.988Z",
+      "updatedAt": "2026-09-23T08:27:20.992Z",
       "demo": false
     },
     {
@@ -151,15 +151,15 @@
       "held": 0,
       "booking": 0,
       "paid": 0,
-      "paidBonus": 0,
+      "paidBonus": 5000,
       "note": "",
       "dates": {
         "appointed5": "2026-09-17"
       },
-      "updatedAt": "2026-09-23T06:55:09.893Z",
+      "updatedAt": "2026-09-23T08:27:20.992Z",
       "demo": false,
       "payoutStatuses": {
-        "appointed5": "unpaid"
+        "appointed5": "paid"
       }
     },
     {
@@ -262,18 +262,18 @@
       "held": 2,
       "booking": 30000,
       "paid": 0,
-      "paidBonus": 10000,
+      "paidBonus": 17000,
       "note": "",
       "dates": {
         "held1": "2026-09-03",
         "appointed5": "2026-09-15"
       },
-      "updatedAt": "2026-09-23T07:00:21.988Z",
+      "updatedAt": "2026-09-23T08:27:20.992Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
         "appointed5": "paid",
-        "booking30": "unpaid"
+        "booking30": "paid"
       }
     },
     {
@@ -335,17 +335,17 @@
       "held": 2,
       "booking": 0,
       "paid": 0,
-      "paidBonus": 0,
+      "paidBonus": 10000,
       "note": "15.09.2026: проведённая очная встреча, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43292504",
       "dates": {
         "held1": "2026-09-15",
         "appointed5": "2026-09-17"
       },
-      "updatedAt": "2026-09-23T06:55:09.893Z",
+      "updatedAt": "2026-09-23T08:27:20.992Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "unpaid",
-        "appointed5": "unpaid"
+        "appointed5": "paid"
       }
     },
     {
@@ -359,17 +359,17 @@
       "held": 1,
       "booking": 0,
       "paid": 0,
-      "paidBonus": 5000,
+      "paidBonus": 10000,
       "note": "29.08.2026: очная встреча засчитана вручную по решению Антона Должикова, 2-я переговорная, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43236578",
       "dates": {
         "held1": "2026-08-29",
         "appointed5": "2026-09-16"
       },
-      "updatedAt": "2026-09-23T06:55:09.893Z",
+      "updatedAt": "2026-09-23T08:27:20.992Z",
       "demo": false,
       "payoutStatuses": {
         "held1": "paid",
-        "appointed5": "unpaid"
+        "appointed5": "paid"
       }
     },
     {
@@ -383,15 +383,15 @@
       "held": 0,
       "booking": 0,
       "paid": 0,
-      "paidBonus": 0,
+      "paidBonus": 5000,
       "note": "",
       "dates": {
         "appointed5": "2026-09-17"
       },
-      "updatedAt": "2026-09-23T06:55:09.893Z",
+      "updatedAt": "2026-09-23T08:27:20.992Z",
       "demo": false,
       "payoutStatuses": {
-        "appointed5": "unpaid"
+        "appointed5": "paid"
       }
     },
     {
@@ -485,9 +485,9 @@
         "booking30": "paid",
         "held3": "paid",
         "paid500": "paid",
-        "held5": "unpaid"
+        "held5": "paid"
       },
-      "updatedAt": "2026-09-23T06:55:09.893Z",
+      "updatedAt": "2026-09-23T08:27:20.992Z",
       "demo": false
     },
     {
@@ -578,19 +578,19 @@
       "held": 4,
       "booking": 0,
       "paid": 0,
-      "paidBonus": 10000,
+      "paidBonus": 20000,
       "note": "06.09.2026: очная встреча добавлена вручную, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43252210",
       "dates": {
         "appointed5": "2026-09-07",
         "held1": "2026-09-06",
         "held3": "2026-09-19"
       },
-      "updatedAt": "2026-09-23T07:00:21.988Z",
+      "updatedAt": "2026-09-23T08:27:20.992Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid",
         "held1": "paid",
-        "held3": "unpaid"
+        "held3": "paid"
       }
     },
     {
@@ -689,16 +689,16 @@
       "held": 0,
       "booking": 0,
       "paid": 0,
-      "paidBonus": 0,
+      "paidBonus": 5000,
       "note": "",
       "hideFromTv": false,
       "dates": {
         "appointed5": "2026-09-17"
       },
-      "updatedAt": "2026-09-23T07:00:21.988Z",
+      "updatedAt": "2026-09-23T08:27:20.992Z",
       "demo": false,
       "payoutStatuses": {
-        "appointed5": "unpaid"
+        "appointed5": "paid"
       }
     },
     {
@@ -942,7 +942,7 @@
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-09-23T07:41:38.011Z",
+  "lastUpdated": "2026-09-23T08:27:20.992Z",
   "dataVersion": "2026-08-31-contest-money-v1",
   "daySevenVersion": "2026-09-02-all-active-day-7-v1"
 }
