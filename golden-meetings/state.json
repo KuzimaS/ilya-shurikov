@@ -1803,6 +1803,12 @@
       "occurredAt": "2026-09-17T19:05:00+03:00"
     },
     {
+      "id": "0de8b681d6a6aae7baba1c8dedfb707954cf3958aeb98e3248828d4ca20a3ca2",
+      "personId": "gradesko-tamara",
+      "date": "2026-09-18",
+      "clientKey": "669219ba9e7584ffb7da49d307a9bbfcfa92fc079b8b3323cec9497ff63d7426"
+    },
+    {
       "id": "6c50ae5cfb71d83cc5b4517219802dd6d034e28e67008860a9676fae878cf8a4",
       "personId": "sadykhova-lyaman",
       "date": "2026-09-18",
@@ -2389,7 +2395,7 @@
       "markedAt": "2026-09-24T06:41:28.910Z"
     }
   ],
-  "updatedAt": "2026-09-24T06:41:28.910Z",
+  "updatedAt": "2026-09-24T06:53:17.406Z",
   "assignedEvents": [
     {
       "id": "9c319b27ae6df754fdbc61a016f8c0a7381fea5cbb231b2792dd5c16cf7ac44f",

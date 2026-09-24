@@ -28,12 +28,15 @@ assert.ok(Array.isArray(overrides));
 const overrideKeys=new Set();
 for(const o of overrides){
  assert.ok(['assigned','held'].includes(o.kind));assert.match(o.clientKey,/^[a-f0-9]{64}$/);assert.match(o.preferredEventId,/^[a-f0-9]{64}$/);
+ if(o.manualConfirmed!==undefined)assert.equal(typeof o.manualConfirmed,'boolean');
  assert.ok(C.people.some(p=>p.id===o.personId));assert.ok(o.date>=C.period.start&&o.date<=C.period.end);
  const key=o.kind+':'+o.clientKey;assert.ok(!overrideKeys.has(key),'Дубли ручных решений');overrideKeys.add(key);
 }
 function merge(kind,previous){
  let rows=[...previous.filter(e=>!sourceDates[kind].has(e.date)),...incoming[kind]];
  for(const o of overrides.filter(o=>o.kind===kind)){
+  // Подтверждённый пользователем ручной зачёт сохраняется даже при замене всей даты.
+  if(o.manualConfirmed&&!rows.some(e=>e.id===o.preferredEventId))rows.push({id:o.preferredEventId,clientKey:o.clientKey,personId:o.personId,date:o.date});
   const matches=rows.filter(e=>e.clientKey===o.clientKey);if(!matches.length)continue;
   assert.ok(matches.some(e=>e.id===o.preferredEventId&&e.personId===o.personId&&e.date===o.date),'В выгрузке нет встречи, выбранной ручным решением: '+o.personId+' '+o.date);
   rows=rows.filter(e=>{if(e.clientKey!==o.clientKey||e.id===o.preferredEventId)return true;rejected.push({type:kind,personId:e.personId,date:e.date,keptPersonId:o.personId,reason:'manual-attribution'});return false;});
@@ -43,3 +46,4 @@ function merge(kind,previous){
 }
 const state={...old,assignedEvents:merge('assigned',old.assignedEvents||[]),heldEvents:merge('held',old.heldEvents)};state.assigned=C.assignedCounts(state.assignedEvents);const valid=C.validateForPublish(state);valid.updatedAt=C.signature(valid)===C.signature(old)?old.updatedAt:new Date().toISOString();delete valid.held;
 fs.writeFileSync(target,JSON.stringify(valid,null,2)+'\n');console.log(JSON.stringify({summary:C.summary(C.normalize(valid)),rejected},null,2));
+
