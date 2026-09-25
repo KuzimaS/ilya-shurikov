@@ -377,22 +377,23 @@
       "name": "Гагаринцева Ангелина",
       "team": "Левченко",
       "startDate": "2026-08-27",
-      "status": "active",
-      "leftDate": "",
+      "status": "left",
+      "leftDate": "2026-09-23",
       "appointed": 6,
       "held": 0,
       "booking": 0,
       "paid": 0,
       "paidBonus": 5000,
-      "note": "",
+      "note": "23.09.2026: увольнение по инициативе сотрудника. Старший стажёр ОП Левченко, SIP 742. Забрать доступы сейчас, лиды передать действующим сотрудникам ОП Левченко.",
       "dates": {
         "appointed5": "2026-09-17"
       },
-      "updatedAt": "2026-09-25T07:03:00.727Z",
+      "updatedAt": "2026-09-25T07:06:23.925Z",
       "demo": false,
       "payoutStatuses": {
         "appointed5": "paid"
-      }
+      },
+      "hideFromTv": true
     },
     {
       "id": "mgr-20260827-20",
@@ -463,14 +464,14 @@
       "name": "Власов Никита",
       "team": "Вильданов",
       "startDate": "2026-08-27",
-      "status": "active",
-      "leftDate": "",
+      "status": "left",
+      "leftDate": "2026-09-22",
       "appointed": 22,
       "held": 5,
       "booking": 30000,
       "paid": 565000,
       "paidBonus": 62000,
-      "note": "28.08.2026: очная встреча добавлена вручную, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43239678\n31.08.2026: очная встреча добавлена вручную, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43247606",
+      "note": "28.08.2026: вручную добавлена очная встреча, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43239678\n31.08.2026: вручную добавлена очная встреча, лид https://acc52f4fc5245ae5.amocrm.ru/leads/detail/43247606\n22.09.2026: увольнение. Менеджер ОП Вильданов, SIP 805. Забрать доступы сейчас, лиды передать лично Вильданову С.",
       "dates": {
         "appointed5": "2026-08-29",
         "held1": "2026-08-28",
@@ -487,8 +488,9 @@
         "paid500": "paid",
         "held5": "canceled"
       },
-      "updatedAt": "2026-09-25T07:03:00.727Z",
-      "demo": false
+      "updatedAt": "2026-09-25T07:06:23.925Z",
+      "demo": false,
+      "hideFromTv": true
     },
     {
       "id": "mgr-20260827-25",
@@ -792,10 +794,10 @@
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
-      "note": "21.09.2026: увольнение по инициативе компании. Забрать доступы сейчас.",
+      "note": "21.09.2026: увольнение по инициативе компании. Стажёр отдела адаптации, SIP 131. Забрать доступы сейчас.",
       "hideFromTv": true,
       "dates": {},
-      "updatedAt": "2026-09-25T07:03:00.727Z",
+      "updatedAt": "2026-09-25T07:06:23.925Z",
       "demo": false
     },
     {
@@ -894,10 +896,10 @@
       "booking": 0,
       "paid": 0,
       "paidBonus": 0,
-      "note": "21.09.2026: увольнение по инициативе компании. Забрать доступы сейчас.",
+      "note": "21.09.2026: увольнение по инициативе компании. Стажёр отдела адаптации, SIP 149. Забрать доступы сейчас.",
       "hideFromTv": true,
       "dates": {},
-      "updatedAt": "2026-09-25T07:03:00.727Z",
+      "updatedAt": "2026-09-25T07:06:23.925Z",
       "demo": false
     },
     {
@@ -1169,7 +1171,7 @@
     }
   ],
   "demoMode": false,
-  "lastUpdated": "2026-09-25T07:03:00.727Z",
-  "dataVersion": "2026-08-31-contest-money-v1",
+  "lastUpdated": "2026-09-25T07:06:23.925Z",
+  "dataVersion": "2026-09-25-dismissals-v1",
   "daySevenVersion": "2026-09-02-all-active-day-7-v1"
 }
